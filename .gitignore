@@ -1,0 +1,98 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/vendor/
+/node_modules/
+/[all
+/symfony.lock
+/migrations/
+/public/index.php
+/src/Kernel.php
+/templates/base.html.twig
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> package managers ###
+/composer.lock
+/symfony.lock
+/yarn.lock
+###< package managers ###
+
+###> Eclipse project files ###
+/.buildpath
+/.project
+/.settings
+###< Eclipse project files ###
+
+
+###> lexik/jwt-authentication-bundle ###
+/config/jwt/*.pem
+###< lexik/jwt-authentication-bundle ###
+
+###> symfony/webpack-encore-bundle ###
+/assets/controllers/
+/assets/styles/
+/assets/app.js
+/assets/bootstrap.js
+/assets/controllers.json
+/node_modules/
+/public/build/
+/public/bundles/
+/yarn.lock
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###
+
+###> liip/imagine-bundle ###
+/public/media/cache/
+/public/web-guitar-pro/media/cache/
+###< liip/imagine-bundle ###
+
+
+###> Jenkins Deploy Files ###
+/.env
+/ftp_deploy.ini
+###< Jenkins Deploy Files ###
+
+###> VankosoftApplication Files ###
+/config/*
+/VSAPP_VERSION
+
+# Public files ignores
+/public/admin-panel/build/
+/public/admin-panel/bundles/
+/public/admin-panel/media/
+/public/shared_assets/build/
+/public/index.php
+/src/Kernel.php
+/templates/base.html.twig
+
+# Except for the applications configs:
+!/config/admin-panel
+!/config/applications
+!/config/api_platform
+
+# Example Application ignores
+/public/test-vankosoft-application/build/
+/public/test-vankosoft-application/bundles/
+/public/test-vankosoft-application/media/
+
+###< VankosoftApplication Files ###
+
+###> VisualParadigm Meta Files ###
+/docs/TechnicalDocumentation/VisualParadigm/.VankosoftApplication.vpp.lck
+/docs/TechnicalDocumentation/VisualParadigm/VankosoftApplication.vpp.bak_*
+###< VisualParadigm Meta Files ###
+

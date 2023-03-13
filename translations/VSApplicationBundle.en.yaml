@@ -1,0 +1,8 @@
+vs_application:
+    menu:
+        blog: Blog
+        snippets: Snippets
+        
+        admin_panel: Admin Panel
+
+

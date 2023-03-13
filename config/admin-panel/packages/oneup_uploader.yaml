@@ -1,0 +1,14 @@
+oneup_uploader:
+    mappings:
+        gallery:
+            frontend: blueimp
+            
+            # Set The Storage You Want to Use
+            #-------------------------------------
+            # https://github.com/1up-lab/OneupUploaderBundle/blob/master/doc/gaufrette_storage.md
+            ############################################################################################
+#            storage:
+#                type: gaufrette
+#                filesystem: gaufrette.vsorg_downloads_filesystem
+
+    

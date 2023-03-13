@@ -1,0 +1,5 @@
+vs_users_subscriptions:
+    resource: "@VSUsersSubscriptionsBundle/Resources/config/routing/users_subscriptions.yml"
+    prefix:   /
+
+

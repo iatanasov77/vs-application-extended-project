@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        
+    App\Controller\Api\TestController:
+        tags: ['controller.service_arguments']
+        autowire: true
+

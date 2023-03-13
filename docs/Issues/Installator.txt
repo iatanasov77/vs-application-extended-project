@@ -1,0 +1,21 @@
+
+Step 6 of 6. Finalize VankoSoft Application Setup.
+--------------------------------------------------
+
+In Filesystem.php line 200:
+
+  Failed to remove directory "/projects/TestHosts/VsWebGuitarPro_Upgrade/..Y8q": rmdir(/projects/TestHosts/VsWebGuitarPro_Upgrade/..Y8q): Text file busy
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

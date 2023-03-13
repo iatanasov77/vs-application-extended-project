@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        
+    App\Controller\AdminPanel\DefaultController:
+        tags: ['controller.service_arguments']
+
+    App\Controller\Application\DebugController:
+        tags: ['controller.service_arguments']

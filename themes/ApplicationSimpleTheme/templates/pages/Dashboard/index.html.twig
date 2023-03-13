@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block javascripts %}
+	{{ encore_entry_script_tags( 'js/home', null, 'ApplicationSimpleTheme' ) }}
+{% endblock %}
+
+{% block content %}    
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">{{ applicationTitle }}</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap py-5">
+                        <div class="img d-flex align-items-center justify-content-center" style="background-image: url(build/application-simple-theme/images/vankosoft-thumb.png);"></div>
+                        <h3 class="text-center mb-0">Welcome</h3>
+                        <p class="text-center">&nbsp;</p>
+                        <button id="btnLogout" data-url="{{ path( 'app_logout' ) }}" class="btn form-control btn-primary rounded submit px-3 m-t-10">
+                            Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,13 @@
+vs_payment_config_resources:
+    resource: "@VSPaymentBundle/Resources/config/routing/payment_config_resources.yaml"
+    prefix: /
+
+vs_payment_config:
+    resource: "@VSPaymentBundle/Resources/config/routing/payment_config.yaml"
+    prefix: /
+
+vs_payment_products:
+    resource: "@VSPaymentBundle/Resources/config/routing/products.yaml"
+    prefix: /
+
+

@@ -1,0 +1,7 @@
+.login100-form-error {
+    width: 100%;
+    border: 2px solid #c80000;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #c80000;
+}

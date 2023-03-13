@@ -1,0 +1,22 @@
+# @see https://github.com/Sylius/SyliusResourceBundle/blob/master/docs/index.md
+sylius_resource:
+ 
+    #######################################################################################################################
+    # Configure your resources
+    #######################################################################################################################
+    resources:
+        #app.book:
+            #classes:
+                #model: App\Entity\Book
+                
+    #######################################################################################################################
+    # Override default settings
+    # -------------------------
+    # You Can To Override Many Resource Parameters For All Resources (Including VankoSoft Bundles)
+    # View Available Settings in 
+    #     \Sylius\Bundle\ResourceBundle\DependencyInjection\Configuration::addSettingsSection(ArrayNodeDefinition $node)
+    #######################################################################################################################
+    settings:
+        paginate: 10
+
+
