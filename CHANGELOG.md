@@ -1,3 +1,15 @@
+1.10.2	|	Release date: **24.03.2023**
+============================================
+* New Features:
+  - Update Readme File.
+  - Add Extensions Entities.
+  - Add Design for Shopping Cart Templates.
+  - Add ShoppingCart Theme.
+  - Update AdminPanel Configs
+  - Update Entities and Forms.
+  - Updaate .env File
+
+
 1.10.1	|	Release date: **13.03.2023**
 ============================================
 * Bug-Fixes:
