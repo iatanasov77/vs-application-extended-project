@@ -1,0 +1,53 @@
+{%- extends '@Pagerfanta/default.html.twig' -%}
+
+{%- block pager -%}
+    {#
+    Page: {$page}<br />
+    Pages Count: {$pagesNum}<br />
+    Items Count: {$totalItemsCount}<br /><br />
+    #}
+    <!-- VsPager BEGIN -->
+    <div class="pagination">
+        <ul>
+            {%- set prevPath = 'javascript:void(0);' -%}
+            {%- set nextPath = 'javascript:void(0);' -%}
+            
+            {%- if pagerfanta.hasPreviousPage() -%}
+                {%- set prevPath = route_generator.route( pagerfanta.getPreviousPage() ) -%}
+            {%- endif -%}
+        
+            {%- if pagerfanta.hasNextPage() -%}
+                {%- set nextPath = route_generator.route( pagerfanta.getNextPage() ) -%}
+            {%- endif -%}
+            
+            {# Previous Page Link #}
+            <li><a href="{{ prevPath }}">&lsaquo;</a></li>
+            
+            {# Page Links #}
+            {%- for page in range( start_page, end_page ) -%}
+                {%- set path = route_generator.route( page ) -%}
+                {%- if page == current_page -%}
+                    {{- block('current_page_link') -}}
+                {%- else -%}
+                    {{- block('page_link') -}}
+                {%- endif -%}
+            {%- endfor -%}
+            
+            {# Next Page Link #}
+            <li><a href="{{ nextPath }}">&rsaquo;</a></li>
+        </ul>
+    </div>
+    <!-- VsPager END -->
+{%- endblock pager -%}
+
+{%- block page_link -%}
+    <li><a href="{{- path -}}">{{- page -}}</a></li>
+{%- endblock page_link -%}
+
+{%- block current_page_link -%}
+    <li><a href="{{- path -}}">{{- page -}}</a></li>
+{%- endblock current_page_link -%}
+
+{%- block ellipsis -%}
+    <span class="dots">...</span>&nbsp;&nbsp;
+{%- endblock ellipsis -%}

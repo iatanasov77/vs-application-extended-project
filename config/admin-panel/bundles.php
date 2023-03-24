@@ -53,6 +53,7 @@ return [
     
     Oneup\UploaderBundle\OneupUploaderBundle::class => ['all' => true],
     
+    
     Payum\Bundle\PayumBundle\PayumBundle::class => ['all' => true],
     Vankosoft\UsersSubscriptionsBundle\VSUsersSubscriptionsBundle::class => ['all' => true],
     Vankosoft\PaymentBundle\VSPaymentBundle::class => ['all' => true],

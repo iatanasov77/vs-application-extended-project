@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+{#
+    {% include 'Partial/featured-products.html.twig' %}
+#}
+    <h4>Latest Products </h4>
+    <ul class="thumbnails">
+    {% for product in latestProducts %}
+        <li class="span3">
+            <div class="thumbnail">
+                <a href="{{ path( 'vs_payment_product_show', {'id': product.id} ) }}">
+                    {% if product.pictures.first %}
+                        {% set productPicture = path( 'vs_cms_images_filesystem_get_file', { file: picturesPath ~ '/' ~ product.pictures.first.path } ) %}
+                    {% else %}
+                        {% set productPicture = '/build/bootstrap-shop-theme/images/products/6.jpg' %}
+                    {% endif %}
+                    <img src="{{ productPicture }}" alt="{{ product.name }}"/>
+                </a>
+                <div class="caption">
+                    <h5>{{ product.name }}</h5>
+                    <p>{{ product.description }}</p>
+                    
+                    <h4 style="text-align:center">
+                        <a class="btn" href="{{ path( 'vs_payment_product_show', {'id': product.id} ) }}"><i class="icon-zoom-in"></i></a> 
+                        <a class="btn btnAddToCart"
+                            href="{{ path( 'vs_payment_add_to_card', {
+                                        'payableObjectType': constant( 'Vankosoft\\PaymentBundle\\Component\\PayableObject::OBJECT_TYPE_PRODUCT' ),
+                                        'payableObjectId': product.id,
+                                        'qty': 1
+                            } ) }}"
+                        >
+                            Add to <i class="icon-shopping-cart"></i>
+                        </a>
+                        <a class="btn btn-primary" href="#">{{ product.price }} {{ product.currency.code | vs_currency_symbol }}</a>
+                    </h4>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags( 'js/product-listing', null, 'BootstrapShopTheme'  ) }}
+{% endblock %}

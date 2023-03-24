@@ -1,3 +1,8 @@
+#doctrine:
+#    orm:
+#        resolve_target_entities:
+#            Vankosoft\PaymentBundle\Model\Interfaces\ProductPictureInterface: App\Entity\Payment\ProductPicture
+
 vs_payment:
     resources:
         gateway_config:
@@ -27,6 +32,9 @@ vs_payment:
         product:
             classes:
                 model: App\Entity\Payment\Product
+        product_picture:
+            classes:
+                model: App\Entity\Payment\ProductPicture
         product_category:
             classes:
                 model: App\Entity\Payment\ProductCategory
