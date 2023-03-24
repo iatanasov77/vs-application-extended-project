@@ -349,6 +349,13 @@ vs_application:
         
         
         profileMenu:
+            contact:
+                name: vs_application.menu.contact
+                route: vs_application_contact
+                attributes:
+                    iconClass: "fas fa-user mr-2"
+                    target: '_self'
+                    
             profile:
                 name: vs_application.menu.my_profile
                 route: vs_users_profile_show
