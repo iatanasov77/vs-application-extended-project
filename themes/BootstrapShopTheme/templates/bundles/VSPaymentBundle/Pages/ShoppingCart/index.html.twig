@@ -1,0 +1,153 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ parent() }} :: {{ 'vs_payment.template.products_index_title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+{% block pageTitle %}<i class="icon_genius"></i> {{ 'vs_payment.template.products_index_title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+
+{% block content %}
+    <h3>
+        SHOPPING CART [ <small>{{ items | length }} Item(s) </small>]
+        <a href="{{ path( 'vs_payment_product_index' ) }}" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> Continue Shopping </a>
+    </h3>    
+    <hr class="soft"/>
+{% if not app.user %}
+    <table class="table table-bordered">
+        <tr><th> I AM ALREADY REGISTERED  </th></tr>
+         <tr> 
+         <td>
+            <form class="form-horizontal">
+                <div class="control-group">
+                  <label class="control-label" for="inputUsername">Username</label>
+                  <div class="controls">
+                    <input type="text" id="inputUsername" placeholder="Username">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <label class="control-label" for="inputPassword1">Password</label>
+                  <div class="controls">
+                    <input type="password" id="inputPassword1" placeholder="Password">
+                  </div>
+                </div>
+                <div class="control-group">
+                  <div class="controls">
+                    <button type="submit" class="btn">Sign in</button> OR <a href="{{ path( 'vs_users_register_form' ) }}" class="btn">Register Now!</a>
+                  </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                      <a href="forgetpass.html" style="text-decoration:underline">Forgot password ?</a>
+                    </div>
+                </div>
+            </form>
+          </td>
+          </tr>
+    </table>
+{% endif %}
+         
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Quantity/Update</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Tax</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% set grandTotal = 0 %}
+        {% for item in items %}
+            {% set grandTotal = grandTotal + ( item.qty * item.price ) %}
+        
+            {% if item.product.pictures.first %}
+                {% set productPicture = path( 'vs_cms_images_filesystem_get_file', { file: picturesPath ~ '/' ~ item.product.pictures.first.path } ) %}
+            {% else %}
+                {% set productPicture = '/build/bootstrap-shop-theme/images/products/6.jpg' %}
+            {% endif %}
+            
+            <tr>
+                <td> <img width="60" src="{{ productPicture }}" alt=""/></td>
+                <td>{{ item.product.description }}</td>
+                <td>
+                <div class="input-append">
+                    <input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text">
+                    <button class="btn" type="button"><i class="icon-minus"></i></button>
+                    <button class="btn" type="button"><i class="icon-plus"></i></button>
+                    <button class="btn btn-danger" type="button"><i class="icon-remove icon-white"></i></button>
+                </div>
+                </td>
+                <td>{{ item.price }} {{ item.currencyCode | vs_currency_symbol }}</td>
+                <td>0.00</td>
+                <td>0.00</td>
+                <td>{{ ( item.qty * item.price ) | number_format( 2 ) }} {{ item.currencyCode | vs_currency_symbol }}</td>
+            </tr>
+        {% endfor %}
+        
+            <tr>
+                <td colspan="6" style="text-align:right">Total Price: </td>
+                <td>{{ grandTotal | number_format( 2 ) }} {{ shoppingCart.currencyCode | vs_currency_symbol }}</td>
+            </tr>
+             <tr>
+                <td colspan="6" style="text-align:right">Total Discount:  </td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align:right">Total Tax:   </td>
+                <td>0.00</td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align:right"><strong>TOTAL {# ($228 - $50 + $31) = #}</strong></td>
+                <td class="label label-important" style="display:block"> <strong> {{ grandTotal | number_format( 2 ) }} {{ shoppingCart.currencyCode | vs_currency_symbol }} </strong></td>
+            </tr>
+        </tbody>
+    </table>
+        
+        
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <td> 
+                    <form class="form-horizontal">
+                    <div class="control-group">
+                    <label class="control-label"><strong> VOUCHERS CODE: </strong> </label>
+                    <div class="controls">
+                    <input type="text" class="input-medium" placeholder="CODE">
+                    <button type="submit" class="btn"> ADD </button>
+                    </div>
+                    </div>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+            
+    <table class="table table-bordered">
+        <tr><th>ESTIMATE YOUR SHIPPING </th></tr>
+        <tr> 
+            <td>
+                <form class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label" for="inputCountry">Country </label>
+                        <div class="controls">
+                            <input type="text" id="inputCountry" placeholder="Country">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputPost">Post Code/ Zipcode </label>
+                        <div class="controls">
+                            <input type="text" id="inputPost" placeholder="Postcode">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn">ESTIMATE </button>
+                        </div>
+                    </div>
+                </form>               
+            </td>
+        </tr>
+    </table>
+    <a href="{{ path( 'vs_payment_product_index' ) }}" class="btn btn-large"><i class="icon-arrow-left"></i> Continue Shopping </a>
+    <a href="login.html" class="btn btn-large pull-right">Next <i class="icon-arrow-right"></i></a>
+{% endblock content %}

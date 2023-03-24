@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|slice(0, 2) }}">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{{ applicationTitle }}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <!-- fav and touch icons -->
+        <link rel="shortcut icon" href="{{ asset('/build/bootstrap-shop-theme/images/ico/favicon.ico') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('/build/bootstrap-shop-theme/images/ico/apple-touch-icon-144-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('/build/bootstrap-shop-theme/images/ico/apple-touch-icon-114-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('/build/bootstrap-shop-theme/images/ico/apple-touch-icon-72-precomposed.png') }}">
+        <link rel="apple-touch-icon-precomposed" href="{{ asset('/build/bootstrap-shop-theme/images/ico/apple-touch-icon-57-precomposed.png') }}">
+        
+        {% block stylesheets %}
+            {{ encore_entry_link_tags( 'js/app', null, 'BootstrapShopTheme' ) }}
+            {{ encore_entry_link_tags( 'css/main', null, 'BootstrapShopTheme' ) }}
+            <style type="text/css" id="enject"></style>
+        {% endblock %}
+    </head>
+    <body>
+        {% include 'Layout/top.html.twig' %}
+        {#
+        {% include 'Layout/slider.html.twig' %}
+        #}
+        
+        <div id="mainBody">
+            <div class="container">
+                <div class="row">
+                    {% include 'Layout/sidebar.html.twig' %}
+                    
+                    <div class="span9">
+                    
+                        {% if app.request.attributes.get( '_route' ) != "app_home" %}
+                            {{ knp_menu_render( 'breadcrumbs', {'template': 'Menu/breadcrumb.html.twig'} ) }}
+                        {% endif %}
+                     
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {% include 'Layout/footer.html.twig' %}
+        
+        {% block widgets %}{% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags( 'js/app', null, 'BootstrapShopTheme' ) }}
+        {% endblock %}
+    </body>
+</html>

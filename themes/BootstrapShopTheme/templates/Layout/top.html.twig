@@ -1,0 +1,69 @@
+<div id="header">
+    <div class="container">
+        <div id="welcomeLine" class="row">
+        {% if app.user %}
+            <div class="span6">Welcome!<strong> {{ app.user.info.fullName }}</strong></div>
+        {% else %}
+            <div class="span6">&nbsp;</div>
+        {% endif %}
+            <div class="span6">
+                <div class="pull-right">
+                    {% for oLocale in localesRepo.findAll() %}
+                        {% if app.request.locale == oLocale.code %}
+                            <span class="btn btn-mini">{{ ( oLocale.code | split( '_' ) )[1] | lower | capitalize }}</span>
+                        {% else %}
+                            <a href="{{ path( 'app_set_locale', {'locale': oLocale.code} ) }}">
+                                <span class="">
+                                    {{ ( oLocale.code | split( '_' ) )[1] | lower | capitalize }}
+                                </span>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                    
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{{ path( 'vs_payment_shopping_cart_index' ) }}">
+                        <span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> 
+                        [ {{ shoppingCart.items | length }} ] Itemes in your cart </span>
+                    </a> 
+                </div>
+            </div>
+        </div>
+        <!-- Navbar ================================================== -->
+        <div id="logoArea" class="navbar">
+            <a id="smallScreen" data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div class="navbar-inner">
+                <a class="brand" href="{{ path( 'app_home' ) }}"><img src="{{ asset('/build/bootstrap-shop-theme/images/logo.png') }}" alt="Bootsshop"/></a>
+                <form class="form-inline navbar-search" method="post" action="products.html" >
+                    <input id="srchFld" class="srchTxt" type="text" />
+                    <select class="srchTxt">
+                        <option>All</option>
+                        <option>CLOTHES </option>
+                        <option>FOOD AND BEVERAGES </option>
+                        <option>HEALTH & BEAUTY </option>
+                        <option>SPORTS & LEISURE </option>
+                        <option>BOOKS & ENTERTAINMENTS </option>
+                    </select> 
+                    <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
+                </form>
+                
+                
+                <ul id="topMenu" class="nav pull-right">
+                    {{ knp_menu_render('mainApplication', {'template': 'Menu/main-menu.html.twig'}) }}
+                    
+                    {% if app.user %}
+                        <a href="{{ path( 'app_logout' ) }}" role="button" style="padding-right:0"><span class="btn btn-large btn-success">Logout</span></a>
+                    {% else %}
+                        <a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
+                        {% include 'Modal/login-form.html.twig' %}
+                    {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End====================================================================== -->

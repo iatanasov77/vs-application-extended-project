@@ -1,0 +1,126 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ parent() }} :: {{ 'vs_payment.template.products_index_title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+{% block pageTitle %}<i class="icon_genius"></i> {{ 'vs_payment.template.products_index_title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+
+{% block content %}
+    <h3> Products Name <small class="pull-right"> 40 products are available </small></h3>   
+    <hr class="soft"/>
+    <p>
+        Nowadays the lingerie industry is one of the most successful business spheres.We always stay in touch with the latest fashion tendencies - that is why our goods are so popular and we have a great number of faithful customers all over the country.
+    </p>
+    <hr class="soft"/>
+    <form class="form-horizontal span6">
+        <div class="control-group">
+            <label class="control-label alignL">Sort By </label>
+            <select>
+                <option>Priduct name A - Z</option>
+                <option>Priduct name Z - A</option>
+                <option>Priduct Stoke</option>
+                <option>Price Lowest first</option>
+            </select>
+        </div>
+    </form>
+      
+    <div id="myTab" class="pull-right">
+        <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
+        <a href="#blockView" data-toggle="tab"><span class="btn btn-large btn-primary"><i class="icon-th-large"></i></span></a>
+    </div>
+    <br class="clr"/>
+    
+    <div class="tab-content">
+        <div class="tab-pane" id="listView">
+        {% for product in resources %}
+            <div class="row">     
+                <div class="span2">
+                    {% if product.pictures.first %}
+                        {% set productPicture = path( 'vs_cms_images_filesystem_get_file', { file: picturesPath ~ '/' ~ product.pictures.first.path } ) %}
+                    {% else %}
+                        {% set productPicture = '/build/bootstrap-shop-theme/images/products/6.jpg' %}
+                    {% endif %}
+                    <img src="{{ productPicture }}" alt="{{ product.name }}"/>
+                </div>
+                <div class="span4">
+                    <h3>New | Available</h3>                
+                    <hr class="soft"/>
+                    <h5>{{ product.name }}</h5>
+                    <p>{{ product.description }}</p>
+                    <a class="btn btn-small pull-right" href="{{ path( 'vs_payment_product_show', {'id': product.id} ) }}">View Details</a>
+                    <br class="clr"/>
+                </div>
+                <div class="span3 alignR">
+                    <form class="form-horizontal qtyFrm">
+                        <h3>{{ product.price }} {{ product.currency.code | vs_currency_symbol }}</h3>
+                        <label class="checkbox">
+                            <input type="checkbox">  Adds product to compair
+                        </label><br/>
+                    
+                        <a class="btn btn-large btn-primary btnAddToCart"
+                            href="{{ path( 'vs_payment_add_to_card', {
+                                        'payableObjectType': constant( 'Vankosoft\\PaymentBundle\\Component\\PayableObject::OBJECT_TYPE_PRODUCT' ),
+                                        'payableObjectId': product.id,
+                                        'qty': 1
+                            } ) }}"
+                        >
+                            Add to <i class=" icon-shopping-cart"></i>
+                        </a>
+                        <a href="{{ path( 'vs_payment_product_show', {'id': product.id} ) }}" class="btn btn-large"><i class="icon-zoom-in"></i></a>
+                    </form>
+                </div>
+            </div>
+            <hr class="soft"/>
+        {% endfor %}
+        </div>
+    
+        <div class="tab-pane  active" id="blockView">
+            <ul class="thumbnails">
+            {% for product in resources %}
+                <li class="span3">
+                  <div class="thumbnail">
+                    <a href="{{ path( 'vs_payment_product_show', {'id': product.id} ) }}">
+                        {% if product.pictures.first %}
+                            {% set productPicture = path( 'vs_cms_images_filesystem_get_file', { file: picturesPath ~ '/' ~ product.pictures.first.path } ) %}
+                        {% else %}
+                            {% set productPicture = '/build/bootstrap-shop-theme/images/products/6.jpg' %}
+                        {% endif %}
+                        <img src="{{ productPicture }}" alt="{{ product.name }}"/>
+                    </a>
+                    <div class="caption">
+                      <h5>{{ product.name }}</h5>
+                      <p>{{ product.description }}</p>
+                       <h4 style="text-align:center">
+                            <a class="btn" href="{{ path( 'vs_payment_product_show', {'id': product.id} ) }}"> <i class="icon-zoom-in"></i></a> 
+                            <a class="btn btnAddToCart"
+                                href="{{ path( 'vs_payment_add_to_card', {
+                                    'payableObjectType': constant( 'Vankosoft\\PaymentBundle\\Component\\PayableObject::OBJECT_TYPE_PRODUCT' ),
+                                    'payableObjectId': product.id,
+                                    'qty': 1
+                                } ) }}"
+                            >
+                                Add to <i class="icon-shopping-cart"></i>
+                            </a> 
+                            <a class="btn btn-primary" href="#">{{ product.price }} {{ product.currency.code | vs_currency_symbol }}</a>
+                        </h4>
+                    </div>
+                  </div>
+                </li>
+            {% endfor %}
+              </ul>
+        <hr class="soft"/>
+        </div>
+    </div>
+
+    <a href="compair.html" class="btn btn-large pull-right">Compair Product</a>
+    
+    {% if resources.haveToPaginate() %}
+        {{ pagerfanta( resources, null, { 'proximity': 10 } ) }}
+    {% endif %}
+    
+    <br class="clr"/>
+{% endblock content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags( 'js/product-listing', null, 'BootstrapShopTheme'  ) }}
+{% endblock %}
+

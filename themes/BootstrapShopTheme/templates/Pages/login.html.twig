@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <h3> Login</h3> 
+    <hr class="soft"/>
+    
+    {% if error %}
+        <div class="alert alert-danger mt-4 float-start text-left w-100" role="alert">
+            <span>{{ error.messageKey|trans(error.messageData, 'security') }}</span>
+        </div>
+    {% endif %}
+    
+    <div class="row">
+        <div class="span4">
+            <div class="well">
+                <form action="{{ path( 'app_login' ) }}" method="post" >
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token( 'authenticate' ) }}" />
+                    
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail1">Email</label>
+                        <div class="controls">
+                            <input class="span3"  type="text" id="inputEmail1" placeholder="Email" name="_username" value="{{ last_username }}" />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputPassword1">Password</label>
+                        <div class="controls">
+                            <input type="password" class="span3"  id="inputPassword1" placeholder="Password" name="_password">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn">Sign in</button>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <a href="{{ path( 'vs_users_forgot_password_form' ) }}">Forget password</a>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <a href="{{ path( 'vs_users_register_form' ) }}">Registration</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

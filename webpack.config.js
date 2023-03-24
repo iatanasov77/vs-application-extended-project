@@ -9,24 +9,15 @@ const adminPanelConfig  = require( themePath + '/webpack.config' );
 //=================================================================================================
 
 /**
- *  Application Theme 1
- */
-Encore.reset();
-const applicationTheme1Config   = require('./themes/ApplicationThemeWithRegistrationAndProfile/webpack.config');
-
-//=================================================================================================
-
-/**
  *  Application Theme 2
  */
 Encore.reset();
-const applicationTheme2Config   = require('./themes/ApplicationSimpleTheme/webpack.config');
+const applicationBootstrapShopTheme = require('./themes/BootstrapShopTheme/webpack.config');
 
 //=================================================================================================
 
 
 module.exports = [
     adminPanelConfig,
-    applicationTheme1Config,
-    applicationTheme2Config
+    applicationBootstrapShopTheme
 ];
