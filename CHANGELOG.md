@@ -1,3 +1,10 @@
+1.10.4	|	Release date: **27.03.2023**
+============================================
+* New Features:
+  - Add Configuration For Extended Project Sample Data Fixtures.
+  - Add Secrets into the .env File.
+
+
 1.10.3	|	Release date: **25.03.2023**
 ============================================
 * New Features:
