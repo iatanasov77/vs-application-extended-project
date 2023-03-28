@@ -32,7 +32,9 @@
         "jquery-ui": "^1.13.0",
         "bazinga-translator": "^5.0.0",
         "intl-messageformat": "^9.11.3",
-        "blueimp-file-upload": "^10.32"
+        "blueimp-file-upload": "^10.32",
+
+        "code-prettify-google": "^1.0.1"
     },
     "devDependencies": {
         "@symfony/stimulus-bridge": "^2.0.0",
