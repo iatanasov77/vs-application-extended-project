@@ -69,6 +69,12 @@ security:
                 path: vs_application_logout
                 target: /login
                 invalidate_session: true
+                
+            # https://symfony.com/doc/current/security/remember_me.html
+            remember_me:
+                secret: '%kernel.secret%'
+                lifetime: 33264000 # 1 year in seconds
+                signature_properties: ['password', 'salt']
 
             custom_authenticators:
                 - vs_users.security.login_form_authenticator
