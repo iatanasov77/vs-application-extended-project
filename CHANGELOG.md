@@ -1,3 +1,11 @@
+1.10.6	|	Release date: **20.05.2023**
+============================================
+* New Features:
+  - Add RememberMe Configuration.
+  - Update Jenkinsfile.
+  - Add in AdminPanel Twig Globals
+
+
 1.10.5	|	Release date: **28.03.2023**
 ============================================
 * Bug-Fixes:
