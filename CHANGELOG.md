@@ -1,3 +1,11 @@
+1.10.8	|	Release date: **02.08.2023**
+============================================
+* New Features and Improvements:
+  - Update Gitignore .
+  - Improve Admin Panel Security Configuration.
+  - Add Pricing Plan Resources .
+
+
 1.10.7	|	Release date: **27.07.2023**
 ============================================
 * New Features:
