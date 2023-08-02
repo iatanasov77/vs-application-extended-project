@@ -38,3 +38,9 @@ vs_payment:
         product_category:
             classes:
                 model: App\Entity\Payment\ProductCategory
+        pricing_plan_category:
+            classes:
+                model: App\Entity\Payment\PricingPlanCategory
+        pricing_plan:
+            classes:
+                model: App\Entity\Payment\PricingPlan

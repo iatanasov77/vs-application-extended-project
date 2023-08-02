@@ -42,6 +42,7 @@
 ###< lexik/jwt-authentication-bundle ###
 
 ###> symfony/webpack-encore-bundle ###
+/assets/
 /assets/controllers/
 /assets/styles/
 /assets/app.js

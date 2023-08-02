@@ -346,6 +346,37 @@ vs_application:
                         routeParameters:
                           id: int
                         display: false
+                        
+            pricing_plans:
+                name: vs_application.menu.pricing_plans
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_genius
+                childs:
+                    pricing_plan_category_index:
+                        name: vs_application.menu.pricing_plan_categories
+                        route: vs_payment_pricing_plan_category_index
+                    pricing_plan_category_create:
+                        name: vs_application.menu.create_pricing_plan_category
+                        route: vs_payment_pricing_plan_category_create
+                    pricing_plan_category_update:
+                        name: vs_application.menu.edit_pricing_plan_category
+                        route: vs_payment_pricing_plan_category_update
+                        routeParameters:
+                          id: int
+                        display: false
+                    pricing_plan_index:
+                        name: vs_application.menu.pricing_plans_listing
+                        route: vs_payment_pricing_plan_index
+                    pricing_plan_create:
+                        name: vs_application.menu.create_pricing_plan
+                        route: vs_payment_pricing_plan_create
+                    pricing_plan_update:
+                        name: vs_application.menu.edit_pricing_plan
+                        route: vs_payment_pricing_plan_update
+                        routeParameters:
+                          id: int
+                        display: false
         
         
         profileMenu:
