@@ -83,6 +83,7 @@ security:
 
     role_hierarchy:
         ROLE_SUPER_ADMIN: []
+        ROLE_ADMIN: []
         ROLE_APPLICATION_ADMIN: [ROLE_TEST_VANKOSOFT_APPLICATION_ADMIN]
         ROLE_TEST_VANKOSOFT_APPLICATION_ADMIN: [ROLE_TEST_VANKOSOFT_APPLICATION_AUTHOR, ROLE_TEST_VANKOSOFT_APPLICATION_USER]
 
@@ -104,5 +105,7 @@ security:
         - { path: ^/forgot-password, roles: PUBLIC_ACCESS }
         - { path: ^/forgot-password/reset/, roles: PUBLIC_ACCESS }
         
-        - { path: ^/, roles: [ROLE_SUPER_ADMIN] }
+        - { path: ^/users/user-roles/, roles: [ROLE_SUPER_ADMIN] }
+        - { path: ^/users/, roles: [ROLE_SUPER_ADMIN,ROLE_ADMIN] }
+        - { path: ^/, roles: [ROLE_SUPER_ADMIN,ROLE_ADMIN,ROLE_APPLICATION_ADMIN] }
 
