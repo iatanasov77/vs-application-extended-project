@@ -11,10 +11,9 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-    lang: 'en'
-    locale: 'en_US'
-    applicationTitle: 'SuperAdmin Panel'
+    locale: __application_locale__
     
+    applicationTitle: 'SuperAdmin Panel'
     vs_application.version: !php/const App\AdminPanelKernel::VERSION
     vs_application.public_dir: "%kernel.project_dir%/public/admin-panel"
     vs_application.page_categories.taxonomy_code: 'page-categories'
