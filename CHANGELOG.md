@@ -1,3 +1,14 @@
+1.10.9	|	Release date: **05.09.2023**
+============================================
+* New Features and Improvements:
+  - Update Vankosoft Application Extensions Versions.
+  - Improve Localization Configs and RegistrationForm.
+  - Remove ENV Variable 'LANGUAGES'.
+  - Improve Application RegistrationForm .
+  - Some AdminPanel Configuration Improvements.
+  - Create CookieConsentTranslation Resource and Use It.
+
+
 1.10.8	|	Release date: **02.08.2023**
 ============================================
 * New Features and Improvements:
