@@ -33,7 +33,8 @@
         "bazinga-translator": "^5.0.0",
         "intl-messageformat": "^9.11.3",
         "blueimp-file-upload": "^10.32",
-
+        
+        "vanilla-cookieconsent": "^2.9",
         "code-prettify-google": "^1.0.1"
     },
     "devDependencies": {

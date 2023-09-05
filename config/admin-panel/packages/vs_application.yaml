@@ -32,6 +32,9 @@ vs_application:
         locale:
             classes:
                 model: App\Entity\Application\Locale
+        cookie_consent_translation:
+            classes:
+                model: App\Entity\Application\CookieConsentTranslation
          
     menu:
         mainSystemMenu:
@@ -40,10 +43,34 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_application_settings_index
                 childs:
                     locales:
                         name: vs_application.menu.available_locales
                         route: vs_application_locale_index
+                    create_locale:
+                        name: vs_application.menu.create_new_locale
+                        route: vs_application_locale_create
+                        display: false
+                    update_locale:
+                        name: vs_application.menu.edit_locale
+                        route: vs_application_locale_update
+                        routeParameters:
+                          id: int
+                        display: false
+                    cookie_consent_translations:
+                        name: vs_application.menu.cookie_consent_translations
+                        route: vs_application_cookie_consent_translation_index
+                    create_cookie_consent_translation:
+                        name: vs_application.menu.create_new_cookie_consent_translation
+                        route: vs_application_cookie_consent_translation_create
+                        display: false
+                    update_cookie_consent_translation:
+                        name: vs_application.menu.edit_cookie_consent_translation
+                        route: vs_application_cookie_consent_translation_update
+                        routeParameters:
+                          id: int
+                        display: false
                     settings:
                         name: vs_application.menu.preferences
                         route: vs_application_settings_index
@@ -52,6 +79,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_application_taxonomy_index
                 childs:
                     list:
                         name: vs_application.menu.list_taxonomies
@@ -71,6 +99,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_users_users_index
                 childs:
                     users_list:
                         name: vs_application.menu.users_list
@@ -104,6 +133,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_cms_pages_index
                 childs:
                     list:
                         name: vs_application.menu.list_pages
@@ -171,6 +201,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_cms_file_manager_index
                 childs:
                     list_filemanagers:
                         name: vs_application.menu.list_filemanagers
@@ -192,6 +223,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_cms_filemanager_artgris_list
                 childs:
                     browse:
                         name: vs_application.menu.browse_files
@@ -209,6 +241,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_users_subscriptions_mailchimp_audiences_index
                 childs:
                     mailchimp_audiences_list:
                         name: vs_application.menu.list_mailchimp_audiences
@@ -222,6 +255,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_users_subscriptions_payed_service_index
                 childs:
                     paid_services_category_index:
                         name: vs_application.menu.categories
@@ -285,6 +319,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_payment_gateway_config_index
                 childs:
                     gateways_index:
                         name: vs_application.menu.gateways
@@ -303,6 +338,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_payment_payment_method_index
                 childs:
                     payment_methods_index:
                         name: vs_application.menu.payment_methods
@@ -321,6 +357,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_payment_product_index
                 childs:
                     catalog_category_index:
                         name: vs_application.menu.catalog_categories
@@ -352,6 +389,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_payment_pricing_plan_index
                 childs:
                     pricing_plan_category_index:
                         name: vs_application.menu.pricing_plan_categories

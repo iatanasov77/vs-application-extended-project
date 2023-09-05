@@ -25,9 +25,14 @@ class RegistrationForm extends UserFormType
 {
     use UserInfoFormTrait;
     
-    public function __construct( RequestStack $requestStack, string $dataClass, string $applicationClass, AuthorizationCheckerInterface $auth )
-    {
-        parent::__construct( $requestStack, $dataClass, $applicationClass, $auth );
+    public function __construct(
+        string $dataClass,
+        RepositoryInterface $localesRepository,
+        RequestStack $requestStack,
+        string $applicationClass,
+        AuthorizationCheckerInterface $auth
+    ) {
+        parent::__construct( $dataClass, $localesRepository, $requestStack, $applicationClass, $auth );
     }
     
     public function buildForm( FormBuilderInterface $builder, array $options ): void
@@ -40,12 +45,12 @@ class RegistrationForm extends UserFormType
         
         $builder->remove( 'roles_options' );
         $builder->remove( 'applications' );
+        $builder->remove( 'username' );
         
         $builder->remove( 'btnSave' );
         
         $builder
             ->setMethod( 'POST' )
-            ->add( 'registerRole', HiddenType::class, ['data' => 'ROLE_USER', 'mapped' => false] )
             ->add( 'agreeTerms', CheckboxType::class, [
                 'label'                 => 'vs_users.form.registration.agreement_text',
                 'translation_domain'    => 'VSUsersBundle',

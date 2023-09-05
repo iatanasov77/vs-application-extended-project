@@ -4,8 +4,6 @@ twig:
     globals:
         applicationIcon: 'build/default/images/superman.svg'
         applicationTitle: '%applicationTitle%'
-        lang: '%lang%'
-        locale: '%locale%'
         formCreateAccount: '%vs_users.form_create_account%'
         webSiteUrl: "http://website.url"
         installedBundles: '%kernel.bundles%'

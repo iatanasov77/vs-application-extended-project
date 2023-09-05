@@ -64,7 +64,7 @@ security:
                 username_parameter: _username
                 password_parameter: _password
                 always_use_default_target_path: false
-                default_target_path:  /
+                default_target_path:  '%vs_users.default_redirect%'
             logout:
                 path: vs_application_logout
                 target: /login
