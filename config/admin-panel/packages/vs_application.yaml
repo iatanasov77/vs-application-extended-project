@@ -32,6 +32,9 @@ vs_application:
         locale:
             classes:
                 model: App\Entity\Application\Locale
+        cookie_consent_translation:
+            classes:
+                model: App\Entity\Application\CookieConsentTranslation
          
     menu:
         mainSystemMenu:
@@ -45,6 +48,29 @@ vs_application:
                     locales:
                         name: vs_application.menu.available_locales
                         route: vs_application_locale_index
+                    create_locale:
+                        name: vs_application.menu.create_new_locale
+                        route: vs_application_locale_create
+                        display: false
+                    update_locale:
+                        name: vs_application.menu.edit_locale
+                        route: vs_application_locale_update
+                        routeParameters:
+                          id: int
+                        display: false
+                    cookie_consent_translations:
+                        name: vs_application.menu.cookie_consent_translations
+                        route: vs_application_cookie_consent_translation_index
+                    create_cookie_consent_translation:
+                        name: vs_application.menu.create_new_cookie_consent_translation
+                        route: vs_application_cookie_consent_translation_create
+                        display: false
+                    update_cookie_consent_translation:
+                        name: vs_application.menu.edit_cookie_consent_translation
+                        route: vs_application_cookie_consent_translation_update
+                        routeParameters:
+                          id: int
+                        display: false
                     settings:
                         name: vs_application.menu.preferences
                         route: vs_application_settings_index

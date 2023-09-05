@@ -1,4 +1,5 @@
 const Encore = require('@symfony/webpack-encore');
+const path = require('path');
 
 Encore
     .setOutputPath( 'public/shared_assets/build/bootstrap-shop-theme/' )
@@ -11,6 +12,10 @@ Encore
     
     .enableSassLoader(function(sassOptions) {}, {
         resolveUrlLoader: true
+    })
+    
+    .addAliases({
+        '@': path.resolve( __dirname, '../../vendor/vankosoft/application/src/Vankosoft/ApplicationBundle/Resources/themes/default/assets' )
     })
     
     .autoProvidejQuery()
