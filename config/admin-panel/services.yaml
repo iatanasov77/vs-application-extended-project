@@ -29,8 +29,6 @@ parameters:
     vs_users.gc_maxlifetime: 1800   # 30 minutes
     vs_users.cookie.domain: '%env(COOKIE_DOMAIN)%'
     vs_users.cookie.lifetime: 86400 # 24 hours
-    vs_users.api_token.domain: '%env(API_TOKEN_DOMAIN)%'
-    vs_users.api_token.lifetime: 3600
     
     # Gaufrette File Systems
     vs_cms.gaufrette.profile.filesystem: vs_application_profile

@@ -35,6 +35,12 @@ vs_application:
         cookie_consent_translation:
             classes:
                 model: App\Entity\Application\CookieConsentTranslation
+        tags_whitelist_context:
+            classes:
+                model: App\Entity\Application\TagsWhitelistContext
+        tags_whitelist_tag:
+            classes:
+                model: App\Entity\Application\TagsWhitelistTag
          
     menu:
         mainSystemMenu:
@@ -68,6 +74,19 @@ vs_application:
                     update_cookie_consent_translation:
                         name: vs_application.menu.edit_cookie_consent_translation
                         route: vs_application_cookie_consent_translation_update
+                        routeParameters:
+                          id: int
+                        display: false
+                    tags_whitelist_contexts:
+                        name: vs_application.menu.tags_whitelist_contexts
+                        route: vs_application_tags_whitelist_context_index
+                    create_tags_whitelist_context:
+                        name: vs_application.menu.create_new_tags_whitelist_context
+                        route: vs_application_tags_whitelist_context_create
+                        display: true
+                    update_tags_whitelist_context:
+                        name: vs_application.menu.edit_tags_whitelist_context
+                        route: vs_application_tags_whitelist_context_update
                         routeParameters:
                           id: int
                         display: false
