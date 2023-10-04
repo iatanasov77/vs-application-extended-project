@@ -26,7 +26,7 @@
         "vankosoft/application": "1.10.*",
         
         "vankosoft/users-subscriptions-bundle": "^2.5",
-        "vankosoft/payment-bundle": "^2.8",
+        "vankosoft/payment-bundle": "^2.9",
         "trickeyone/intl-subdivision": "^4.0"
     },
     "require-dev": {
