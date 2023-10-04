@@ -1,3 +1,13 @@
+1.10.14	|	Release date: **04.10.2023**
+============================================
+* New Features and Improvements:
+  - Add Payment Method Select Form into BootstrapShopTheme .
+  - Many Payment Features and Improvements.
+  - Improve and New Features into the BootstrapShopTheme .
+* Bug-Fixes:
+  - Fix RegistrationForm.
+
+
 1.10.13	|	Release date: **22.09.2023**
 ============================================
 * New Features and Improvements:
