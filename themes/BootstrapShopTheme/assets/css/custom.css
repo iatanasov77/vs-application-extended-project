@@ -1,0 +1,14 @@
+
+.modal-body.credit-card {
+    margin: auto;
+    width: 50%;
+}
+
+#selectPricingPlanForm.credit-card {
+    margin: auto;
+    width: 65%;
+}
+
+#selectPricingPlanForm .card-header {
+	display: none;
+}

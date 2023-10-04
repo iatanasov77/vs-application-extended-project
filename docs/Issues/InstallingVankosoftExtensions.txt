@@ -3,7 +3,6 @@ NEED AUTOMATION
 1. Add Menues and Routes from UsersSubscriptionsBundle and PaymentBundle
 2. Create Taxonomy for PaidService Categories
 3. Add Assets for Payment and Subscription AdminPanel Pages
-4. Add 'jquery-duplicate-fields' in  package.json
 
 
 5. The child config "security" under "payum" must be configured.

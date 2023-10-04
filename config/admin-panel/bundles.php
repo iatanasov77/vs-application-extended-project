@@ -40,7 +40,6 @@ return [
     JMS\SerializerBundle\JMSSerializerBundle::class => ['all' => true],
     
     Bazinga\Bundle\HateoasBundle\BazingaHateoasBundle::class => ['all' => true],
-    SPE\FilesizeExtensionBundle\SPEFilesizeExtensionBundle::class => ['all' => true],
     
     Vankosoft\ApplicationInstalatorBundle\VSApplicationInstalatorBundle::class => ['all' => true],
     Vankosoft\ApplicationBundle\VSApplicationBundle::class => ['all' => true],

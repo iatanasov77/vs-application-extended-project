@@ -302,6 +302,15 @@ vs_application:
                         display: false
         
         mainPaymentMenu:
+            general:
+                name: vs_application.menu.payment_general
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_genius
+                childs:
+                    recieved_payments:
+                        name: vs_application.menu.recieved_payments
+                        route: vs_payment_payment_index
             currency_config:
                 name: vs_application.menu.currency
                 uri: "javascript:;"
