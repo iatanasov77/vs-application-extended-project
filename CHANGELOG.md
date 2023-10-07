@@ -1,3 +1,9 @@
+1.10.15	|	Release date: **07.10.2023**
+============================================
+* New Features:
+  - Update About New Features in Payment Bundle
+
+
 1.10.14	|	Release date: **04.10.2023**
 ============================================
 * New Features and Improvements:
