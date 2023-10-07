@@ -20,8 +20,9 @@ class User extends BaseUser implements SubscribedUserInterface, PaymentsUserInte
     
     public function __construct()
     {
-        $this->subscriptions    = new ArrayCollection();
-        $this->orders           = new ArrayCollection();
+        $this->subscriptions            = new ArrayCollection();
+        $this->orders                   = new ArrayCollection();
+        $this->pricingPlanSubscriptions = new ArrayCollection();
         
         parent::__construct();
     }

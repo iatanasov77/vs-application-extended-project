@@ -302,15 +302,6 @@ vs_application:
                         display: false
         
         mainPaymentMenu:
-            general:
-                name: vs_application.menu.payment_general
-                uri: "javascript:;"
-                attributes:
-                    iconClass: icon_genius
-                childs:
-                    recieved_payments:
-                        name: vs_application.menu.recieved_payments
-                        route: vs_payment_payment_index
             currency_config:
                 name: vs_application.menu.currency
                 uri: "javascript:;"
@@ -443,6 +434,32 @@ vs_application:
                         routeParameters:
                           id: int
                         display: false
+                        
+            orders:
+                name: vs_application.menu.orders
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_genius
+                childs:
+                    orders:
+                        name: vs_application.menu.orders
+                        route: vs_payment_order_index
+                    recieved_payments:
+                        name: vs_application.menu.recieved_payments
+                        route: vs_payment_payment_index
+            
+            paid_subscriptions:
+                name: vs_application.menu.paid_subscriptions
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_genius
+                childs:
+                    paid_service_subscriptions:
+                        name: vs_application.menu.paid_service_subscriptions
+                        route: vs_users_subscriptions_payed_service_subscriptions_index
+                    pricing_plan_subscriptions:
+                        name: vs_application.menu.pricing_plan_subscriptions
+                        route: vs_payment_pricing_plan_subscriptions_index
         
         
         profileMenu:

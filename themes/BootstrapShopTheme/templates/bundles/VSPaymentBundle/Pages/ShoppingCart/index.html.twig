@@ -71,16 +71,22 @@
                 <td>{{ item.product.description }}</td>
                 <td>
                 <div class="input-append">
-                    <input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text">
-                    <button class="btn" type="button"><i class="icon-minus"></i></button>
-                    <button class="btn" type="button"><i class="icon-plus"></i></button>
-                    <button class="btn btn-danger" type="button"><i class="icon-remove icon-white"></i></button>
+                    <input class="span1 CartItemQty" style="max-width:34px" placeholder="1" size="16" type="number"
+                        value="{{ item.qty }}"
+                        data-itemId="{{ item.id }}"
+                        data-singlePrice="{{ item.price }}"
+                    />
+                    <button class="btn CartItemQtyMinus" type="button"><i class="icon-minus"></i></button>
+                    <button class="btn CartItemQtyPlus" type="button"><i class="icon-plus"></i></button>
+                    <button class="btn btn-danger RemoveCartItem" data-itemId="{{ item.id }}" type="button">
+                        <i class="icon-remove icon-white"></i>
+                    </button>
                 </div>
                 </td>
                 <td>{{ item.price }} {{ item.currencyCode | vs_currency_symbol }}</td>
                 <td>0.00</td>
                 <td>0.00</td>
-                <td>{{ ( item.qty * item.price ) | number_format( 2 ) }} {{ item.currencyCode | vs_currency_symbol }}</td>
+                <td class="ItemTotal"><span class="ItemTotalValue">{{ ( item.qty * item.price ) | number_format( 2 ) }}</span> {{ item.currencyCode | vs_currency_symbol }}</td>
             </tr>
         {% endfor %}
         
@@ -98,7 +104,13 @@
             </tr>
             <tr>
                 <td colspan="6" style="text-align:right"><strong>TOTAL {# ($228 - $50 + $31) = #}</strong></td>
-                <td class="label label-important" style="display:block"> <strong> {{ grandTotal | number_format( 2 ) }} {{ shoppingCart.currencyCode | vs_currency_symbol }} </strong></td>
+                <td class="label label-important" style="display:block">
+                    <strong id="GrandTotal"
+                        data-currencySymbol="{{ shoppingCart.currencyCode | vs_currency_symbol }}"
+                    >
+                        <span id="GrandTotalValue">{{ grandTotal | number_format( 2 ) }}</span> {{ shoppingCart.currencyCode | vs_currency_symbol }}
+                    </strong>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -149,5 +161,14 @@
         </tr>
     </table>
     <a href="{{ path( 'vs_payment_product_index' ) }}" class="btn btn-large"><i class="icon-arrow-left"></i> Continue Shopping </a>
-    <a href="{{ path( 'vs_payment_show_payment_methods_form' ) }}" class="btn btn-large pull-right">Next <i class="icon-arrow-right"></i></a>
+    <a href="{{ path( 'vs_payment_show_payment_methods_form' ) }}" class="btn btn-large pull-right">Checkout <i class="icon-arrow-right"></i></a>
+    <a href="{{ path( 'vs_payment_show_payment_methods_form' ) }}" class="btn btn-large pull-right"
+        style="margin-right: 10px;"
+        id="btnUpdateCart"
+    >Update Cart</a>
 {% endblock content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags( 'js/shopping-card', null, 'BootstrapShopTheme'  ) }}
+{% endblock %}

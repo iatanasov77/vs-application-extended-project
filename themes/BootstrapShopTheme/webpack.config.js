@@ -48,6 +48,7 @@ Encore
     .addEntry( 'js/register', './themes/BootstrapShopTheme/assets/js/pages/register.js' )
     .addEntry( 'js/pricing-plans', './themes/BootstrapShopTheme/assets/js/pages/pricing-plans.js' )
     .addEntry( 'js/credit-card', './themes/BootstrapShopTheme/assets/js/pages/credit-card.js' )
+    .addEntry( 'js/shopping-card', './themes/BootstrapShopTheme/assets/js/pages/shopping-card.js' )
 ;
 
 const config = Encore.getWebpackConfig();

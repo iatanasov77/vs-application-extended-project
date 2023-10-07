@@ -42,3 +42,6 @@ vs_payment:
         pricing_plan:
             classes:
                 model: App\Entity\Payment\PricingPlan
+        pricing_plan_subscription:
+            classes:
+                model: App\Entity\Payment\PricingPlanSubscription
