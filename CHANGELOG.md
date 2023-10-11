@@ -1,3 +1,10 @@
+1.10.16	|	Release date: **11.10.2023**
+============================================
+* New Features and Improvements:
+  - Litle Theme Refactoring.
+  - Some Updates .
+
+
 1.10.15	|	Release date: **07.10.2023**
 ============================================
 * New Features:
