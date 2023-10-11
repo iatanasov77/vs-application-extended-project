@@ -454,9 +454,6 @@ vs_application:
                 attributes:
                     iconClass: icon_genius
                 childs:
-                    paid_service_subscriptions:
-                        name: vs_application.menu.paid_service_subscriptions
-                        route: vs_users_subscriptions_payed_service_subscriptions_index
                     pricing_plan_subscriptions:
                         name: vs_application.menu.pricing_plan_subscriptions
                         route: vs_payment_pricing_plan_subscriptions_index
