@@ -7,5 +7,5 @@ sylius_fixtures:
     suites:                
         vankosoft_sampledata_suite:
             fixtures:
-                test_countries: ~
+                #test_countries: ~
 
