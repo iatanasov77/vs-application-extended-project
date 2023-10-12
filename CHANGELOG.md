@@ -1,3 +1,9 @@
+1.10.17	|	Release date: **12.10.2023**
+============================================
+* Bug-Fixes:
+  - Fix Configurations.
+
+
 1.10.16	|	Release date: **11.10.2023**
 ============================================
 * New Features and Improvements:
