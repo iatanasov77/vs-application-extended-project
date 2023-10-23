@@ -13,7 +13,9 @@ imports:
 parameters:
     locale: en_US
     
+    applicationIcon: 'build/default/images/superman.svg'
     applicationTitle: 'SuperAdmin Panel'
+    
     vs_application.version: !php/const App\AdminPanelKernel::VERSION
     vs_application.public_dir: "%kernel.project_dir%/public/admin-panel"
     vs_application.page_categories.taxonomy_code: 'page-categories'
