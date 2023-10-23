@@ -1,3 +1,11 @@
+1.10.18	|	Release date: **23.10.2023**
+============================================
+* New Features:
+  - Update Paths of CMS Routes.
+  - Add Application Icon in Service Parameters.
+  - Add a Service Parameters to Display Layout Top Search Field.
+
+
 1.10.17	|	Release date: **12.10.2023**
 ============================================
 * Bug-Fixes:
