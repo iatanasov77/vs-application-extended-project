@@ -2,8 +2,9 @@ twig:
     default_path: '%kernel.project_dir%/templates'
 
     globals:
-        applicationIcon: 'build/default/images/superman.svg'
+        applicationIcon: '%applicationIcon%'
         applicationTitle: '%applicationTitle%'
+        hasTopSearch: '%hasTopSearch%'
         formCreateAccount: '%vs_users.form_create_account%'
         webSiteUrl: "http://website.url"
         installedBundles: '%kernel.bundles%'
