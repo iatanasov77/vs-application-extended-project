@@ -4,6 +4,7 @@ twig:
     globals:
         applicationIcon: '%applicationIcon%'
         applicationTitle: '%applicationTitle%'
+        hasTopSearch: '%hasTopSearch%'
         formCreateAccount: '%vs_users.form_create_account%'
         webSiteUrl: "http://website.url"
         installedBundles: '%kernel.bundles%'

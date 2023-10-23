@@ -14,7 +14,8 @@ parameters:
     locale: en_US
     
     applicationIcon: 'build/default/images/superman.svg'
-    applicationTitle: 'SuperAdmin Panel'
+    applicationTitle: 'vs_application.template.super_admin_panel'
+    hasTopSearch: true
     
     vs_application.version: !php/const App\AdminPanelKernel::VERSION
     vs_application.public_dir: "%kernel.project_dir%/public/admin-panel"
