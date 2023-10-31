@@ -25,6 +25,7 @@ parameters:
     vs_users.login_by: 'username'
     vs_users.form_create_account: false
     vs_users.default_redirect: 'vs_application_dashboard'
+    vs_users.crud.display_siblings: false
     
     # The cookie_lifetime would be set to a relatively high value, 
     # and the garbage collection gc_maxlifetime would be set to destroy sessions at whatever the desired idle period is.
