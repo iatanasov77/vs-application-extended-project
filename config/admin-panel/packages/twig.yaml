@@ -3,6 +3,7 @@ twig:
 
     globals:
         applicationIcon: '%applicationIcon%'
+        applicationCompany: '%applicationCompany%'
         applicationTitle: '%applicationTitle%'
         hasTopSearch: '%hasTopSearch%'
         formCreateAccount: '%vs_users.form_create_account%'

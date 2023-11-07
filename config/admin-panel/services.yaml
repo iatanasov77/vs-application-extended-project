@@ -14,6 +14,7 @@ parameters:
     locale: en_US
     
     applicationIcon: 'build/default/images/superman.svg'
+    applicationCompany: 'vs_application.template.vankosoft_application'
     applicationTitle: 'vs_application.template.super_admin_panel'
     hasTopSearch: true
     
