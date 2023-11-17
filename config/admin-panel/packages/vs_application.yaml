@@ -307,6 +307,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_payment_currency_index
                 childs:
                     currency_index:
                         name: vs_application.menu.currencies
@@ -440,6 +441,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_payment_order_index
                 childs:
                     orders:
                         name: vs_application.menu.orders
@@ -453,6 +455,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
+                    breadcrumb_route: vs_payment_pricing_plan_subscriptions_index
                 childs:
                     pricing_plan_subscriptions:
                         name: vs_application.menu.pricing_plan_subscriptions
