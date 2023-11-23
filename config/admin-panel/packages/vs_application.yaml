@@ -41,6 +41,9 @@ vs_application:
         tags_whitelist_tag:
             classes:
                 model: App\Entity\Application\TagsWhitelistTag
+        widget:
+            classes:
+                model: App\Entity\Application\Widget
          
     menu:
         mainSystemMenu:
@@ -90,6 +93,9 @@ vs_application:
                         routeParameters:
                           id: int
                         display: false
+                    widgets:
+                        name: vs_application.menu.widgets
+                        route: vs_application_widget_ext_index
                     settings:
                         name: vs_application.menu.preferences
                         route: vs_application_settings_index
