@@ -359,6 +359,9 @@ vs_application:
                         routeParameters:
                           gatewayName: string
                         display: false
+                    gateway_config_stripe_subscription_plans:
+                        name: vs_application.menu.stripe_subscription_plans
+                        route: gateway_config_stripe_subscription_objects_index
             payment_methods:
                 name: vs_application.menu.payment_methods
                 uri: "javascript:;"
@@ -442,8 +445,8 @@ vs_application:
                           id: int
                         display: false
                         
-            orders:
-                name: vs_application.menu.orders
+            orders_and_payments:
+                name: vs_application.menu.orders_and_payments
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
@@ -455,17 +458,20 @@ vs_application:
                     recieved_payments:
                         name: vs_application.menu.recieved_payments
                         route: vs_payment_payment_index
-            
-            paid_subscriptions:
-                name: vs_application.menu.paid_subscriptions
-                uri: "javascript:;"
-                attributes:
-                    iconClass: icon_genius
-                    breadcrumb_route: vs_payment_pricing_plan_subscriptions_index
-                childs:
                     pricing_plan_subscriptions:
                         name: vs_application.menu.pricing_plan_subscriptions
                         route: vs_payment_pricing_plan_subscriptions_index
+                        
+            developement:
+                name: vs_application.menu.developement
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_genius
+                    breadcrumb_route: app_home
+                childs:
+                    orders:
+                        name: vs_application.menu.delete_all_orders
+                        route: vs_payment_developement_delete_all_orders
         
         
         profileMenu:

@@ -1,3 +1,11 @@
+; Very Good Tool: https://theapache64.github.io/git-do-not-ignore/
+
 *
-*/
 !.gitignore
+
+*/
+!payum/
+payum/*
+!payum/storage/
+payum/storage/*
+!payum/storage/.gitkeep
