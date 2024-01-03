@@ -1,3 +1,9 @@
+payum:
+    gateways:
+        core:
+            payum.template.obtain_token: '@VSPayment/Payum/obtain_js_token.html.twig'
+            payum.template.obtain_credit_card: '@VSPayment/Payum/obtainCreditCard.html.twig'
+
 vs_payment:
     # Supported Storages: doctrine_orm, filesystem
     token_storage: doctrine_orm
@@ -45,3 +51,6 @@ vs_payment:
         pricing_plan_subscription:
             classes:
                 model: App\Entity\Payment\PricingPlanSubscription
+        coupon:
+            classes:
+                model: App\Entity\Payment\Coupon
