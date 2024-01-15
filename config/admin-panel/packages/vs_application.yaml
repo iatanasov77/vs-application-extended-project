@@ -258,8 +258,6 @@ vs_application:
                         name: vs_application.menu.upload_a_file
                         route: vs_cms_filemanager_artgris_upload
         
-        
-        
         mainUsersSubscriptionsMenu:
             newsletter:
                 name: vs_application.menu.newsletter
@@ -308,13 +306,16 @@ vs_application:
                         display: false
         
         mainPaymentMenu:
-            currency_config:
-                name: vs_application.menu.currency
+            payment_core_models:
+                name: vs_application.menu.payment_core_models
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
                     breadcrumb_route: vs_payment_currency_index
                 childs:
+                    ###########################
+                    # Currency Entries
+                    ###########################
                     currency_index:
                         name: vs_application.menu.currencies
                         route: vs_payment_currency_index
@@ -339,7 +340,51 @@ vs_application:
                         routeParameters:
                           id: int
                         display: false
-                
+                    
+                    ###########################
+                    # Pricing Plan Entries
+                    ###########################
+                    pricing_plan_category_index:
+                        name: vs_application.menu.pricing_plan_categories
+                        route: vs_payment_pricing_plan_category_index
+                    pricing_plan_category_create:
+                        name: vs_application.menu.create_pricing_plan_category
+                        route: vs_payment_pricing_plan_category_create
+                    pricing_plan_category_update:
+                        name: vs_application.menu.edit_pricing_plan_category
+                        route: vs_payment_pricing_plan_category_update
+                        routeParameters:
+                          id: int
+                        display: false
+                    pricing_plan_index:
+                        name: vs_application.menu.pricing_plans_listing
+                        route: vs_payment_pricing_plan_index
+                    pricing_plan_create:
+                        name: vs_application.menu.create_pricing_plan
+                        route: vs_payment_pricing_plan_create
+                    pricing_plan_update:
+                        name: vs_application.menu.edit_pricing_plan
+                        route: vs_payment_pricing_plan_update
+                        routeParameters:
+                          id: int
+                        display: false
+                        
+                    ###########################
+                    # Coupon Entries
+                    ###########################
+                    coupon_index:
+                        name: vs_application.menu.discount_coupons_listing
+                        route: vs_payment_coupon_index
+                    coupon_create:
+                        name: vs_application.menu.create_discount_coupon
+                        route: vs_payment_coupon_create
+                    coupon_update:
+                        name: vs_application.menu.edit_discount_coupon
+                        route: vs_payment_coupon_update
+                        routeParameters:
+                          id: int
+                        display: false
+                    
             gateway_config:
                 name: vs_application.menu.gateway_config
                 uri: "javascript:;"
@@ -347,6 +392,9 @@ vs_application:
                     iconClass: icon_genius
                     breadcrumb_route: vs_payment_gateway_config_index
                 childs:
+                    ####################################
+                    # Payment Gateways Config Entries
+                    ####################################
                     gateways_index:
                         name: vs_application.menu.gateways
                         route: vs_payment_gateway_config_index
@@ -359,16 +407,10 @@ vs_application:
                         routeParameters:
                           gatewayName: string
                         display: false
-                    gateway_config_stripe_subscription_plans:
-                        name: vs_application.menu.stripe_subscription_plans
-                        route: gateway_config_stripe_subscription_objects_index
-            payment_methods:
-                name: vs_application.menu.payment_methods
-                uri: "javascript:;"
-                attributes:
-                    iconClass: icon_genius
-                    breadcrumb_route: vs_payment_payment_method_index
-                childs:
+                        
+                    ###########################
+                    # Payment Method Entries
+                    ###########################
                     payment_methods_index:
                         name: vs_application.menu.payment_methods
                         route: vs_payment_payment_method_index
@@ -381,6 +423,17 @@ vs_application:
                         routeParameters:
                           id: int
                         display: false
+                        
+                    ################################
+                    # Payum/Stripe Objects Entries
+                    ################################
+                    gateway_config_stripe_subscription_plans:
+                        name: vs_application.menu.stripe_subscription_plans
+                        route: gateway_config_stripe_subscription_objects_index
+                    gateway_config_stripe_coupons:
+                        name: vs_application.menu.stripe_coupons
+                        route: gateway_config_stripe_coupon_objects_index
+                    
             catalog:
                 name: vs_application.menu.catalog
                 uri: "javascript:;"
@@ -412,39 +465,7 @@ vs_application:
                         routeParameters:
                           id: int
                         display: false
-                        
-            pricing_plans:
-                name: vs_application.menu.pricing_plans
-                uri: "javascript:;"
-                attributes:
-                    iconClass: icon_genius
-                    breadcrumb_route: vs_payment_pricing_plan_index
-                childs:
-                    pricing_plan_category_index:
-                        name: vs_application.menu.pricing_plan_categories
-                        route: vs_payment_pricing_plan_category_index
-                    pricing_plan_category_create:
-                        name: vs_application.menu.create_pricing_plan_category
-                        route: vs_payment_pricing_plan_category_create
-                    pricing_plan_category_update:
-                        name: vs_application.menu.edit_pricing_plan_category
-                        route: vs_payment_pricing_plan_category_update
-                        routeParameters:
-                          id: int
-                        display: false
-                    pricing_plan_index:
-                        name: vs_application.menu.pricing_plans_listing
-                        route: vs_payment_pricing_plan_index
-                    pricing_plan_create:
-                        name: vs_application.menu.create_pricing_plan
-                        route: vs_payment_pricing_plan_create
-                    pricing_plan_update:
-                        name: vs_application.menu.edit_pricing_plan
-                        route: vs_payment_pricing_plan_update
-                        routeParameters:
-                          id: int
-                        display: false
-                        
+             
             orders_and_payments:
                 name: vs_application.menu.orders_and_payments
                 uri: "javascript:;"
@@ -458,6 +479,12 @@ vs_application:
                     recieved_payments:
                         name: vs_application.menu.recieved_payments
                         route: vs_payment_payment_index
+                    recieved_payments_show:
+                        name: vs_application.menu.show_payment_details
+                        route: vs_payment_payment_show
+                        routeParameters:
+                          id: int
+                        display: false
                     pricing_plan_subscriptions:
                         name: vs_application.menu.pricing_plan_subscriptions
                         route: vs_payment_pricing_plan_subscriptions_index
@@ -472,6 +499,9 @@ vs_application:
                     orders:
                         name: vs_application.menu.delete_all_orders
                         route: vs_payment_developement_delete_all_orders
+                    clear_session:
+                        name: vs_application.menu.clear_session
+                        route: vs_payment_developement_clear_session
         
         
         profileMenu:
