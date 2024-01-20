@@ -41,9 +41,15 @@ vs_application:
         tags_whitelist_tag:
             classes:
                 model: App\Entity\Application\TagsWhitelistTag
+        widget_group:
+            classes:
+                model: App\Entity\Application\WidgetGroup
         widget:
             classes:
                 model: App\Entity\Application\Widget
+        widget_config:
+            classes:
+                model: App\Entity\Application\WidgetConfig
          
     menu:
         mainSystemMenu:
@@ -93,12 +99,45 @@ vs_application:
                         routeParameters:
                           id: int
                         display: false
-                    widgets:
-                        name: vs_application.menu.widgets
-                        route: vs_application_widget_ext_index
                     settings:
                         name: vs_application.menu.preferences
                         route: vs_application_settings_index
+            widgets:
+                name: vs_application.menu.widgets
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_genius
+                    breadcrumb_route: vs_application_widget_ext_index
+                childs:
+                    list_widget_groups:
+                        name: vs_application.menu.list_widget_groups
+                        route: vs_application_widget_group_index
+                    create_widget_group:
+                        name: vs_application.menu.create_widget_group
+                        route: vs_application_widget_group_create
+                        display: true
+                    update_widget_group:
+                        name: vs_application.menu.update_widget_group
+                        route: vs_application_widget_group_update
+                        routeParameters:
+                          id: int
+                        display: false
+                    list_widgets:
+                        name: vs_application.menu.list_widgets
+                        route: vs_application_widget_index
+                    create_widget:
+                        name: vs_application.menu.create_new_widget
+                        route: vs_application_widget_create
+                        display: true
+                    update_widget:
+                        name: vs_application.menu.update_widget
+                        route: vs_application_widget_update
+                        routeParameters:
+                          id: int
+                        display: false
+                    widget_configs:
+                        name: vs_application.menu.widget_configs
+                        route: vs_application_widget_ext_index
             taxonomy:
                 name: vs_application.menu.taxonomy
                 uri: "javascript:;"
