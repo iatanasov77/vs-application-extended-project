@@ -1,3 +1,22 @@
+1.10.19	|	Release date: **22.01.2024**
+============================================
+* New Features and Improvements:
+  - Improve Security Config.
+  - Update Default Service Parameters.
+  - Update package.json
+  - Add to Twig Globals.
+  - Add New Payment Gatewy Credentials into Dev Environement.
+  - Improve Admin Panel Menu Configuration.
+  - Use Widgets Insteadof Global Twig Variables for Layout Objects.
+  - Add Some Improvements.
+  - Some Improvements
+  - Add Coupon Resource into Payment Entities.
+  - Improve and Additions to Some Configs.
+  - Improve Phing Build Config.
+  - Add Widgets Entities.
+  - Add Widgets Support into Project Base.
+
+
 1.10.18	|	Release date: **23.10.2023**
 ============================================
 * New Features:
