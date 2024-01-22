@@ -4,6 +4,7 @@ imports:
     - { resource: services/controller.yaml }
     - { resource: services/form.yaml }
     - { resource: services/uploader.yaml }
+    - { resource: services/widgets.yaml }
 
 # This file is the entry point to configure your own services.
 # Files in the packages/ subdirectory configure your dependencies.
@@ -60,6 +61,7 @@ services:
             - '../../src/Form/'
             - '../../src/Tests/'
             - '../../src/Controller/'
+            - '../../src/Widgets/'
             - '../../src/AdminPanelKernel.php'
         autowire: true
     
