@@ -96,9 +96,10 @@ security:
         # API Routes
         - { path: ^/api-docs, roles: PUBLIC_ACCESS }
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
-        - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
         
         # Web Routes
+        - { path: ^/logout, roles: IS_AUTHENTICATED_FULLY }
         - { path: ^/login, roles: PUBLIC_ACCESS, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: ^/register, roles: PUBLIC_ACCESS, requires_channel: '%env(SECURE_SCHEME)%' }
         - { path: ^/verify, roles: PUBLIC_ACCESS, requires_channel: '%env(SECURE_SCHEME)%' }

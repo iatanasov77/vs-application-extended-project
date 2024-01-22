@@ -5,6 +5,10 @@ vs_payment_config_resources:
 vs_payment_config:
     resource: "@VSPaymentBundle/Resources/config/routing/payment_config.yaml"
     prefix: /
+    
+vs_payment_config_gateway:
+    resource: "@VSPaymentBundle/Resources/config/routing/gateway_config.yaml"
+    prefix: /
 
 vs_payment_products:
     resource: "@VSPaymentBundle/Resources/config/routing/products.yaml"

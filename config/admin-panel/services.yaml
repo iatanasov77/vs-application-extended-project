@@ -4,6 +4,7 @@ imports:
     - { resource: services/controller.yaml }
     - { resource: services/form.yaml }
     - { resource: services/uploader.yaml }
+    - { resource: services/widgets.yaml }
 
 # This file is the entry point to configure your own services.
 # Files in the packages/ subdirectory configure your dependencies.
@@ -14,6 +15,7 @@ parameters:
     locale: en_US
     
     applicationIcon: 'build/default/images/superman.svg'
+    applicationCompany: 'vs_application.template.vankosoft_application'
     applicationTitle: 'vs_application.template.super_admin_panel'
     hasTopSearch: true
     
@@ -25,6 +27,7 @@ parameters:
     vs_users.login_by: 'username'
     vs_users.form_create_account: false
     vs_users.default_redirect: 'vs_application_dashboard'
+    vs_users.crud.display_siblings: false
     
     # The cookie_lifetime would be set to a relatively high value, 
     # and the garbage collection gc_maxlifetime would be set to destroy sessions at whatever the desired idle period is.
@@ -58,6 +61,7 @@ services:
             - '../../src/Form/'
             - '../../src/Tests/'
             - '../../src/Controller/'
+            - '../../src/Widgets/'
             - '../../src/AdminPanelKernel.php'
         autowire: true
     
