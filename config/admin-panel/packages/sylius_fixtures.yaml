@@ -1,7 +1,7 @@
 imports:
     - { resource: '@VSApplicationInstalatorBundle/Resources/config/app/fixtures/application_configuration.yaml' }
     #- { resource: '@VSApplicationInstalatorBundle/Resources/config/app/fixtures/sample_data.yaml' }
-    - { resource: '@VSPaymentBundle/Resources/config/app/fixtures/extended_sample_data.yaml' }
+    - { resource: '@VSCatalogBundle/Resources/config/app/fixtures/extended_sample_data.yaml' }
 
 sylius_fixtures:
     suites:                

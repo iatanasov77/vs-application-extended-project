@@ -59,4 +59,6 @@ return [
     Vankosoft\UsersSubscriptionsBundle\VSUsersSubscriptionsBundle::class => ['all' => true],
     Vankosoft\PaymentBundle\VSPaymentBundle::class => ['all' => true],
     Vankosoft\BoricaBundle\VSBoricaBundle::class => ['all' => true],
+    
+    Vankosoft\CatalogBundle\VSCatalogBundle::class => ['all' => true],
 ];

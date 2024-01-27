@@ -8,15 +8,18 @@ use Vankosoft\UsersSubscriptionsBundle\Model\Interfaces\SubscribedUserInterface;
 use Vankosoft\UsersSubscriptionsBundle\Model\Traits\SubscribedUserTrait;
 use Vankosoft\PaymentBundle\Model\Interfaces\UserPaymentAwareInterface;
 use Vankosoft\PaymentBundle\Model\Traits\UserPaymentAwareTrait;
+use Vankosoft\CatalogBundle\Model\Interfaces\UserSubscriptionAwareInterface;
+use Vankosoft\CatalogBundle\Model\Traits\UserSubscriptionAwareTrait;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="VSUM_Users")
  */
-class User extends BaseUser implements SubscribedUserInterface, UserPaymentAwareInterface
+class User extends BaseUser implements SubscribedUserInterface, UserPaymentAwareInterface, UserSubscriptionAwareInterface
 {
     use SubscribedUserTrait;
     use UserPaymentAwareTrait;
+    use UserSubscriptionAwareTrait;
     
     public function __construct()
     {
