@@ -6,6 +6,9 @@ vs_catalog:
         product_picture:
             classes:
                 model: App\Entity\Catalog\ProductPicture
+        product_file:
+            classes:
+                model: App\Entity\Catalog\ProductFile
         product_category:
             classes:
                 model: App\Entity\Catalog\ProductCategory
@@ -24,8 +27,5 @@ vs_catalog:
         product_association:
             classes:
                 model: App\Entity\Catalog\ProductAssociation
-#         service_association:
-#             classes:
-#                 model: App\Entity\Catalog\ServiceAssociation
 
 

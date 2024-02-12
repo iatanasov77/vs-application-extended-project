@@ -49,9 +49,9 @@ vs_application:
         widget:
             classes:
                 model: App\Entity\Application\Widget
-        widget_config:
+        widgets_registry:
             classes:
-                model: App\Entity\Application\WidgetConfig
+                model: App\Entity\Application\WidgetsRegistry
          
     menu:
         mainSystemMenu:
@@ -148,8 +148,8 @@ vs_application:
                         routeParameters:
                           id: int
                         display: false
-                    widget_configs:
-                        name: vs_application.menu.widget_configs
+                    widgets_registry:
+                        name: vs_application.menu.widgets_registry
                         route: vs_application_widget_ext_index
             taxonomy:
                 name: vs_application.menu.taxonomy
@@ -501,7 +501,7 @@ vs_application:
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
-                    breadcrumb_route: vs_payment_product_index
+                    breadcrumb_route: vs_catalog_product_index
                 childs:
                     catalog_category_index:
                         name: vs_application.menu.catalog_categories

@@ -1,0 +1,21 @@
+<ul id="sideManu" class="nav nav-tabs nav-stacked">
+    {% for cat in widget.params.categories %}
+        {% set currentParent = null %}
+        {% if widget.params.currentCategory %}
+            {% set currentParent = widget.params.currentCategory.parent %}
+        {% endif %}
+        
+        <li class="subMenu{% if cat == currentParent %} open{% endif %}">
+            <a> {{ cat.name | upper }} [{{ cat.products.count }}]</a>
+            <ul{% if cat != currentParent %} style="display:none"{% endif %}>
+                {% for catChild in cat.children %}
+                    <li>
+                        <a class="active" href="{{ path( 'vs_catalog_catalog_category_products', {'categorySlug': catChild.taxon.code} ) }}">
+                            <i class="icon-chevron-right"></i>{{ catChild.name }} ({{ catChild.products.count }}) 
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+</ul>

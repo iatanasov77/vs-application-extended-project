@@ -32,7 +32,7 @@
         "symfony/runtime": "6.2.*",
         
         "vankosoft/application": "1.10.*",
-        "vankosoft/catalog-bundle": "^0.1",
+        "vankosoft/catalog-bundle": "^1.0",
         
         "trickeyone/intl-subdivision": "^4.0",
         "php-http/message-factory": "^1.1",
