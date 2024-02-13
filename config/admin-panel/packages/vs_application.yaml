@@ -332,18 +332,6 @@ vs_application:
                     iconClass: icon_genius
                     breadcrumb_route: vs_users_subscriptions_payed_service_index
                 childs:
-                    paid_services_category_index:
-                        name: vs_application.menu.categories
-                        route: vs_users_subscriptions_payed_service_category_index
-                    paid_services_category_create:
-                        name: vs_application.menu.create_a_category
-                        route: vs_users_subscriptions_payed_service_category_create
-                    paid_services_category_update:
-                        name: vs_application.menu.edit_a_category
-                        route: vs_users_subscriptions_payed_service_category_update
-                        routeParameters:
-                          id: int
-                        display: false
                     paid_services_index:
                         name: vs_application.menu.paid_services
                         route: vs_users_subscriptions_payed_service_index
