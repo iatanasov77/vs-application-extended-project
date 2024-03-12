@@ -41,6 +41,7 @@ return [
     
     Bazinga\Bundle\HateoasBundle\BazingaHateoasBundle::class => ['all' => true],
     
+    Vankosoft\AgentBundle\VSAgentBundle::class => ['all' => true],
     Vankosoft\ApplicationInstalatorBundle\VSApplicationInstalatorBundle::class => ['all' => true],
     Vankosoft\ApplicationBundle\VSApplicationBundle::class => ['all' => true],
     Vankosoft\CmsBundle\VSCmsBundle::class => ['all' => true],
