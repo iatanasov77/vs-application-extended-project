@@ -3,16 +3,33 @@ doctrine:
         server_version: "mariadb-10.1.41"
         
     orm:
-        auto_generate_proxy_classes: false
-        metadata_cache_driver:
-            type: pool
-            pool: doctrine.system_cache_pool
-        query_cache_driver:
-            type: pool
-            pool: doctrine.system_cache_pool
-        result_cache_driver:
-            type: pool
-            pool: doctrine.result_cache_pool
+        auto_generate_proxy_classes: true
+        
+        entity_managers:
+            default:
+                metadata_cache_driver:
+                    type: service
+                    id: doctrine.system_cache_provider
+                query_cache_driver:
+                    type: service
+                    id: doctrine.system_cache_provider
+                result_cache_driver:
+                    type: service
+                    id: doctrine.result_cache_provider
+
+services:
+    doctrine.result_cache_provider:
+        class: Doctrine\Common\Cache\Psr6\DoctrineProvider
+        public: false
+        factory: ['Doctrine\Common\Cache\Psr6\DoctrineProvider', 'wrap']
+        arguments:
+            - '@doctrine.result_cache_pool'
+    doctrine.system_cache_provider:
+        class: Doctrine\Common\Cache\Psr6\DoctrineProvider
+        public: false
+        factory: [ 'Doctrine\Common\Cache\Psr6\DoctrineProvider', 'wrap' ]
+        arguments:
+            - '@doctrine.system_cache_pool'
 
 framework:
     cache:

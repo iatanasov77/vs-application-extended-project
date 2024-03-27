@@ -125,7 +125,7 @@ node ( label: 'php-host' ) {
                             ssh -t -t -l root 164.138.221.242 -o StrictHostKeyChecking=no -p 1022  << ENDSSH
                                 cd ${REMOTE_DIR}
                                 yes | cp -dRf ${REMOTE_DIR} ${REMOTE_DIR}_BACKUP
-                                mysqldump -pg2Sx4,+WXwdQ ${DATABASE_PRODUCTION} > ${REMOTE_DIR}/../${DATABASE_PRODUCTION}_${now}.sql
+                                mysqldump -p${APP_MYSQL_PASSWORD} ${APP_MYSQL_DATABASE} > ${REMOTE_DIR}/../${APP_MYSQL_DATABASE}_${now}.sql
                                 #${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:maintenance --set-maintenance
                                 
                                 returnCode=\$?   # Capture return code
