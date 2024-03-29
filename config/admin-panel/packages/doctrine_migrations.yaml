@@ -1,7 +1,7 @@
 doctrine:
     dbal:
         # Add which tables to be removed from migrations
-        schema_filter: '/^(?!wbnt_dfgb_|ext_log_entries).*$/'
+        schema_filter: '/^(?!wbnt_dfgb_|ext_log_entries|VSAPP_DoctrineDbalCache).*$/'
 
 doctrine_migrations:
     enable_profiler: '%kernel.debug%'
