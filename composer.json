@@ -80,6 +80,7 @@
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%/admin-panel": "symfony-cmd",
             "liip:imagine:cache:remove": "symfony-cmd"
         },
         "post-install-cmd": [
