@@ -117,6 +117,19 @@ node ( label: 'php-host' ) {
     
     stage( 'Before Deploy (Create Backup on Hosting, Set Maintenance Mode etc.)' ) {
         if ( BUILD_ENVIRONMENT == 'production' ) {
+            script {
+                sshagent(credentials : ['vps-mini-ssh-root']) {
+                    sh """
+                        ssh -t -t -l root 164.138.221.242 -o StrictHostKeyChecking=no -p 1022  << ENDSSH
+                            cd ${REMOTE_DIR}
+                            #${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:maintenance --set-maintenance
+                            
+                            exit 0
+ENDSSH
+                    """
+                }
+            }
+            
             if ( DB_BACKUP ) {
                 def now = new Date()
                 
@@ -127,7 +140,6 @@ node ( label: 'php-host' ) {
                                 cd ${REMOTE_DIR}
                                 yes | cp -dRf ${REMOTE_DIR} ${REMOTE_DIR}_BACKUP
                                 mysqldump -p${APP_MYSQL_PASSWORD} ${APP_MYSQL_DATABASE} > ${REMOTE_DIR}/../${APP_MYSQL_DATABASE}_${now}.sql
-                                #${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:maintenance --set-maintenance
                                 
                                 returnCode=\$?   # Capture return code
                                 exit \$returnCode
@@ -161,7 +173,9 @@ ENDSSH
                             migrationCode=\$?   # Capture migration return code
                             
                             ${PHP_BIN} -d memory_limit=-1 bin/console cache:clear
-                            ${PHP_BIN} -d memory_limit=-1 bin/web-guitar-pro cache:clear
+                            
+                            ${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:install:info update
+                            ${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:load-widgets
                             
                             #${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:maintenance --unset-maintenance
                             
