@@ -518,6 +518,103 @@ vs_application:
                     gateway_config_stripe_coupons:
                         name: vs_application.menu.stripe_coupons
                         route: gateway_config_stripe_coupon_objects_index
+                        
+            currencies:
+                name: vs_application.menu.currencies
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_genius
+                    breadcrumb_route: vs_payment_currency_index
+                childs:
+                    currency_index:
+                        name: vs_application.menu.currencies
+                        route: vs_payment_currency_index
+                    currency_create:
+                        name: vs_application.menu.create_new_currency
+                        route: vs_payment_currency_create
+                    currency_update:
+                        name: vs_application.menu.edit_currency
+                        route: vs_payment_currency_update
+                        routeParameters:
+                          id: int
+                        display: false
+                    exchange_rate_index:
+                        name: vs_application.menu.exchange_rates
+                        route: vs_payment_exchange_rate_index
+                    exchange_rate_create:
+                        name: vs_application.menu.create_new_exchange_rate
+                        route: vs_payment_exchange_rate_create
+                    exchange_rate_update:
+                        name: vs_application.menu.edit_exchange_rate
+                        route: vs_payment_exchange_rate_update
+                        routeParameters:
+                          id: int
+                        display: false
+                        
+            customers:
+                name: vs_application.menu.customers
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_genius
+                    breadcrumb_route: vs_payment_customer_group_index
+                childs:
+                    customer_group_index:
+                        name: vs_application.menu.customer_groups_listing
+                        route: vs_payment_customer_group_index
+                    customer_group_create:
+                        name: vs_application.menu.create_customer_group
+                        route: vs_payment_customer_group_create
+                    customer_group_update:
+                        name: vs_application.menu.edit_customer_group
+                        route: vs_payment_customer_group_update
+                        routeParameters:
+                          id: int
+                        display: false
+                
+            promotions:
+                name: vs_application.menu.discounts_coupouns
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_genius
+                    breadcrumb_route: vs_payment_currency_index
+                childs:
+                    promotion_index:
+                        name: vs_application.menu.promotions_listing
+                        route: vs_payment_promotion_index
+                    promotion_create:
+                        name: vs_application.menu.create_promotion
+                        route: vs_payment_promotion_create
+                    promotion_update:
+                        name: vs_application.menu.edit_promotion
+                        route: vs_payment_promotion_update
+                        routeParameters:
+                          id: int
+                        display: false
+                    promotion_coupon_index:
+                        name: vs_application.menu.promotion_coupons_listing
+                        route: vs_payment_promotion_coupon_index
+                        routeParameters:
+                          promotionId: int
+                        display: false
+                    promotion_coupon_generate:
+                        name: vs_application.menu.generate_promotion_coupon
+                        route: vs_payment_promotion_coupon_generate
+                        routeParameters:
+                          promotionId: int
+                        display: false
+                    promotion_coupon_create:
+                        name: vs_application.menu.create_promotion_coupon
+                        route: vs_payment_promotion_coupon_create
+                        routeParameters:
+                          promotionId: int
+                        display: false
+                    promotion_coupon_update:
+                        name: vs_application.menu.edit_promotion_coupon
+                        route: vs_payment_promotion_coupon_update
+                        routeParameters:
+                          id: int
+                          promotionId: int
+                        display: false
              
             orders_and_payments:
                 name: vs_application.menu.orders_and_payments
@@ -617,6 +714,26 @@ vs_application:
                     pricing_plan_update:
                         name: vs_application.menu.edit_pricing_plan
                         route: vs_catalog_pricing_plan_update
+                        routeParameters:
+                          id: int
+                        display: false
+                        
+            associations:
+                name: vs_application.menu.associations
+                uri: "javascript:;"
+                attributes:
+                    iconClass: icon_genius
+                    breadcrumb_route: vs_catalog_association_type_index
+                childs:
+                    association_type_index:
+                        name: vs_application.menu.association_types
+                        route: vs_catalog_association_type_index
+                    association_type_create:
+                        name: vs_application.menu.create_association_type
+                        route: vs_catalog_association_type_create
+                    association_type_update:
+                        name: vs_application.menu.edit_association_type
+                        route: vs_catalog_association_type_update
                         routeParameters:
                           id: int
                         display: false
