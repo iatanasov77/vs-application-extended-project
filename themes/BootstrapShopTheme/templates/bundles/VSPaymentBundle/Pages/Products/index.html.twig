@@ -45,7 +45,7 @@
                     <hr class="soft"/>
                     <h5>{{ product.name }}</h5>
                     <p>{{ product.description }}</p>
-                    <a class="btn btn-small pull-right" href="{{ path( 'vs_payment_product_show', {'id': product.id} ) }}">View Details</a>
+                    <a class="btn btn-small pull-right" href="{{ path( 'vs_catalog_product_show', {'id': product.id} ) }}">View Details</a>
                     <br class="clr"/>
                 </div>
                 <div class="span3 alignR">
@@ -64,7 +64,7 @@
                         >
                             Add to <i class=" icon-shopping-cart"></i>
                         </a>
-                        <a href="{{ path( 'vs_payment_product_show', {'id': product.id} ) }}" class="btn btn-large"><i class="icon-zoom-in"></i></a>
+                        <a href="{{ path( 'vs_catalog_product_show', {'id': product.id} ) }}" class="btn btn-large"><i class="icon-zoom-in"></i></a>
                     </form>
                 </div>
             </div>
@@ -77,7 +77,7 @@
             {% for product in resources %}
                 <li class="span3">
                   <div class="thumbnail">
-                    <a href="{{ path( 'vs_payment_product_show', {'id': product.id} ) }}">
+                    <a href="{{ path( 'vs_catalog_product_show', {'id': product.id} ) }}">
                         {% if product.pictures.first %}
                             {% set productPicture = path( 'vs_cms_images_filesystem_get_file', { file: picturesPath ~ '/' ~ product.pictures.first.path } ) %}
                         {% else %}
@@ -89,7 +89,7 @@
                       <h5>{{ product.name }}</h5>
                       <p>{{ product.description }}</p>
                        <h4 style="text-align:center">
-                            <a class="btn" href="{{ path( 'vs_payment_product_show', {'id': product.id} ) }}"> <i class="icon-zoom-in"></i></a> 
+                            <a class="btn" href="{{ path( 'vs_catalog_product_show', {'id': product.id} ) }}"> <i class="icon-zoom-in"></i></a> 
                             <a class="btn btnAddToCart"
                                 href="{{ path( 'vs_payment_add_to_card', {
                                     'payableObjectType': constant( 'Vankosoft\\PaymentBundle\\Component\\PayableObject::OBJECT_TYPE_PRODUCT' ),

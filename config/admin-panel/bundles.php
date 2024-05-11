@@ -41,6 +41,7 @@ return [
     
     Bazinga\Bundle\HateoasBundle\BazingaHateoasBundle::class => ['all' => true],
     
+    Vankosoft\AgentBundle\VSAgentBundle::class => ['all' => true],
     Vankosoft\ApplicationInstalatorBundle\VSApplicationInstalatorBundle::class => ['all' => true],
     Vankosoft\ApplicationBundle\VSApplicationBundle::class => ['all' => true],
     Vankosoft\CmsBundle\VSCmsBundle::class => ['all' => true],
@@ -59,4 +60,6 @@ return [
     Vankosoft\UsersSubscriptionsBundle\VSUsersSubscriptionsBundle::class => ['all' => true],
     Vankosoft\PaymentBundle\VSPaymentBundle::class => ['all' => true],
     Vankosoft\BoricaBundle\VSBoricaBundle::class => ['all' => true],
+    
+    Vankosoft\CatalogBundle\VSCatalogBundle::class => ['all' => true],
 ];

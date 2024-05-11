@@ -9,7 +9,7 @@ node ( label: 'php-host' ) {
     def DB_BACKUP
     def REMOTE_DIR
     
-    final PHP_BIN               = '/usr/bin/php74'
+    final PHP_BIN               = '/usr/bin/php82'
     
     final GIT_CREDENTIALS_ID    = 'github-iatanasov77';
     final GIT_URI               = 'github.com/iatanasov77/vs-web-guitarpro.git'
@@ -101,6 +101,7 @@ node ( label: 'php-host' ) {
     stage( 'Build Application' ) {
         sh """
             export COMPOSER_HOME='/home/vagrant/.composer';
+            export COMPOSER_ALLOW_SUPERUSER=1;
             export NODE_OPTIONS=--max-old-space-size=4096
             /usr/local/bin/phing install-${BUILD_ENVIRONMENT} -verbose -debug
         """
@@ -116,6 +117,19 @@ node ( label: 'php-host' ) {
     
     stage( 'Before Deploy (Create Backup on Hosting, Set Maintenance Mode etc.)' ) {
         if ( BUILD_ENVIRONMENT == 'production' ) {
+            script {
+                sshagent(credentials : ['vps-mini-ssh-root']) {
+                    sh """
+                        ssh -t -t -l root 164.138.221.242 -o StrictHostKeyChecking=no -p 1022  << ENDSSH
+                            cd ${REMOTE_DIR}
+                            #${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:maintenance --set-maintenance
+                            
+                            exit 0
+ENDSSH
+                    """
+                }
+            }
+            
             if ( DB_BACKUP ) {
                 def now = new Date()
                 
@@ -125,8 +139,7 @@ node ( label: 'php-host' ) {
                             ssh -t -t -l root 164.138.221.242 -o StrictHostKeyChecking=no -p 1022  << ENDSSH
                                 cd ${REMOTE_DIR}
                                 yes | cp -dRf ${REMOTE_DIR} ${REMOTE_DIR}_BACKUP
-                                mysqldump -pg2Sx4,+WXwdQ ${DATABASE_PRODUCTION} > ${REMOTE_DIR}/../${DATABASE_PRODUCTION}_${now}.sql
-                                #${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:maintenance --set-maintenance
+                                mysqldump -p${APP_MYSQL_PASSWORD} ${APP_MYSQL_DATABASE} > ${REMOTE_DIR}/../${APP_MYSQL_DATABASE}_${now}.sql
                                 
                                 returnCode=\$?   # Capture return code
                                 exit \$returnCode
@@ -160,7 +173,9 @@ ENDSSH
                             migrationCode=\$?   # Capture migration return code
                             
                             ${PHP_BIN} -d memory_limit=-1 bin/console cache:clear
-                            ${PHP_BIN} -d memory_limit=-1 bin/web-guitar-pro cache:clear
+                            
+                            ${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:install:info update
+                            ${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:load-widgets
                             
                             #${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:maintenance --unset-maintenance
                             

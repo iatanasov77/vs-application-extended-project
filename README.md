@@ -1,4 +1,4 @@
-# VankoSoft Application
+# Vankosoft Extended Project
 
 Create Project
 ---------------

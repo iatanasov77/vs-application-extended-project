@@ -1,7 +1,7 @@
 doctrine:
     dbal:
         # Add which tables to be removed from migrations
-        schema_filter: '/^(?!wbnt_dfgb_|taxon_translation|sylius_taxon|sylius_taxon_translation|sylius_locale|ext_log_entries|widget_user).*$/'
+        schema_filter: '/^(?!wbnt_dfgb_|ext_log_entries|VSAPP_DoctrineDbalCache).*$/'
 
 doctrine_migrations:
     enable_profiler: '%kernel.debug%'

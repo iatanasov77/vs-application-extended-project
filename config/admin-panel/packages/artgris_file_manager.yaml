@@ -3,4 +3,4 @@
 artgris_file_manager:
     conf:
         default:
-            dir: "%kernel.project_dir%/public/shared_media/artgris/filemanager"
+            dir: "../../public/shared_media/artgris/filemanager"

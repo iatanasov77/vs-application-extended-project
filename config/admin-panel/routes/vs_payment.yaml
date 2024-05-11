@@ -10,8 +10,11 @@ vs_payment_config_gateway:
     resource: "@VSPaymentBundle/Resources/config/routing/gateway_config.yaml"
     prefix: /
 
-vs_payment_products:
-    resource: "@VSPaymentBundle/Resources/config/routing/products.yaml"
+vs_catalog_products:
+    resource: "@VSCatalogBundle/Resources/config/routing/products.yaml"
     prefix: /
-
+    
+vs_catalog_pricing_plans:
+    resource: "@VSCatalogBundle/Resources/config/routing/pricing_plans.yaml"
+    prefix: /
 
