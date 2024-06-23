@@ -12,6 +12,7 @@ liip_imagine:
                     - "%kernel.project_dir%/public/shared_media/gaufrette/profile"
                     - "%kernel.project_dir%/public/shared_media/gaufrette/filemanager"
                     - "%kernel.project_dir%/public/shared_media/artgris"
+                    - '%kernel.project_dir%/public/shared_media/gaufrette/app_pictures'
     
     resolvers:
         default:
@@ -39,3 +40,9 @@ liip_imagine:
             filters:
                 thumbnail: { size: [50, 50], mode: outbound }
                 background: { size: [50, 50], position: center, color: '#ffffff' }
+                
+        index_page_thumbnail:
+            quality: 75
+            filters:
+                thumbnail: { size: [120, 90], mode: outbound }
+                background: { size: [124, 94], position: center, color: '#000000' }
