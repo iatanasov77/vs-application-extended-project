@@ -1,0 +1,48 @@
+{% for product in category.products %}
+    <div class="row">     
+        <div class="span2">
+            {% if product.pictures.first %}
+                {% set productPicture = path( 'vs_cms_images_filesystem_get_file', { file: picturesPath ~ '/' ~ product.pictures.first.path } ) %}
+            {% else %}
+                {% set productPicture = '/build/bootstrap-shop-theme/images/products/6.jpg' %}
+            {% endif %}
+            <img src="{{ productPicture }}" alt="{{ product.name }}"/>
+        </div>
+        <div class="span4">
+            <h3>New | Available</h3>                
+            <hr class="soft"/>
+            <h5>{{ product.name }}</h5>
+            <p>{{ product.description }}</p>
+            <a class="btn btn-small pull-right"
+                href="{{ path( 'vs_catalog_catalog_product_show', {'categorySlug': 'test-category','productSlug': product.slug} ) }}"
+            >
+                View Details
+            </a>
+            <br class="clr"/>
+        </div>
+        <div class="span3 alignR">
+            <form class="form-horizontal qtyFrm">
+                <h3>{{ product.price }} {{ product.currency.code | vs_currency_symbol }}</h3>
+                <label class="checkbox">
+                    <input type="checkbox">  Adds product to compair
+                </label><br/>
+            
+                <a class="btn btn-large btn-primary btnAddToCart"
+                    href="{{ path( 'vs_payment_add_to_card', {
+                                'payableObjectType': constant( 'Vankosoft\\PaymentBundle\\Component\\PayableObject::OBJECT_TYPE_PRODUCT' ),
+                                'payableObjectId': product.id,
+                                'qty': 1
+                    } ) }}"
+                >
+                    Add to <i class=" icon-shopping-cart"></i>
+                </a>
+                <a href="{{ path( 'vs_catalog_catalog_product_show', {'categorySlug': 'test-category','productSlug': product.slug} ) }}"
+                    class="btn btn-large"
+                >
+                    <i class="icon-zoom-in"></i>
+                </a>
+            </form>
+        </div>
+    </div>
+    <hr class="soft"/>
+{% endfor %}

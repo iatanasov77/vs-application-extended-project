@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    <h3>{{ 'vs_application.menu.pricing_plans' | trans( {},'VSApplicationBundle' ) }}</h3>   
+    <hr class="soft" />
+
+    <div class="span6">
+        {% include '@VSPayment/Pages/PricingPlansCheckout/Partial/pricing-plans-listing.html.twig' %}
+    </div>
+{% endblock %}
+
+{% block widgets %}
+    {% include '@VSPayment/Pages/PricingPlansCheckout/plan-modal.html.twig' %}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    
+    {{ encore_entry_link_tags( 'js/pricing-plans', null, 'BootstrapShopTheme' ) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <div id="RealPaymentFormContainer" style="display: none;">
+        {% include '@VSPayment/Pages/CreditCard/Partial/StripeJsV2Form.html.twig' with {
+             'formAction': '',
+             'formMethod': 'POST'
+        } %}
+    </div>
+    
+    {{ encore_entry_script_tags( 'js/pricing-plans', null, 'BootstrapShopTheme' ) }}
+{% endblock %}

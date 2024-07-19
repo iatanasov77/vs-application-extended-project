@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ parent() }} :: {{ 'vs_payment.template.products_index_title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+{% block pageTitle %}<i class="icon_genius"></i> {{ 'vs_payment.template.products_index_title' | trans( {},'VSPaymentBundle' ) }}{% endblock %}
+
+{% block content %}
+    <h3> {{ category.name }} <small class="pull-right"> {{ category.products.count }} {{ 'vs_catalog.template.products_are_available' | trans( {},'VSCatalogBundle' ) }} </small></h3>   
+    <hr class="soft"/>
+    <p>{{ category.description }}</p>
+    <hr class="soft"/>
+    
+    <form class="form-horizontal span6">
+        <div class="control-group">
+            <label class="control-label alignL">{{ 'vs_catalog.form.product_sort.sort_by' | trans( {},'VSCatalogBundle' ) }} </label>
+            <select>
+                <option>{{ 'vs_catalog.form.product_sort.product_name' | trans( {},'VSCatalogBundle' ) }} A - Z</option>
+                <option>{{ 'vs_catalog.form.product_sort.product_name' | trans( {},'VSCatalogBundle' ) }} Z - A</option>
+                <option>{{ 'vs_catalog.form.product_sort.product_stoke' | trans( {},'VSCatalogBundle' ) }}</option>
+                <option>{{ 'vs_catalog.form.product_sort.price_Lowest_first' | trans( {},'VSCatalogBundle' ) }}</option>
+            </select>
+        </div>
+    </form>
+      
+    <div id="myTab" class="pull-right">
+        <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
+        <a href="#blockView" data-toggle="tab"><span class="btn btn-large btn-primary"><i class="icon-th-large"></i></span></a>
+    </div>
+    <br class="clr"/>
+    
+    <div class="tab-content">
+        <div class="tab-pane" id="listView">
+            {% include '@VSCatalog/Pages/Catalog/partial/products-list-view.html.twig' %}
+        </div>
+    
+        <div class="tab-pane  active" id="blockView">
+            {% include '@VSCatalog/Pages/Catalog/partial/products-block-view.html.twig' %}
+        </div>
+    </div>
+
+    <a href="compair.html" class="btn btn-large pull-right">Compair Product</a>
+    
+    {#
+    {% if resources.haveToPaginate() %}
+        {{ pagerfanta( resources, null, { 'proximity': 10 } ) }}
+    {% endif %}
+    #}
+    
+    <br class="clr"/>
+{% endblock content %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags( 'js/product-listing', null, 'BootstrapShopTheme'  ) }}
+{% endblock %}
