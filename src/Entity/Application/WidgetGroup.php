@@ -3,10 +3,8 @@
 use Doctrine\ORM\Mapping as ORM;
 use Vankosoft\ApplicationBundle\Model\WidgetGroup as BaseWidgetGroup;
 
-/**
- * @ORM\Table(name="VSAPP_WidgetGroups")
- * @ORM\Entity
- */
+#[ORM\Entity]
+#[ORM\Table(name: "VSAPP_WidgetGroups")]
 class WidgetGroup extends BaseWidgetGroup
 {
 }

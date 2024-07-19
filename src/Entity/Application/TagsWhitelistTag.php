@@ -3,10 +3,8 @@
 use Doctrine\ORM\Mapping as ORM;
 use Vankosoft\ApplicationBundle\Model\TagsWhitelistTag as BaseTagsWhitelistTag;
 
-/**
- * @ORM\Table(name="VSAPP_TagsWhitelistTags")
- * @ORM\Entity
- */
+#[ORM\Entity]
+#[ORM\Table(name: "VSAPP_TagsWhitelistTags")]
 class TagsWhitelistTag extends BaseTagsWhitelistTag
 {
 }

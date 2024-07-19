@@ -3,11 +3,8 @@
 use Doctrine\ORM\Mapping as ORM;
 use Vankosoft\CatalogBundle\Model\ProductCategory as ProductCategoryBase;
 
-/**
- * @ORM\Table(name="VSCAT_ProductCategories")
- * @ORM\Entity
- */
+#[ORM\Entity]
+#[ORM\Table(name: "VSCAT_ProductCategories")]
 class ProductCategory extends ProductCategoryBase
 {
-    
 }
