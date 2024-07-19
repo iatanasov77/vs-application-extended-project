@@ -1,0 +1,10 @@
+oneup_flysystem:
+    adapters:
+#        vsorg.downloads_adapter:
+#            local:
+#                location: '%vsorg.filemanager_shared_media_gaufrette.downloads%'
+    filesystems:
+#        vsorg.downloads_filesystem:
+#            adapter: vsorg.downloads_adapter
+#            alias: League\Flysystem\Filesystem
+
