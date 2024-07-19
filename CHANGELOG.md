@@ -1,3 +1,9 @@
+1.10.22	|	Release date: **19.07.2024**
+============================================
+* New Features:
+  - Use Attributes for Entity Doctrine Mapping.
+
+
 1.10.21	|	Release date: **19.07.2024**
 ============================================
 * Bug-Fixes and Improvements:
