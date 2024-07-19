@@ -3,11 +3,8 @@
 use Doctrine\ORM\Mapping as ORM;
 use Vankosoft\CatalogBundle\Model\PricingPlanSubscription as BasePricingPlanSubscription;
 
-/**
- * @ORM\Table(name="VSCAT_PricingPlanSubscriptions")
- * @ORM\Entity
- */
+#[ORM\Entity]
+#[ORM\Table(name: "VSCAT_PricingPlanSubscriptions")]
 class PricingPlanSubscription extends BasePricingPlanSubscription
 {
-    
 }

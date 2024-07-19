@@ -3,11 +3,8 @@
 use Doctrine\ORM\Mapping as ORM;
 use Vankosoft\CatalogBundle\Model\ProductPicture as BaseProductPicture;
 
-/**
- * @ORM\Table(name="VSCAT_ProductPictures")
- * @ORM\Entity
- */
+#[ORM\Entity]
+#[ORM\Table(name: "VSCAT_ProductPictures")]
 class ProductPicture extends BaseProductPicture
 {
-    
 }

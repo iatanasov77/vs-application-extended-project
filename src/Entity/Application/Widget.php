@@ -3,10 +3,8 @@
 use Doctrine\ORM\Mapping as ORM;
 use Vankosoft\ApplicationBundle\Model\Widget as BaseWidget;
 
-/**
- * @ORM\Table(name="VSAPP_Widgets")
- * @ORM\Entity
- */
+#[ORM\Entity]
+#[ORM\Table(name: "VSAPP_Widgets")]
 class Widget extends BaseWidget
 {
 }

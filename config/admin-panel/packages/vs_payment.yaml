@@ -38,24 +38,21 @@ vs_payment:
         exchange_rate:
             classes:
                 model: App\Entity\Payment\ExchangeRate
-        product:
+        promotion:
             classes:
-                model: App\Entity\Payment\Product
-        product_picture:
+                model: App\Entity\Payment\Promotion
+        promotion_coupon:
             classes:
-                model: App\Entity\Payment\ProductPicture
-        product_category:
+                model: App\Entity\Payment\PromotionCoupon
+        promotion_action:
             classes:
-                model: App\Entity\Payment\ProductCategory
-        pricing_plan_category:
+                model: App\Entity\Payment\PromotionAction
+        promotion_rule:
             classes:
-                model: App\Entity\Payment\PricingPlanCategory
-        pricing_plan:
+                model: App\Entity\Payment\PromotionRule
+        adjustment:
             classes:
-                model: App\Entity\Payment\PricingPlan
-        pricing_plan_subscription:
+                model: App\Entity\Payment\Adjustment
+        customer_group:
             classes:
-                model: App\Entity\Payment\PricingPlanSubscription
-        coupon:
-            classes:
-                model: App\Entity\Payment\Coupon
+                model: App\Entity\Payment\CustomerGroup

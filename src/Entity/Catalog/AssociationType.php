@@ -3,11 +3,8 @@
 use Doctrine\ORM\Mapping as ORM;
 use Vankosoft\CatalogBundle\Model\AssociationType as BaseAssociationType;
 
-/**
- * @ORM\Table(name="VSCAT_AssociationTypes")
- * @ORM\Entity
- */
+#[ORM\Entity]
+#[ORM\Table(name: "VSCAT_AssociationTypes")]
 class AssociationType extends BaseAssociationType
 {
-    
 }
