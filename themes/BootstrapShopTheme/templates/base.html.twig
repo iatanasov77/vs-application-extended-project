@@ -22,9 +22,7 @@
     </head>
     <body>
         {% include 'Layout/top.html.twig' %}
-        {#
-        {% include 'Layout/slider.html.twig' %}
-        #}
+        {% block home_slider %}{% endblock %}
         
         <div id="mainBody">
             <div class="container">

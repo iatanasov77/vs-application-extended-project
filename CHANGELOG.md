@@ -1,3 +1,10 @@
+1.10.24	|	Release date: **19.07.2024**
+============================================
+* New Features:
+  - Update Admin Panel Menu Config.
+  - Update BootstrapShop Theme.
+
+
 1.10.23	|	Release date: **19.07.2024**
 ============================================
 * Bug-Fixes:

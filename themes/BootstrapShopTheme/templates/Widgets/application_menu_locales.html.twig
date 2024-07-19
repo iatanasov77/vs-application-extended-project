@@ -1,0 +1,9 @@
+<div class="locales-menu">
+    {% for locale in widget.params.availableLocales %}
+        <a href="{{ path( 'app_set_locale', {'locale': locale.code} ) }}">
+            <span class="">
+                {{ ( locale.code | split( '_' ) )[1] | lower | capitalize }}
+            </span>
+        </a>
+    {% endfor %}
+</div>

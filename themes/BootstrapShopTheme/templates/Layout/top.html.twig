@@ -8,17 +8,7 @@
         {% endif %}
             <div class="span6">
                 <div class="pull-right">
-                    {% for oLocale in localesRepo.findAll() %}
-                        {% if app.request.locale == oLocale.code %}
-                            <span class="btn btn-mini">{{ ( oLocale.code | split( '_' ) )[1] | lower | capitalize }}</span>
-                        {% else %}
-                            <a href="{{ path( 'app_set_locale', {'locale': oLocale.code} ) }}">
-                                <span class="">
-                                    {{ ( oLocale.code | split( '_' ) )[1] | lower | capitalize }}
-                                </span>
-                            </a>
-                        {% endif %}
-                    {% endfor %}
+                    {{ vs_widget_render( 'application-layout', ['application-menu-locales'] ) }}
                     
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="{{ path( 'vs_payment_shopping_cart_index' ) }}">
