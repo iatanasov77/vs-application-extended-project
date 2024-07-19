@@ -74,7 +74,7 @@ vs_application:
                     locales:
                         name: vs_application.menu.dashboard
                         route: vs_application_dashboard
-        
+            
             settings:
                 name: vs_application.menu.settings
                 uri: "javascript:;"
@@ -124,6 +124,7 @@ vs_application:
                     settings:
                         name: vs_application.menu.preferences
                         route: vs_application_settings_index
+            
             widgets:
                 name: vs_application.menu.widgets
                 uri: "javascript:;"
@@ -160,6 +161,7 @@ vs_application:
                     widgets_registry:
                         name: vs_application.menu.widgets_registry
                         route: vs_application_widget_ext_index
+            
             taxonomy:
                 name: vs_application.menu.taxonomy
                 uri: "javascript:;"
@@ -419,59 +421,8 @@ vs_application:
                         display: false
         
         mainPaymentMenu:
-            payment_core_models:
-                name: vs_application.menu.payment_core_models
-                uri: "javascript:;"
-                attributes:
-                    iconClass: icon_genius
-                    breadcrumb_route: vs_payment_currency_index
-                childs:
-                    ###########################
-                    # Currency Entries
-                    ###########################
-                    currency_index:
-                        name: vs_application.menu.currencies
-                        route: vs_payment_currency_index
-                    currency_create:
-                        name: vs_application.menu.create_new_currency
-                        route: vs_payment_currency_create
-                    currency_update:
-                        name: vs_application.menu.edit_currency
-                        route: vs_payment_currency_update
-                        routeParameters:
-                          id: int
-                        display: false
-                    exchange_rate_index:
-                        name: vs_application.menu.exchange_rates
-                        route: vs_payment_exchange_rate_index
-                    exchange_rate_create:
-                        name: vs_application.menu.create_new_exchange_rate
-                        route: vs_payment_exchange_rate_create
-                    exchange_rate_update:
-                        name: vs_application.menu.edit_exchange_rate
-                        route: vs_payment_exchange_rate_update
-                        routeParameters:
-                          id: int
-                        display: false
-                        
-                    ###########################
-                    # Coupon Entries
-                    ###########################
-                    coupon_index:
-                        name: vs_application.menu.discount_coupons_listing
-                        route: vs_payment_coupon_index
-                    coupon_create:
-                        name: vs_application.menu.create_discount_coupon
-                        route: vs_payment_coupon_create
-                    coupon_update:
-                        name: vs_application.menu.edit_discount_coupon
-                        route: vs_payment_coupon_update
-                        routeParameters:
-                          id: int
-                        display: false
-                    
             gateway_config:
-                name: vs_application.menu.gateway_config
+                name: vs_application.menu.gateways_payment_methods
                 uri: "javascript:;"
                 attributes:
                     iconClass: icon_genius
@@ -615,7 +566,7 @@ vs_application:
                           id: int
                           promotionId: int
                         display: false
-             
+                    
             orders_and_payments:
                 name: vs_application.menu.orders_and_payments
                 uri: "javascript:;"
@@ -737,7 +688,6 @@ vs_application:
                         routeParameters:
                           id: int
                         display: false
-        
         
         profileMenu:
             contact:
