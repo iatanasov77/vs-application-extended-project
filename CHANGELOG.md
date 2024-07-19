@@ -1,3 +1,12 @@
+1.10.21	|	Release date: **19.07.2024**
+============================================
+* Bug-Fixes and Improvements:
+  - Update AdminPanel Configs.
+  - Update Doctrine Extensions Config.
+  - Iprove LIIP Imagine Config.
+  - Translate Contact Form Placeholders.
+
+
 1.10.20	|	Release date: **11.05.2024**
 ============================================
 * New Features:
