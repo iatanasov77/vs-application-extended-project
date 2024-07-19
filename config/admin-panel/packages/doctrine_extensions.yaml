@@ -11,8 +11,10 @@ stof_doctrine_extensions:
             loggable:       true
             sortable:       true
             
+            #softdeleteable: true
             #blameable:      false
             #uploadable:     false
+    
     class:
-        loggable:       Vankosoft\ApplicationBundle\EventSubscriber\LoggableListener
+        loggable:   Vankosoft\ApplicationBundle\EventSubscriber\LoggableListener
  
