@@ -50,8 +50,8 @@ return [
     Vankosoft\CmsBundle\VSCmsBundle::class => ['all' => true],
     Vankosoft\UsersBundle\VSUsersBundle::class => ['all' => true],
     
-//     Oneup\UploaderBundle\OneupUploaderBundle::class => ['all' => true],
-//     Oneup\FlysystemBundle\OneupFlysystemBundle::class => ['all' => true],
+    Oneup\UploaderBundle\OneupUploaderBundle::class => ['all' => true],
+    Oneup\FlysystemBundle\OneupFlysystemBundle::class => ['all' => true],
     
     Payum\Bundle\PayumBundle\PayumBundle::class => ['all' => true],
     Vankosoft\UsersSubscriptionsBundle\VSUsersSubscriptionsBundle::class => ['all' => true],
