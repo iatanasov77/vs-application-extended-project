@@ -1,3 +1,9 @@
+1.10.25	|	Release date: **22.07.2024**
+============================================
+* Bug-Fixes and Improvements:
+  - Change Routes Config Annotations with Attributes.
+
+
 1.10.24	|	Release date: **19.07.2024**
 ============================================
 * New Features:
