@@ -1,0 +1,17 @@
+{
+    "name": "vankosoft/admin-panel-velzon-child",
+    "description": "AdminPanel VelzonChild Theme",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Atanasov",
+            "email": "i.atanasov77@gmail.com"
+        }
+    ],
+    "extra": {
+        "sylius-theme": {
+            "title": "AdminPanel VelzonChild",
+            "parents": [ "vankosoft/admin-panel-velzon-default" ]
+        }
+    }
+}
