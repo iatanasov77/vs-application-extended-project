@@ -2,4 +2,5 @@ sylius_theme:
     sources:
         filesystem:
             directories:
-                 - "%kernel.project_dir%/themes"
+                - "%kernel.project_dir%/vendor/vankosoft/application-themes/AdminPanel_VelzonDefault"
+                - "%kernel.project_dir%/themes"
