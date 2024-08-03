@@ -11,9 +11,9 @@ vs_application:
         enabled: false
         project: 'project-slug'
         connection:
-            host: 'http://api.vankosoft.org/api'
-            user: apiadmin
-            password: apipassword
+            host: '%env(VANKOSOFT_API_HOST)%'
+            user: '%env(VANKOSOFT_API_USER)%'
+            password: '%env(VANKOSOFT_API_PASSWORD)%'
 
     resources:
         application:
