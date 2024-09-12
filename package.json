@@ -12,7 +12,6 @@
         "@kanety/jquery-simple-tree-table": "^0.5.0",
         "@popperjs/core": "^2.11.6",
         "bootstrap": "^5.2.3",
-        "bootstrap-sass": "^3.4.1",
         "ckeditor4": "4.22.1",
         "lightbox2": "^2.11.3",
         "highlight.js": "^11.0.1",
@@ -62,8 +61,8 @@
         "file-loader": "^6.0.0",
         "regenerator-runtime": "^0.13.2",
         "resolve-url-loader": "2",
-        "sass": "^1.57.1",
-        "sass-loader": "^12.0.0",
+        "sass": "^1.78",
+        "sass-loader": "^14.0",
         "stimulus": "^2.0.0",
         "webpack-notifier": "^1.6.0"
     },
