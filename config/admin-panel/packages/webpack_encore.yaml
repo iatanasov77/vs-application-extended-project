@@ -4,8 +4,11 @@ framework:
         packages:
             default:
                 json_manifest_path: '%kernel.project_dir%/public/admin-panel/build/default/manifest.json'
+            velzon-theme:
+                json_manifest_path: '%kernel.project_dir%/public/admin-panel/build/velzon-theme/manifest.json'
 
 webpack_encore:
     output_path: '%kernel.project_dir%/public/admin-panel/build/default'
     builds:
         defaultConfig: '%kernel.project_dir%/public/admin-panel/build/default'
+        VelzonTheme: '%kernel.project_dir%/public/admin-panel/build/velzon-theme'

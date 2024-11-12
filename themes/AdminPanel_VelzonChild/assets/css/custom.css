@@ -1,0 +1,46 @@
+.auth-page-wrapper .auth-page-content {
+	padding-bottom: 0 !important;
+}
+
+.footer a {
+	color: var(--vz-footer-color) !important;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+label.required:after {
+    content: '*';
+    color: red;
+    margin-left: 5px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.textbox.combo {
+    display: block !important;
+    width: 100% !important;
+    height: calc(2.25rem + 2px) !important;
+    padding-top: 0.375rem !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    color: #495057 !important;
+    background-color: #fff !important;
+    background-clip: padding-box !important;
+    border: 1px solid #d2d2e4 !important;
+    border-radius: 0.25rem !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.textbox .textbox-text {
+	padding-left: 15px !important;
+}
+
+.combo-arrow {
+    background-color: #fff !important;
+    margin: 5px !important;
+}
