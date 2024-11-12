@@ -1,3 +1,19 @@
+1.11.0	|	Release date: **12.11.2024**
+============================================
+* New Features, Fixes and Improvements:
+  - Add AdminPanel Velzon Theme.
+  - Add Refresh Token TTL into ENV Vars.
+  - Move VankoSoft API Credentials into ENV Variables.
+  - Optimize AdminPanel Configs.
+  - Update Mercure ENV Variables.
+  - Remove 'bootstrap-sass' Frontend Package.
+  - Update All AdminPanel configs about Sylius Resource Bundle 1.12.
+  - Fix Taxon Entity.
+  - Copy Default Theme Assets in Admin Panel Velzon Theme WebPack Config.
+  - Update Frontend Packages Requirements.
+  - Update Composer Requirements and Web Socket Requirements.
+
+
 1.10.25	|	Release date: **22.07.2024**
 ============================================
 * Bug-Fixes and Improvements:
