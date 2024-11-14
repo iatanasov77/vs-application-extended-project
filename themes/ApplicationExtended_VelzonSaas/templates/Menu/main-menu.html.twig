@@ -1,0 +1,81 @@
+{% extends 'knp_menu.html.twig' %}
+
+{% block root %}
+
+        {# {{ dump( item.children ) }} #}
+        {% for key, parentItem in item.children %}
+            
+            {% if parentItem.attributes.forTheme is not defined or parentItem.attributes.forTheme == 'application-extended-velzon-saas' %}
+                
+                {% if app.user %}
+                    {% if parentItem.attributes.id is defined and parentItem.attributes.id in ['user_register', 'user_login'] %}
+                        {# Dont Show This Items #}
+                    {% else %}
+                        {% if( parentItem.displayed ) %}
+                            {% if( parentItem.hasChildren ) %}
+                                <div class="btn-group">
+                                    <a class="nav-link menu-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        href="{{ parentItem.uri }}"
+                                    >
+                                        <i class="{{ parentItem.attributes.iconClass }}"></i> 
+                                        <span>{{ parentItem.name | trans }}</span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        {% for childItem in parentItem.children %}
+                                            {% if childItem.extra( 'divider' ) %}
+                                                <div class="dropdown-divider"></div>
+                                            {% else %}
+                                                <a class="dropdown-item" href="{{ childItem.uri }}">{{ childItem.name | trans }}</a>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link menu-link" href="{{ parentItem.uri }}">
+                                        <i class="{{ parentItem.attributes.iconClass }}"></i> 
+                                        <span>{{ parentItem.name|trans }}</span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                    
+                {% else %}
+                
+                    {% if parentItem.attributes.id is defined and parentItem.attributes.id == 'user_register' %}
+                        <!--  Registration  -->
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{ parentItem.uri }}">
+                                <i class="{{ parentItem.attributes.iconClass }}"></i> 
+                                <span>{{ parentItem.name|trans }}</span>
+                            </a>
+                        </li>
+                        <!--/  Registration  -->
+                    {% elseif parentItem.attributes.id is defined and parentItem.attributes.id == 'user_login' %}
+                        <!--  User Login  -->
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="{{ parentItem.uri }}">
+                                <i class="{{ parentItem.attributes.iconClass }}"></i> 
+                                <span>{{ parentItem.name|trans }}</span>
+                            </a>
+                        </li>
+                        <!--/ User Login  -->
+                    {% else %}
+                        {% if( parentItem.displayed ) %}
+                            <li class="nav-item">
+                                <a class="nav-link menu-link" href="{{ parentItem.uri }}">
+                                    <i class="{{ parentItem.attributes.iconClass }}"></i> 
+                                    <span>{{ parentItem.name|trans }}</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                    
+                {% endif %}
+                
+            {% endif %}
+            
+        {% endfor %}
+
+{% endblock %}

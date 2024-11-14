@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+/**
+ * MANUAL:  http://socketo.me/docs/hello-world
+ *          https://github.com/voryx/Thruway/issues/96
+ */
+error_reporting( E_ERROR | E_WARNING | E_PARSE );
+require_once dirname( __DIR__ ) . '/vendor/autoload.php';
+
+use Thruway\Peer\Router;
+use Thruway\Transport\RatchetTransportProvider;
+use App\Component\Websocket\Server\WebsocketZmqPusher;
+
+$router = new Router();
+$realm = "realm1";
+
+$router->addInternalClient( new WebsocketZmqPusher( $realm, $router->getLoop(), 'tcp://127.0.0.1:' . $argv[1] ) );
+$router->addTransportProvider( new RatchetTransportProvider( "0.0.0.0", $argv[2] ) );
+$router->start();

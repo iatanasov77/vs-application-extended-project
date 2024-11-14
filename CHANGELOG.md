@@ -1,3 +1,9 @@
+1.11.1	|	Release date: **14.11.2024**
+============================================
+* New Features:
+  - Add a New Theme for Applications.
+
+
 1.11.0	|	Release date: **12.11.2024**
 ============================================
 * New Features, Fixes and Improvements:

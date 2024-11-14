@@ -1,0 +1,61 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+    {% if app.user %}
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">Client 1</h5>
+                    <div class="card-body">
+                        <form name="client1_form" class="form-horizontal" id="FormClient1" action="" method="POST">
+                            <input type="hidden" id="client1_form_user" name="user" value="{{ app.user.username }}" />
+                            
+                            <div class="form-group">
+                                <label class="form-label required" for="client1_form_message">Message</label>
+                                <textarea id="client1_form_message" name="message" required="required" class="form-control"></textarea>
+                            </div>
+                            
+                            <div class="input-group row mt-2">
+                                <div class="col-sm-2">
+                                    <button type="submit" name="Send" class="btn btn-primary">Send</button>
+                                </div>
+                                <div class="col-sm-10"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card">
+                    <h5 class="card-header">Client 2</h5>
+                    <div class="card-body">
+                        <div class="chatConsole" id="ChatConsole"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <h2>Not Logged in</h2>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    
+    <script type="text/javascript">
+        const clientSettings    = {{ ( clientSettings | json_encode | raw ) }};
+        window.clientSettings   = clientSettings;
+        
+        const currentUser       = {% if app.user %}'{{ app.user.username }}'{% endif %};
+        window.currentUser      = currentUser;
+    </script>
+    
+    {{ encore_entry_script_tags( 'js/test-websocket', null, 'ApplicationExtendedTheme' ) }}
+{% endblock %}

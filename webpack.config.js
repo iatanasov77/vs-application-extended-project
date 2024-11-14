@@ -16,8 +16,16 @@ const applicationBootstrapShopTheme = require('./themes/BootstrapShopTheme/webpa
 
 //=================================================================================================
 
+/**
+ *  ApplicationExtended Theme
+ */
+Encore.reset();
+const ApplicationExtended_VelzonSaas_Config   = require('./themes/ApplicationExtended_VelzonSaas/webpack.config');
+
+//=================================================================================================
 
 module.exports = [
     adminPanelConfig,
-    applicationBootstrapShopTheme
+    applicationBootstrapShopTheme,
+    ApplicationExtended_VelzonSaas_Config
 ];

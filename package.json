@@ -50,7 +50,13 @@
         "choices.js": "^10.2",
 
         "code-prettify-google": "^1.0.1",
-        "@stripe/stripe-js": "^2.1"
+        "@stripe/stripe-js": "^2.1",
+        
+        "@flaticon/flaticon-uicons": "^3.3",
+        "ws": "^8.18",
+        "stream": "^0.0.3",
+        "autobahn": "^22.11",
+        "autobahn-browser": "^22.11"
     },
     "devDependencies": {
         "@hotwired/stimulus": "^3.0.0",

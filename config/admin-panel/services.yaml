@@ -50,6 +50,7 @@ services:
             - '../../src/Entity/'
             - '../../src/Form/'
             - '../../src/Tests/'
+            - '../../src/Component/'
             - '../../src/Controller/'
             - '../../src/Widgets/'
             - '../../src/AdminPanelKernel.php'

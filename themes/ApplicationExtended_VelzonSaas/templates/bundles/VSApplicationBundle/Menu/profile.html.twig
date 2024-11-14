@@ -1,0 +1,27 @@
+{% extends 'knp_menu.html.twig' %}
+
+{% block root %}
+    {% for id, parentItem in item.children %}
+        {% if parentItem.extra( 'divider' ) %}
+            <div class="dropdown-divider"></div>
+        {% elseif parentItem.attributes.id is defined and parentItem.attributes.id == 'application_logout' %}
+            <a class="dropdown-item"
+                id="application-logout"
+                href="{{ parentItem.uri }}"
+                {% if parentItem.attributes.target is defined %}target="{{ parentItem.attributes.target }}"{% endif %}
+            >
+                <i class="{{ parentItem.attributes.iconClass }}"></i> 
+                <span class="align-middle">{{ parentItem.name }}</span>
+            </a>
+        {% else %}
+            <a class="dropdown-item"
+                href="{{ parentItem.uri }}"
+                {% if parentItem.attributes.target is defined %}target="{{ parentItem.attributes.target }}"{% endif %}
+            >
+                <i class="{{ parentItem.attributes.iconClass }}"></i> 
+                <span class="align-middle">{{ parentItem.name }}</span>
+            </a>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+

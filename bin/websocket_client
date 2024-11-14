@@ -1,0 +1,36 @@
+#!/usr/bin/env php
+<?php
+/**
+ * MANUAL: https://github.com/voryx/Thruway
+ */
+error_reporting( E_ERROR | E_WARNING | E_PARSE );
+require_once dirname( __DIR__ ) . '/vendor/autoload.php';
+
+use Thruway\ClientSession;
+use Thruway\Peer\Client;
+use Thruway\Transport\PawlTransportProvider;
+
+$client = new Client( "realm1" );
+$client->addTransportProvider( new PawlTransportProvider( "ws://myprojects.lh:8092" ) );
+
+$client->on( 'open', function ( ClientSession $session ) {
+
+    // 1) subscribe to a topic
+    $onevent = function ( $args ) {
+        echo "Event {$args[0]}\n";
+    };
+    $session->subscribe( 'game', $onevent );
+
+    // 2) publish an event
+    $session->publish( 'game', ['Hello, world from PHP!!!'], [], ["acknowledge" => true] )->then(
+        function () {
+            echo "Publish Acknowledged!\n";
+        },
+        function ( $error ) {
+            // publish failed
+            echo "Publish Error {$error}\n";
+        }
+    );
+});
+
+$client->start();
