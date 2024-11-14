@@ -1,3 +1,9 @@
+1.11.2	|	Release date: **14.11.2024**
+============================================
+* Bug-Fixes:
+  - Fix ApplicationExtended_VelzonSaas Theme.
+
+
 1.11.1	|	Release date: **14.11.2024**
 ============================================
 * New Features:
