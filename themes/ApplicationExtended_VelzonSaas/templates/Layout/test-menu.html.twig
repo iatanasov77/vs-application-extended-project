@@ -1,0 +1,49 @@
+<div class="dropdown ms-1 topbar-head-dropdown header-item">
+    <button type="button" class="btn btn-secondary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span>{{ 'vs_application.menu.test_mercure' | trans( {},'VSApplicationBundle' ) }}</span>
+    </button>
+    
+    <div class="dropdown-menu dropdown-menu-end">
+        <a class="dropdown-item notify-item py-2" href="http://api.game-platform.lh:3000/" target="_blank">
+            <span class="align-middle">{{ 'vs_application.menu.mercure_dashboard' | trans( {},'VSApplicationBundle' ) }}</span>
+        </a>
+        <a class="dropdown-item notify-item py-2" href="{{ path( 'vs_api_test_mercure_index' ) }}">
+            <span class="align-middle">{{ 'vs_application.menu.recieve_updates' | trans( {},'VSApplicationBundle' ) }}</span>
+        </a>
+        <a class="dropdown-item notify-item py-2" href="{{ path( 'vs_api_test_mercure_publish' ) }}">
+            <span class="align-middle">{{ 'vs_application.menu.publish_update' | trans( {},'VSApplicationBundle' ) }}</span>
+        </a>
+    </div>
+</div>
+
+<div class="dropdown ms-1 topbar-head-dropdown header-item">
+    <button type="button" class="btn btn-secondary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span>{{ 'vs_application.menu.test_webSocket' | trans( {},'VSApplicationBundle' ) }}</span>
+    </button>
+    
+    <div class="dropdown-menu dropdown-menu-end">
+        <a class="dropdown-item notify-item py-2" href="{{ path( 'vs_api_test_websocket_client_1' ) }}">
+            <span class="align-middle">{{ 'vs_application.menu.client_1' | trans( {},'VSApplicationBundle' ) }}</span>
+        </a>
+        <a class="dropdown-item notify-item py-2" href="{{ path( 'vs_api_test_websocket_client_2' ) }}">
+            <span class="align-middle">{{ 'vs_application.menu.client_2' | trans( {},'VSApplicationBundle' ) }}</span>
+        </a>
+    </div>
+</div>
+
+{% if extension_loaded( 'zmq' ) %}
+    <div class="dropdown ms-1 topbar-head-dropdown header-item">
+        <button type="button" class="btn btn-secondary" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span>{{ 'vs_application.menu.test_wamp_with_zmq' | trans( {},'VSApplicationBundle' ) }}</span>
+        </button>
+        
+        <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item notify-item py-2" href="{{ path( 'vs_api_test_wamp_client_1' ) }}">
+                <span class="align-middle">{{ 'vs_application.menu.client_1' | trans( {},'VSApplicationBundle' ) }}</span>
+            </a>
+            <a class="dropdown-item notify-item py-2" href="{{ path( 'vs_api_test_wamp_client_2' ) }}">
+                <span class="align-middle">{{ 'vs_application.menu.client_2' | trans( {},'VSApplicationBundle' ) }}</span>
+            </a>
+        </div>
+    </div>
+{% endif %}
