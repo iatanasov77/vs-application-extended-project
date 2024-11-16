@@ -48,6 +48,7 @@
         "node-waves": "^0.7",
         "simplebar": "^6.2",
         "choices.js": "^10.2",
+        "ad-rotator": "^5.8",
 
         "code-prettify-google": "^1.0.1",
         "@stripe/stripe-js": "^2.1",

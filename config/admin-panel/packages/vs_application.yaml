@@ -347,6 +347,19 @@ vs_application:
                         routeParameters:
                           id: int
                         display: false
+                    banner_places_list:
+                        name: vs_application.menu.banner_places_list
+                        route: vs_cms_banner_place_index
+                    banner_places_create:
+                        name: vs_application.menu.banner_places_create
+                        route: vs_cms_banner_place_create
+                        display: true
+                    banner_places_update:
+                        name: vs_application.menu.banner_places_update
+                        route: vs_cms_banner_place_update
+                        routeParameters:
+                          id: int
+                        display: false
             
             filemanager_vankosoft:
                 name: vs_application.menu.vankoSoft_file_manager
