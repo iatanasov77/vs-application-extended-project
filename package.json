@@ -13,6 +13,11 @@
         "@popperjs/core": "^2.11.6",
         "bootstrap": "^5.2.3",
         "ckeditor4": "4.22.1",
+        
+        "@ckeditor/ckeditor5-theme-lark": "^43.0.0",
+        "ckeditor5": "^43.0.0",
+        "ckeditor5-premium-features": "^43.0.0",
+        
         "lightbox2": "^2.11.3",
         "highlight.js": "^11.0.1",
         "glyphicons-only-bootstrap": "^1.0.1",
@@ -72,6 +77,8 @@
         "@babel/preset-env": "^7.16.0",
         "@babel/preset-react": "^7.0.0",
         "@symfony/webpack-encore": "^5.0",
+        
+        "@ckeditor/ckeditor5-dev-utils": "^43.0",
         
         "stimulus": "^2.0.0",
         "core-js": "^3.0.0",
