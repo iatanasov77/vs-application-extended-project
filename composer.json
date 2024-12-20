@@ -36,8 +36,8 @@
         "symfony/http-client": "6.4.*",
         
         "vankosoft/application": "1.11.*",
-        "vankosoft/application-themes": "^1.1",
-        "vankosoft/catalog-bundle": "^1.3",
+        "vankosoft/application-themes": "^1.2",
+        "vankosoft/catalog-bundle": "^1.4",
         "vankosoft/api-bundle": "^3.0",
         
         "vankosoft/thruway-bundle": "^1.0",
