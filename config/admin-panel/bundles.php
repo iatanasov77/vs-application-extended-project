@@ -22,6 +22,7 @@ return [
     Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle::class => ['all' => true],
     
     FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
+    daddl3\SymfonyCKEditor5WebpackViteBundle\SymfonyCKEditor5WebpackViteBundle::class => ['all' => true],
     Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
     Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
     Knp\Bundle\TimeBundle\KnpTimeBundle::class => ['all' => true],
