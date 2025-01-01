@@ -6,7 +6,11 @@ node ( label: 'php-host' ) {
     def APP_HOST                = 'guitarpro.vankosoft.org'
     def BUILD_ENVIRONMENT
     def BRANCH_NAME
-    def DB_BACKUP
+    def DO_BACKUP
+    
+    def REMOTE_SSH_HOST         = '164.138.221.242'
+    def REMOTE_SSH_PORT         = '22'
+    def REMOTE_SSH_USER         = 'root'
     def REMOTE_DIR
     
     final PHP_BIN               = '/usr/bin/php82'
@@ -46,7 +50,7 @@ node ( label: 'php-host' ) {
         
         switch( BUILD_ENVIRONMENT ) {
             case 'production':
-                DB_BACKUP   = false
+                DO_BACKUP   = false
                 
                 def tags    = vankosoftJob.getGitTags( GIT_REPO_WITH_CRED )
                 
@@ -55,7 +59,7 @@ node ( label: 'php-host' ) {
                                 
                 break;
             default:
-                DB_BACKUP       = false
+                DO_BACKUP       = false
                 APP_HOST        = "${HOST_PREFIX}${BUILD_ENVIRONMENT}.vankosoft.org"  
                 
                 def branches    = vankosoftJob.getGitBranches( GIT_REPO_WITH_CRED )
@@ -139,7 +143,7 @@ node ( label: 'php-host' ) {
             script {
                 sshagent(credentials : ['vps-mini-ssh-root']) {
                     sh """
-                        ssh -t -t -l root 164.138.221.242 -o StrictHostKeyChecking=no -p 1022  << ENDSSH
+                        ssh -t -t -l ${REMOTE_SSH_USER} ${REMOTE_SSH_HOST} -o StrictHostKeyChecking=no -p ${REMOTE_SSH_PORT} << ENDSSH
                             cd ${REMOTE_DIR}
                             #${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:maintenance --set-maintenance
                             
@@ -149,13 +153,13 @@ ENDSSH
                 }
             }
             
-            if ( DB_BACKUP ) {
+            if ( DO_BACKUP ) {
                 def now = new Date()
                 
                 script {
                     sshagent(credentials : ['vps-mini-ssh-root']) {
                         sh """
-                            ssh -t -t -l root 164.138.221.242 -o StrictHostKeyChecking=no -p 1022  << ENDSSH
+                            ssh -t -t -l ${REMOTE_SSH_USER} ${REMOTE_SSH_HOST} -o StrictHostKeyChecking=no -p ${REMOTE_SSH_PORT} << ENDSSH
                                 cd ${REMOTE_DIR}
                                 yes | cp -dRf ${REMOTE_DIR} ${REMOTE_DIR}_BACKUP
                                 mysqldump -p${APP_MYSQL_PASSWORD} ${APP_MYSQL_DATABASE} > ${REMOTE_DIR}/../${APP_MYSQL_DATABASE}_${now}.sql
@@ -186,7 +190,7 @@ ENDSSH
             script {
                 sshagent(credentials : ['vps-mini-ssh-root']) {
                     sh """
-                        ssh -t -t -l root 164.138.221.242 -o StrictHostKeyChecking=no -p 1022  << ENDSSH
+                        ssh -t -t -l ${REMOTE_SSH_USER} ${REMOTE_SSH_HOST} -o StrictHostKeyChecking=no -p ${REMOTE_SSH_PORT} << ENDSSH
                             cd ${REMOTE_DIR}
                             ${PHP_BIN} -d memory_limit=-1 bin/console --no-interaction doctrine:migrations:migrate
                             migrationCode=\$?   # Capture migration return code
@@ -210,7 +214,7 @@ ENDSSH
             script {
                 sshagent(credentials : ['vps-mini-ssh-root']) {
                     sh """
-                        ssh -t -t -l root 164.138.221.242 -o StrictHostKeyChecking=no -p 1022  << ENDSSH
+                        ssh -t -t -l ${REMOTE_SSH_USER} ${REMOTE_SSH_HOST} -o StrictHostKeyChecking=no -p ${REMOTE_SSH_PORT} << ENDSSH
                             cd ${REMOTE_DIR}
                             ${PHP_BIN} -d memory_limit=-1 bin/console --no-interaction doctrine:migrations:migrate
                             migrationCode=\$?   # Capture migration return code
