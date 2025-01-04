@@ -700,6 +700,13 @@ vs_application:
                         display: false
         
         profileMenu:
+            about:
+                name: vs_application.menu.about
+                route: vs_application_about
+                attributes:
+                    iconClass: "fas fa-info me-2"
+                    target: '_self'
+            
             contact:
                 name: vs_application.menu.contact
                 route: vs_application_contact
