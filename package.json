@@ -58,7 +58,8 @@
         "simplebar": "^6.2",
         "choices.js": "^10.2",
         "ad-rotator": "^5.8",
-
+        "apexcharts": "^4.3",
+        
         "code-prettify-google": "^1.0.1",
         "@stripe/stripe-js": "^2.1",
         
@@ -82,16 +83,20 @@
         
         "stimulus": "^2.0.0",
         "core-js": "^3.0.0",
-        "file-loader": "^6.0.0",
-        "regenerator-runtime": "^0.13.2",
-        "resolve-url-loader": "2",
         
-        "sass": "^1.17.0",
-        "sass-loader": "^16.0.1",
         "eslint": "^8.0.0",
         "webpack": "^5.72",
         "webpack-cli": "^5.1.4",
-        "webpack-notifier": "^1.15.0"
+        "webpack-notifier": "^1.15.0",
+        
+        "file-loader": "^6.0.0",
+        "regenerator-runtime": "^0.13.2",
+        "raw-loader": "^4.0.2",
+        "resolve-url-loader": "5.0.0",
+        "sass": "^1.77.6",
+        "sass-loader": "^16.0.1",
+        "ts-loader": "^9.0.0",
+        "typescript": "~5.2.2"
     },
 	"resolutions": {
     	"@kanety/jquery-simple-tree-table/jquery": "3.6.3",
