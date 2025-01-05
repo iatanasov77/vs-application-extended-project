@@ -1,9 +1,10 @@
 <!-- Sidebar ================================================== -->
     <div id="sidebar" class="span3">
         <div class="well well-small">
-            <a id="myCart" href="{{ path( 'vs_payment_shopping_cart_index' ) }}">
+            {% set shoppingCartLength = shoppingCart.items | length %}
+            <a id="myCart" href="{% if shoppingCartLength %}{{ path( 'vs_payment_shopping_cart_index' ) }}{% else %}javascript:void(0);{% endif %}">
                 <img src="{{ asset('/build/bootstrap-shop-theme/images/ico-cart.png') }}" alt="cart">
-                {{ shoppingCart.items | length }} Items in your cart  
+                {{ shoppingCartLength }} Items in your cart  
                 <span class="badge badge-warning pull-right">{{ shoppingCart.totalAmount | number_format( 2 ) }} {{ shoppingCart.currencyCode | vs_currency_symbol }}</span>
             </a>
         </div>
