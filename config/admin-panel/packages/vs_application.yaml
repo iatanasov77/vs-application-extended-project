@@ -71,7 +71,7 @@ vs_application:
                     iconClass: ri-dashboard-2-line
                     breadcrumb_route: vs_application_dashboard
                 childs:
-                    locales:
+                    dashboard:
                         name: vs_application.menu.dashboard
                         route: vs_application_dashboard
             
