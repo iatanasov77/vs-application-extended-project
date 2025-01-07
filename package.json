@@ -11,6 +11,7 @@
         "@fortawesome/fontawesome-free": "^6.1.0",
         "@kanety/jquery-simple-tree-table": "^0.5.0",
         "@popperjs/core": "^2.11.6",
+        "stimulus": "^3.2",
         "bootstrap": "^5.2.3",
         "ckeditor4": "4.22.1",
         
