@@ -61,6 +61,13 @@
         "ad-rotator": "^5.8",
         "apexcharts": "^4.3",
         
+        "dragula": "^3.7",
+        "dom-autoscroller": "^2.3",
+        "@lordicon/helpers": "^1.10",
+        "@lordicon/element": "^1.10",
+        "lottie-web": "^5.12",
+        "flatpickr": "^4.6",
+        
         "code-prettify-google": "^1.0.1",
         "@stripe/stripe-js": "^2.1",
         

@@ -9,7 +9,8 @@ vs_application:
     
     vankosoft_api:
         enabled: false
-        project: 'project-slug'
+        project: project-slug
+        kanbanboard: not-defined
         connection:
             host: '%env(VANKOSOFT_API_HOST)%'
             user: '%env(VANKOSOFT_API_USER)%'
@@ -222,7 +223,7 @@ vs_application:
 #                 name: vs_application.menu.project_issues
 #                 uri: "javascript:;"
 #                 attributes:
-#                     iconClass: ri-rocket-line
+#                     iconClass: fas fa-bug
 #                     breadcrumb_route: vs_application_project_issues_index
 #                 childs:
 #                     list_issues:
@@ -231,6 +232,15 @@ vs_application:
 #                     create_issues:
 #                         name: vs_application.menu.create_issue
 #                         route: vs_application_project_issues_create
+#                     update_issues:
+#                         name: vs_application.menu.update_issue
+#                         route: vs_application_project_issues_update
+#                         routeParameters:
+#                           id: int
+#                         display: false
+#                     show_kanbanboard:
+#                         name: vs_application.menu.kanbanboard_show
+#                         route: vs_application_project_issues_kanbanboard_show
                         
         mainCmsMenu:
             cms:
