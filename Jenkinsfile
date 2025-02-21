@@ -63,7 +63,7 @@ node ( label: 'php-host' ) {
                 break;
             default:
                 DO_BACKUP       = false
-                APP_HOST        = "${HOST_PREFIX}${BUILD_ENVIRONMENT}.vankosoft.org"  
+                APP_HOST        = "${BUILD_ENVIRONMENT}.${APP_HOST}"
                 
                 def branches    = vankosoftJob.getGitBranches( GIT_REPO_WITH_CRED )
                 
