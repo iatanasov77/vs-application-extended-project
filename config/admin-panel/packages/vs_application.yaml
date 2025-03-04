@@ -757,5 +757,3 @@ vs_application:
                     divider_prepend: false
                     divider_append: true
                     target: '_self'
-            
-
