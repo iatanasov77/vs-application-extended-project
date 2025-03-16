@@ -76,6 +76,7 @@ Encore
     
     // Velzon Images
     .copyFiles([
+        {from: path.resolve( __dirname, baseThemePath + '/images' ), to: 'images/[path][name].[ext]'},
         //{from: './themes/CompasBilling/assets/vendor/Velzon_v3.5.0/lang', to: 'lang/[path][name].[ext]'},
         {from: path.resolve( __dirname, baseThemePath + '/vendor/Velzon_v4.2.0/fonts' ), to: 'fonts/[path][name].[ext]'},
         {from: path.resolve( __dirname, baseThemePath + '/vendor/Velzon_v4.2.0/images/flags' ), to: 'images/flags/[path][name].[ext]'},
@@ -106,6 +107,7 @@ Encore
     
     // VsApplicationBundle Pages
     .addEntry( 'js/profile-edit', './themes/AdminPanel_VelzonChild/assets/js/pages/profile-edit.js' )
+    .addEntry( 'js/velzon-profile', './themes/AdminPanel_VelzonChild/assets/js/pages/profile.js' )
     
     //////////////////////////////////////////////////////////////////
     // Standard Pages
