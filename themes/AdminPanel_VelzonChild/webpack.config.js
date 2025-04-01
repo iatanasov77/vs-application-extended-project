@@ -41,8 +41,7 @@ Encore
     
     .addAliases({
         '@': path.resolve( __dirname, defaultThemePath ),
-        
-        '@@@': path.resolve( __dirname, baseThemePath )
+        '@@': path.resolve( __dirname, baseThemePath )
     })
     
     // Default Theme Images
