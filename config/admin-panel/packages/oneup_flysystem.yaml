@@ -12,6 +12,15 @@ oneup_flysystem:
         vs_application_slider:
             local:
                 location: "%vs_cms.filemanager_shared_media_gaufrette.slider%"
+        vs_application_kanbanboard_task_attachments:
+            ftp:
+                options:
+                    host: '%env(VANKOSOFT_API_FTP_HOST)%'
+                    root: '%env(VANKOSOFT_API_FTP_ROOT)%'
+                    username: '%env(VANKOSOFT_API_FTP_USER)%'
+                    password: '%env(VANKOSOFT_API_FTP_PASS)%'
+                    ignorePassiveAddress: false
+                    passive: true
     
     filesystems:
         vs_application_app_pictures:
@@ -22,3 +31,5 @@ oneup_flysystem:
             adapter: "%vs_cms.gaufrette.filemanager.filesystem%"
         vs_application_slider:
             adapter: "%vs_cms.gaufrette.slider.filesystem%"
+        vs_application_kanbanboard_task_attachments:
+            adapter: vs_application_kanbanboard_task_attachments

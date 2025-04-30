@@ -220,7 +220,7 @@ vs_application:
             # Uncomment this section If You need to Use VankoSoft Issue Tracker
             #########################################################################
 #             project_issues:
-#                 name: vs_application.menu.project_issues
+#                 name: vs_application.menu.issue_tracking
 #                 uri: "javascript:;"
 #                 attributes:
 #                     iconClass: fas fa-bug

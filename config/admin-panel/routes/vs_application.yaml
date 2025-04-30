@@ -31,3 +31,9 @@ vs_application_frontend:
     prefix:   /
     options:
         expose: true
+
+vs_application_issue_tracking:
+    resource: "@VSApplicationBundle/Resources/config/routing/issue_tracking.yaml"
+    prefix:   /
+    options:
+        expose: true
