@@ -1,0 +1,11 @@
+vs_catalog_products:
+    resource: "@VSCatalogBundle/Resources/config/routing/products.yaml"
+    prefix: /
+    options:
+        expose: true
+    
+vs_catalog_pricing_plans:
+    resource: "@VSCatalogBundle/Resources/config/routing/pricing_plans.yaml"
+    prefix: /
+    options:
+        expose: true
