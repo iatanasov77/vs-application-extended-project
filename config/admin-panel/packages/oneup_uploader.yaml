@@ -1,4 +1,9 @@
 oneup_uploader:
+    chunks:
+        maxage: 86400
+        storage:
+            directory: '%kernel.project_dir%/var/uploader_chunks'
+    
     mappings:
         gallery:
             frontend: blueimp
