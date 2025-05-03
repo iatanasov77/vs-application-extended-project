@@ -1,3 +1,30 @@
+1.12.1	|	Release date: **03.05.2025**
+============================================
+* New Features:
+  - Add an ENV Variable for Which Version of CkEditor to Use.
+  - Add About Link into Profile Menu.
+  - Update AdminPanel VelzonChild Webpack Config.
+  - Improve BootstrapShopTheme .
+  - Update AdminPanel Menu Config.
+  - Update Project Dependencies.
+  - Improve Jenkinsfile.
+  - Add a Kanbanboard Page into Project AdminPanel.
+  - Update and Fix Frontend Dependencies for Stimulus Framework.
+  - Improve Jenkinsfile .
+  - Change VankoSoft API Scheme to https in ENV Files.
+  - Create a 'staging' ENV.
+  - Remove KNP Gaufrette Loading and Configs.
+  - Add Twig Global useCkEditor set from ENV to Use in JS and Twig Templates when needed.
+  - Add Symfony Lock Config.
+  - Remove Uneeded Services.
+  - Add a Custom Logic into JS for Admin Velzon Theme Profile Page.
+  - Some Updates.
+  - Improve Aliases in 'AdminPanel_VelzonChild' theme webpack.config.js
+  - Add Vankosoft API Task Attachment FTP Filessystem.
+  - Update Admin Panel Routes.
+  - Configure Chunks path for Chunked Uploads.
+
+
 1.12.0	|	Release date: **01.01.2025**
 ============================================
 * New Features:
