@@ -23,6 +23,7 @@ doctrine:
         
     orm:
         auto_generate_proxy_classes: true
+        auto_mapping: true
         
         # Enables the new implementation of proxies based on lazy ghosts instead of using the legacy implementation
         #enable_lazy_ghost_objects: false
@@ -31,20 +32,17 @@ doctrine:
         report_fields_where_declared: true
         validate_xml_mapping: true
         
-        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
-        auto_mapping: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore
         
         mappings:
             App:
                 is_bundle: false
-                #type: annotation
                 type: attribute
                 dir: '%kernel.project_dir%/src/Entity'
                 prefix: 'App\Entity'
                 alias: App
 
             gedmo_tree:
-                #type: annotation
                 type: attribute
                 prefix: Gedmo\Tree\Entity
                 dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Tree/Entity"
@@ -52,7 +50,6 @@ doctrine:
                 is_bundle: false
                 
             translatable:
-                #type: annotation
                 type: attribute
                 prefix: Gedmo\Translatable\Entity
                 dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Translatable/Entity/MappedSuperclass"
@@ -60,7 +57,6 @@ doctrine:
                 is_bundle: false
                 
             loggable:
-                #type: annotation
                 type: attribute
                 prefix: Gedmo\Loggable\Entity
                 dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Loggable/Entity"
@@ -68,12 +64,13 @@ doctrine:
                 is_bundle: false
                 
             sortable:
-                #type: annotation
                 type: attribute
                 prefix: Gedmo\Sortable\Entity
                 dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Sortable/Entity"
                 alias: GedmoSortable
                 is_bundle: false
 
-        #resolve_target_entities:
-        #    IA\UsersBundle\Entity\Model\SubscriptionInterface: App\Entity\UserManagement\Subscription
+        filters:
+            softdeleteable:
+                class: Gedmo\SoftDeleteable\Filter\SoftDeleteableFilter
+                enabled: false # Enable it if you need Soft Deleteable Extension to not show Deleted Records

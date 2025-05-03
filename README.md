@@ -32,3 +32,8 @@ Add New Application in Project
 $ php bin/console vankosoft:application:create --locale en_US
 ```
 
+Generate FOS JS Routes JSON
+-------------------------------
+```
+$ bin/console fos:js-routing:dump --format=json --target=public/shared_assets/js/fos_js_routes_admin.json
+```

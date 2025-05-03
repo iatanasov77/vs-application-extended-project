@@ -1,12 +1,15 @@
-{% for product in category.products %}
+{% for product in products %}
     <div class="row">     
         <div class="span2">
             {% if product.pictures.first %}
+                {#
                 {% set productPicture = path( 'vs_cms_images_filesystem_get_file', { file: picturesPath ~ '/' ~ product.pictures.first.path } ) %}
+                #}
+                {% set productPicture = product.pictures.first.path %}
             {% else %}
                 {% set productPicture = '/build/bootstrap-shop-theme/images/products/6.jpg' %}
             {% endif %}
-            <img src="{{ productPicture }}" alt="{{ product.name }}"/>
+            <img src="{{ productPicture | imagine_filter( 'products_listing_thumbnail' ) }}" alt="{{ product.name }}"/>
         </div>
         <div class="span4">
             <h3>New | Available</h3>                

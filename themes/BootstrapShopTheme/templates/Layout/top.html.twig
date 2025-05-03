@@ -9,11 +9,12 @@
             <div class="span6">
                 <div class="pull-right">
                     {{ vs_widget_render( 'application-layout', ['application-menu-locales'] ) }}
-                    
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="{{ path( 'vs_payment_shopping_cart_index' ) }}">
+                    
+                    {% set shoppingCartLength = shoppingCart.items | length %}
+                    <a href="{% if shoppingCartLength %}{{ path( 'vs_payment_shopping_cart_index' ) }}{% else %}javascript:void(0);{% endif %}">
                         <span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> 
-                        [ {{ shoppingCart.items | length }} ] Itemes in your cart </span>
+                        [ {{ shoppingCartLength }} ] Itemes in your cart </span>
                     </a> 
                 </div>
             </div>

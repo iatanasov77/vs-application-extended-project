@@ -9,7 +9,8 @@ vs_application:
     
     vankosoft_api:
         enabled: false
-        project: 'project-slug'
+        project: project-slug
+        kanbanboard: not-defined
         connection:
             host: '%env(VANKOSOFT_API_HOST)%'
             user: '%env(VANKOSOFT_API_USER)%'
@@ -71,7 +72,7 @@ vs_application:
                     iconClass: ri-dashboard-2-line
                     breadcrumb_route: vs_application_dashboard
                 childs:
-                    locales:
+                    dashboard:
                         name: vs_application.menu.dashboard
                         route: vs_application_dashboard
             
@@ -219,10 +220,10 @@ vs_application:
             # Uncomment this section If You need to Use VankoSoft Issue Tracker
             #########################################################################
 #             project_issues:
-#                 name: vs_application.menu.project_issues
+#                 name: vs_application.menu.issue_tracking
 #                 uri: "javascript:;"
 #                 attributes:
-#                     iconClass: ri-rocket-line
+#                     iconClass: fas fa-bug
 #                     breadcrumb_route: vs_application_project_issues_index
 #                 childs:
 #                     list_issues:
@@ -231,6 +232,15 @@ vs_application:
 #                     create_issues:
 #                         name: vs_application.menu.create_issue
 #                         route: vs_application_project_issues_create
+#                     update_issues:
+#                         name: vs_application.menu.update_issue
+#                         route: vs_application_project_issues_update
+#                         routeParameters:
+#                           id: int
+#                         display: false
+#                     show_kanbanboard:
+#                         name: vs_application.menu.kanbanboard_show
+#                         route: vs_application_project_issues_kanbanboard_show
                         
         mainCmsMenu:
             cms:
@@ -700,6 +710,13 @@ vs_application:
                         display: false
         
         profileMenu:
+            about:
+                name: vs_application.menu.about
+                route: vs_application_about
+                attributes:
+                    iconClass: "fas fa-info me-2"
+                    target: '_self'
+            
             contact:
                 name: vs_application.menu.contact
                 route: vs_application_contact
@@ -740,5 +757,3 @@ vs_application:
                     divider_prepend: false
                     divider_append: true
                     target: '_self'
-            
-

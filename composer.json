@@ -33,20 +33,21 @@
         "symfony/flex": "^1.17|^2",
         "symfony/notifier": "6.4.*",
         "symfony/runtime": "6.4.*",
+        
         "symfony/http-client": "6.4.*",
+        "guzzlehttp/promises": "^2.0",
+        "php-http/httplug": "^2.4",
         
         "vankosoft/application": "1.12.*",
-        "vankosoft/application-themes": "^1.2",
-        "vankosoft/catalog-bundle": "^1.4",
+        "vankosoft/application-themes": "^1.4",
+        "vankosoft/catalog-bundle": "^2.3",
         "vankosoft/api-bundle": "^3.0",
         
         "vankosoft/thruway-bundle": "^1.0",
         "cboden/ratchet": "^0.4",
         "react/react": "^1.4",
         "react/partial": "^3.0",
-        "react/zmq": "^0.4",
-        
-        "trickeyone/intl-subdivision": "^4.0"
+        "react/zmq": "^0.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",

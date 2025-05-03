@@ -1,19 +1,24 @@
 <ul class="thumbnails">
-    {% for product in category.products %}
+    {% for product in products %}
         <li class="span3">
           <div class="thumbnail">
             <a href="{{ path( 'vs_catalog_catalog_product_show', {'categorySlug': 'test-category','productSlug': product.slug} ) }}">
                 {% if product.pictures.first %}
+                    {#
                     {% set productPicture = path( 'vs_cms_images_filesystem_get_file', { file: picturesPath ~ '/' ~ product.pictures.first.path } ) %}
+                    #}
+                    {% set productPicture = product.pictures.first.path %}
                 {% else %}
                     {% set productPicture = '/build/bootstrap-shop-theme/images/products/6.jpg' %}
                 {% endif %}
-                <img src="{{ productPicture }}" alt="{{ product.name }}"/>
+                <img src="{{ productPicture | imagine_filter( 'products_listing_thumbnail' ) }}" alt="{{ product.name }}"/>
             </a>
             <div class="caption">
-              <h5>{{ product.name }}</h5>
-              <p>{{ product.description }}</p>
-               <h4 style="text-align:center">
+                <div class="product-name">
+                    <h5>{{ product.name }}</h5>
+                    <p>{{ product.description }}</p>
+                </div>
+                <h4 style="text-align:center">
                     <a class="btn"
                         href="{{ path( 'vs_catalog_catalog_product_show', {'categorySlug': 'test-category','productSlug': product.slug} ) }}"
                     > 
