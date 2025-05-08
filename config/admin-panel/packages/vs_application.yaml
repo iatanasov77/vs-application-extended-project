@@ -216,32 +216,6 @@ vs_application:
                           id: int
                         display: false
                         
-            #########################################################################
-            # Uncomment this section If You need to Use VankoSoft Issue Tracker
-            #########################################################################
-#             project_issues:
-#                 name: vs_application.menu.issue_tracking
-#                 uri: "javascript:;"
-#                 attributes:
-#                     iconClass: fas fa-bug
-#                     breadcrumb_route: vs_application_project_issues_index
-#                 childs:
-#                     list_issues:
-#                         name: vs_application.menu.project_issues
-#                         route: vs_application_project_issues_index
-#                     create_issues:
-#                         name: vs_application.menu.create_issue
-#                         route: vs_application_project_issues_create
-#                     update_issues:
-#                         name: vs_application.menu.update_issue
-#                         route: vs_application_project_issues_update
-#                         routeParameters:
-#                           id: int
-#                         display: false
-#                     show_kanbanboard:
-#                         name: vs_application.menu.kanbanboard_show
-#                         route: vs_application_project_issues_kanbanboard_show
-                        
         mainCmsMenu:
             cms:
                 name: vs_application.menu.static_pages
