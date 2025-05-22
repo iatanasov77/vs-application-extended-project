@@ -15,5 +15,3 @@ oneup_uploader:
 #            storage:
 #                type: gaufrette
 #                filesystem: gaufrette.vsorg_downloads_filesystem
-
-    
