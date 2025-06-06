@@ -39,8 +39,8 @@
         "php-http/httplug": "^2.4",
         
         "vankosoft/application": "1.12.*",
-        "vankosoft/application-themes": "^1.4",
-        "vankosoft/catalog-bundle": "^2.3",
+        "vankosoft/application-themes": "^1.5",
+        "vankosoft/catalog-bundle": "^2.4",
         "vankosoft/api-bundle": "^3.0",
         
         "vankosoft/thruway-bundle": "^1.0",
