@@ -23,7 +23,10 @@ doctrine:
         
     orm:
         auto_generate_proxy_classes: true
+        
         auto_mapping: true
+        controller_resolver:
+            auto_mapping: true
         
         # Enables the new implementation of proxies based on lazy ghosts instead of using the legacy implementation
         #enable_lazy_ghost_objects: false
@@ -59,7 +62,7 @@ doctrine:
             loggable:
                 type: attribute
                 prefix: Gedmo\Loggable\Entity
-                dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Loggable/Entity"
+                dir: "%kernel.project_dir%/vendor/gedmo/doctrine-extensions/src/Loggable/Entity/MappedSuperclass"
                 alias: GedmoLoggable
                 is_bundle: false
                 
