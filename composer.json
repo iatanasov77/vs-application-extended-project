@@ -38,10 +38,12 @@
         "guzzlehttp/promises": "^2.0",
         "php-http/httplug": "^2.4",
         
-        "vankosoft/application": "1.12.*",
+        "vankosoft/application": "1.13.*",
         "vankosoft/application-themes": "^1.5",
         "vankosoft/catalog-bundle": "^2.4",
         "vankosoft/api-bundle": "^3.0",
+        
+        "doctrine/dbal": "^3.0",
         
         "vankosoft/thruway-bundle": "^1.0",
         "cboden/ratchet": "^0.4",
