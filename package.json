@@ -12,14 +12,10 @@
         "@kanety/jquery-simple-tree-table": "^0.5.0",
         "@popperjs/core": "^2.11.6",
         
-        "@hotwired/stimulus": "^3.2",
-        "@hotwired/stimulus-webpack-helpers": "^1.0",
-        "@symfony/stimulus-bridge": "^4.0",
         "@types/webpack-env": "^1.18",
         "@types/json-schema": "^7.0",
         "loader-utils": "^3.3",
         "schema-utils": "^4.3",
-        "stimulus": "^3.2",
        
          "bootstrap": "^5.2.3",
         "ckeditor4": "4.22.1",
@@ -41,8 +37,6 @@
         "jquery-duplicate-fields": "^1.1",
         "mdb-ui-kit": "^8.1",
         "moment": "^2.29.1",
-        "popper": "^1.0.1",
-        "popper.js": "^1.15.0",
         "velocity-animate": "^1.5.2",
         
         "scrolling-tabs-bootstrap-5": "^1.1",
@@ -91,9 +85,6 @@
         "autobahn-browser": "^22.11"
     },
     "devDependencies": {
-        "@hotwired/stimulus": "^3.0.0",
-        "@symfony/stimulus-bridge": "^2.0.0",
-        
         "@babel/core": "^7.17.0",
         "@babel/eslint-parser": "^7.17.0",
         "@babel/preset-env": "^7.16.0",
@@ -111,7 +102,7 @@
         "regenerator-runtime": "^0.13.2",
         "raw-loader": "^4.0.2",
         "resolve-url-loader": "5.0.0",
-        "sass": "^1.77.6",
+        "sass": "1.32.13",
         "sass-loader": "^16.0.1",
         "ts-loader": "^9.0.0",
         "typescript": "~5.2.2"
