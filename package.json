@@ -85,26 +85,26 @@
         "autobahn-browser": "^22.11"
     },
     "devDependencies": {
-        "@babel/core": "^7.17.0",
-        "@babel/eslint-parser": "^7.17.0",
-        "@babel/preset-env": "^7.16.0",
-        "@babel/preset-react": "^7.0.0",
+        "@babel/core": "^7.17",
+        "@babel/eslint-parser": "^7.17",
+        "@babel/preset-env": "^7.16",
+        "@babel/preset-react": "^7.0",
         "@symfony/webpack-encore": "^5.0",
         "@ckeditor/ckeditor5-dev-utils": "^43.0",
         
-        "core-js": "^3.0.0",
-        "eslint": "^8.0.0",
+        "core-js": "^3.0",
+        "eslint": "^9.0",
         "webpack": "^5.72",
         "webpack-cli": "^5.1.4",
-        "webpack-notifier": "^1.15.0",
+        "webpack-notifier": "^1.15",
         
-        "file-loader": "^6.0.0",
+        "file-loader": "^6.0",
         "regenerator-runtime": "^0.13.2",
         "raw-loader": "^4.0.2",
-        "resolve-url-loader": "5.0.0",
+        "resolve-url-loader": "^5.0",
         "sass": "1.32.13",
         "sass-loader": "^16.0.1",
-        "ts-loader": "^9.0.0",
+        "ts-loader": "^9.0",
         "typescript": "~5.2.2"
     },
 	"resolutions": {
