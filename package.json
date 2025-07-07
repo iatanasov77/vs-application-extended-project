@@ -8,8 +8,8 @@
         "build": "./node_modules/@symfony/webpack-encore/bin/encore.js production --progress"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^6.1.0",
-        "@kanety/jquery-simple-tree-table": "^0.5.0",
+        "@fortawesome/fontawesome-free": "^6.1",
+        "@kanety/jquery-simple-tree-table": "^0.5",
         "@popperjs/core": "^2.11.6",
         
         "@types/webpack-env": "^1.18",
@@ -20,9 +20,9 @@
          "bootstrap": "^5.2.3",
         "ckeditor4": "4.22.1",
         
-        "@ckeditor/ckeditor5-theme-lark": "^43.0.0",
-        "ckeditor5": "^43.0.0",
-        "ckeditor5-premium-features": "^43.0.0",
+        "@ckeditor/ckeditor5-theme-lark": "^43.0",
+        "ckeditor5": "^43.0",
+        "ckeditor5-premium-features": "^43.0",
         
         "lightbox2": "^2.11.3",
         "highlight.js": "^11.0.1",
@@ -43,8 +43,8 @@
         "bootstrap-icons": "^1.11",
         "move-js": "^0.5",
                 
-        "jquery-ui": "^1.13.0",
-        "bazinga-translator": "^5.0.0",
+        "jquery-ui": "^1.13",
+        "bazinga-translator": "^5.0",
         "intl-messageformat": "^9.11.3",
         "blueimp-file-upload": "^10.32",
         "mimetype-to-fontawesome": "^2.1",
