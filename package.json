@@ -31,10 +31,8 @@
         "jquery-slimscroll": "^1.3.8",
         "jquery.nicescroll": "^3.7.6",
         "jquery-easyui": "^1.5.21",
-        "jquery-easyui-extensions": "^1.0",
         "jquery-ui-dist": "^1.12.1",
         "jquery-validation": "^1.20",
-        "jquery-duplicate-fields": "^1.1",
         "mdb-ui-kit": "^8.1",
         "moment": "^2.29.1",
         "velocity-animate": "^1.5.2",
@@ -53,6 +51,7 @@
         "@yaireo/dragsort": "^1.3.1",
         "vanilla-cookieconsent": "^3.0",
         "remixicon": "^3.5",
+        "prop-types": "^15.7",
 
 		"particles.js": "^2.0",
         "jsvectormap": "^1.5",
@@ -73,6 +72,9 @@
         
         "code-prettify-google": "^1.0.1",
         "@stripe/stripe-js": "^2.1",
+        
+        "@vankosoft/jquery-duplicate-fields": "^2.0",
+        "@vankosoft/jquery-easyui-extensions": "^2.0",
         
         "@analytics/google-analytics": "^1.1",
         "analytics": "^0.8"        ,
