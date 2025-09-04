@@ -36,6 +36,20 @@ parameters:
     vs_users.cookie.domain: '%env(COOKIE_DOMAIN)%'
     vs_users.cookie.lifetime: 86400 # 24 hours
     
+    vs_payment.gateway_factories:
+        - 'offline'
+        - 'offline_bank_transfer'
+        - 'paypal_rest'
+        - 'paypal_express_checkout'
+        - 'paypal_pro_checkout'
+        - 'stripe_checkout'
+        - 'stripe_js'
+        - 'vendo_sdk'
+        - 'paysera'
+        - 'borica'
+        - 'authorize_net_aim'
+        - 'telephone_call'
+    
 services:
     # default configuration for services in *this* file
     _defaults:

@@ -41,6 +41,9 @@
         "vankosoft/application": "1.13.*",
         "vankosoft/application-themes": "^1.5",
         "vankosoft/catalog-bundle": "^2.4",
+        "vankosoft/borica-bundle": "^0.2",
+        "vankosoft/vendo-sdk-bundle": "^0.1",
+        "vankosoft/paysera-bundle": "^0.1",
         "vankosoft/api-bundle": "^3.0",
         
         "doctrine/dbal": "^3.0",

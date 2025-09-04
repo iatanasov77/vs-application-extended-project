@@ -51,5 +51,10 @@ return [
     Vankosoft\UsersSubscriptionsBundle\VSUsersSubscriptionsBundle::class => ['all' => true],
     Vankosoft\PaymentBundle\VSPaymentBundle::class => ['all' => true],
     Vankosoft\BoricaBundle\VSBoricaBundle::class => ['all' => true],
+    Vankosoft\VendoSdkBundle\VSVendoSdkBundle::class => ['all' => true],
+    Vankosoft\PayseraBundle\VSPayseraBundle::class => ['all' => true],
     Vankosoft\CatalogBundle\VSCatalogBundle::class => ['all' => true],
+    
+    Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle::class => ['all' => true],
+    Gesdinet\JWTRefreshTokenBundle\GesdinetJWTRefreshTokenBundle::class => ['all' => true],
 ];
