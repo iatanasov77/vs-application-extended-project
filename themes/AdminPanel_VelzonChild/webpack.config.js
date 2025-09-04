@@ -158,6 +158,12 @@ Encore
     .addEntry( 'js/sliders-edit', applicationAssetsPath + '/js/pages/sliders-edit.js' )
     .addEntry( 'js/sliders-items', applicationAssetsPath + '/js/pages/sliders-items.js' )
     .addEntry( 'js/sliders-items-edit', applicationAssetsPath + '/js/pages/sliders-items-edit.js' )
+    
+    .addEntry( 'js/banner-places', applicationAssetsPath + '/js/pages/banner-places.js' )
+    .addEntry( 'js/banner-places-edit', applicationAssetsPath + '/js/pages/banner-places-edit.js' )
+    .addEntry( 'js/banners', applicationAssetsPath + '/js/pages/banners.js' )
+    .addEntry( 'js/banners-edit', applicationAssetsPath + '/js/pages/banners-edit.js' )
+    .addEntry( 'js/banner-modal', applicationAssetsPath + '/js/pages/banner-modal.js' )
 ;
 
 //////////////////////////////////////////////////////////////////
