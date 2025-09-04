@@ -1,3 +1,16 @@
+1.13.1	|	Release date: **04.09.2025**
+============================================
+* New Features and Improvements:
+  - Improve Jenkinsfile and Doctrine Config.
+  - Add a JWT Configs Needed for Creating Doctrine Migrations without Error.
+  - Improve Webpack Encore Config.
+  - Improve Frontend Dependencies.
+  - Add an Auth Controller for API Applications
+  - Update Doctrine Config for Staging Environement.
+  - Change Namespaces of Vankosoft NPM Packages.
+  - Add Missing Entries in Webpack Config.
+
+
 1.13.0	|	Release date: **09.06.2025**
 ============================================
 * New Features:
