@@ -1,67 +1,54 @@
-const bootstrap = require( 'bootstrap' );
+import { handlePricingPlanPayment } from '@@@@/js/includes/pricing_plan.js';
+import './credit_card.css';
 
 import Velocity from 'velocity-animate';
 import 'velocity-animate/velocity.ui';
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// bin/test-vankosoft-application-extended fos:js-routing:dump --format=json --target=public/shared_assets/js/fos_js_routes_application.json
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var routes  = require( '../../../../../public/shared_assets/js/fos_js_routes_application.json' );
-import { VsPath } from '@/js/includes/fos_js_routes.js';
-
-export function ChoosePlan( planFormUrl )
-{
-    $.ajax({
-        type: "GET",
-        url: planFormUrl,
-        success: function( response )
-        {
-            $( '#selectPricingPlanForm' ).html( response );
-            
-            /** Bootstrap 5 Modal Toggle */
-            const myModal = new bootstrap.Modal( '#plan-modal', {
-                keyboard: false
-            });
-            myModal.show( $( '#plan-modal' ).get( 0 ) );
-        },
-        error: function()
-        {
-            alert( "SYSTEM ERROR!!!" );
-        }
-    });
-}
-
-function GetCreditCardForm( url )
-{
-    /** Bootstrap 5 Modal Toggle */
-    const myModal = new bootstrap.Modal( '#plan-modal', {
-        keyboard: false
-    });
-    myModal.hide( $( '#plan-modal' ).get( 0 ) );
-    
-    $.ajax({
-        type: "GET",
-        url: url,
-        success: function( response )
-        {
-            $( '.modal-title' ).text( 'Enter Your Card Details' );
-            $( '.modal-body' ).attr( 'style', '' );
-            $( '.modal-body' ).addClass( 'credit-card' );
-            $( '#selectPricingPlanForm' ).addClass( 'credit-card' );
-                        
-            $( '#selectPricingPlanForm' ).html( response );
-            
-            myModal.show( $( '#plan-modal' ).get( 0 ) );
-        },
-        error: function()
-        {
-            alert( "SYSTEM ERROR!!!" );
-        }
-    });
-}
+window.PricingPlanFormSubmited      = false;
+window.PaymentMethodFormSubmited    = false;
 
 $( function()
 {
+    $( '#selectPricingPlanForm' ).on( 'change', '.rPaymentMethod', function()
+    {
+        var selected    = $( this ).attr( 'data-paymentMethod' );
+        switch( selected ) {
+            case 'bank-transfer' :
+                $( '#BankTransferInfo' ).show();
+                break;
+            default:
+                $( '#BankTransferInfo' ).hide();
+        }
+        
+        let supportRecurring    = $( '.rPaymentMethod:checked' ).attr( 'data-supportRecurring' );
+        if ( supportRecurring ) {
+            $( '#SetRecurringPayments' ).show();
+        } else {
+            $( '#select_pricing_plan_form_paymentMethod_setRecurringPayments' ).prop( 'checked', false );
+            $( '#SetRecurringPayments' ).hide();
+        }
+    });
+    
+    $( '#selectPaymentMethodForm' ).on( 'change', '.rPaymentMethod', function()
+    {
+        var selected    = $( this ).attr( 'data-paymentMethod' );
+        switch( selected ) {
+            case 'bank-transfer' :
+                $( '#BankTransferInfo' ).show();
+                break;
+            default:
+                $( '#BankTransferInfo' ).hide();
+        }
+        
+        let supportRecurring    = $( '.rPaymentMethod:checked' ).attr( 'data-supportRecurring' );
+        if ( supportRecurring ) {
+            $( '#SetRecurringPayments' ).show();
+        } else {
+            $( '#select_payment_method_form_paymentMethod_setRecurringPayments' ).prop( 'checked', false );
+            $( '#SetRecurringPayments' ).hide();
+        }
+    });
+    
     $( ".modal" ).each( function( l ) {
         $( this ).on( "show.bs.modal", function( l ) {
             var o   = $( this ).attr( "data-easein" );
@@ -80,32 +67,26 @@ $( function()
         e.preventDefault();
         e.stopPropagation();
         
-        var formData    = new FormData( document.getElementById( 'PricingPlanForm' ) );
-        $.ajax({
-            type: "POST",
-            url: VsPath( 'vs_payment_handle_pricing_plan_form', {}, routes ),
-            data: formData,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function( response )
-            {
-                //alert( response.data.paymentPrepareUrl );
-                //alert( response.data.gatewayFactory );
-                switch ( response.data.gatewayFactory ) {
-                    case 'stripe_checkout':
-                    case 'stripe_js':
-                        GetCreditCardForm( VsPath( response.data.paymentPrepareUrl, {}, routes ) );
-                        
-                        break;
-                    default:
-                        document.location   = VsPath( response.data.paymentPrepareUrl, {}, routes );
-                }
-            },
-            error: function()
-            {
-                alert( "SYSTEM ERROR!!!" );
-            }
-        });
+        if ( ! window.PricingPlanFormSubmited ) {
+            handlePricingPlanPayment( 'PricingPlanForm', 'plan-modal', 'selectPricingPlanForm' );
+            
+            window.PricingPlanFormSubmited  = true;
+        }
+    });
+    
+    $( '#selectPaymentMethodForm' ).on( 'click', '#SelectPaymentMethodSubmit', function ( e ) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if ( ! window.PaymentMethodFormSubmited ) {
+            handlePricingPlanPayment( 'PaymentMethodForm', 'payment-modal', 'selectPaymentMethodForm' );
+            
+            window.PaymentMethodFormSubmited  = true;
+        }
+    });
+    
+    $( '.btnRgister' ).on( 'click', function ( e ) {
+        document.location = $( this ).attr( 'data-url' );
     });
 });
+

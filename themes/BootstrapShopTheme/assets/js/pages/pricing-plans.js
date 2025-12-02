@@ -1,5 +1,7 @@
-import { ChoosePlan } from '../includes/pricing-plans.js';
-import { SubmitCreditCardForm, SubmitPaymentForm } from '@@/js/Stripe/StripeJsV2.js';
+import { SubmitCreditCardForm, SubmitPaymentForm } from '@@@/js/Stripe/StripeJsV2.js';
+import { SubmitPayumCreditCardForm } from '@@@/js/Payum/Payum.js';
+import { ChoosePlan } from '@@@@/js/includes/pricing_plan.js';
+import '../includes/pricing-plans.js';
 
 $( function()
 {
@@ -10,4 +12,6 @@ $( function()
     
     $( '#selectPricingPlanForm' ).on( 'submit', '#credit_card_form', SubmitCreditCardForm );
     $( '#payment-form' ).on( 'submit', SubmitPaymentForm );
+    
+    $( '#selectPricingPlanForm' ).on( 'submit', '#payum_credit_card_form', SubmitPayumCreditCardForm );
 });
