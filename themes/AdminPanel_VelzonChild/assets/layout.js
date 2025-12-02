@@ -1,1 +1,1 @@
-require ( '@@/layout.js' );
+require ( '@@@/layout.js' );

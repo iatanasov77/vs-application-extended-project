@@ -26,14 +26,35 @@ class RegistrationForm extends UserFormType
 {
     use UserInfoFormTrait;
     
+    /** @var string */
+    private $pricingPlanClass;
+    
+    /** @var RepositoryInterface */
+    private $pricingPlanRepository;
+    
     public function __construct(
         string $dataClass,
         RepositoryInterface $localesRepository,
         RequestStack $requestStack,
         string $applicationClass,
-        AuthorizationCheckerInterface $auth
+        string $userRolesClass,
+        AuthorizationCheckerInterface $auth,
+        array $requiredFields,
+        string $pricingPlanClass,
+        RepositoryInterface $pricingPlanRepository
     ) {
-        parent::__construct( $dataClass, $localesRepository, $requestStack, $applicationClass, $auth );
+        parent::__construct(
+            $dataClass,
+            $localesRepository,
+            $requestStack,
+            $applicationClass,
+            $userRolesClass,
+            $auth,
+            $requiredFields
+        );
+        
+        $this->pricingPlanClass         = $pricingPlanClass;
+        $this->pricingPlanRepository    = $pricingPlanRepository;
     }
     
     public function buildForm( FormBuilderInterface $builder, array $options ): void
@@ -45,13 +66,27 @@ class RegistrationForm extends UserFormType
         $builder->remove( 'verified' );
         
         $builder->remove( 'roles_options' );
-        $builder->remove( 'applications' );
         $builder->remove( 'username' );
+        
+        $builder->remove( 'applications' );
+        $builder->remove( 'allowedRoles' );
         
         $builder->remove( 'btnSave' );
         
         $builder
             ->setMethod( 'POST' )
+            
+            ->add( 'pricingPlan', ChoiceType::class, [
+                'label'                 => 'vs_vvp.form.register.pricing_plan_select',
+                'placeholder'           => 'vs_vvp.form.register.pricing_plan_select_placeholder',
+                'translation_domain'    => 'VanzVideoPlayer',
+                'choices'               => $this->pricingPlanRepository->findAllForForm([
+                    'test-plans',
+                ]),
+                'required'              => true,
+                'mapped'                => false,
+            ])
+            
             ->add( 'agreeTerms', CheckboxType::class, [
                 'label'                 => 'vs_users.form.registration.agreement_text',
                 'translation_domain'    => 'VSUsersBundle',
@@ -123,6 +158,7 @@ class RegistrationForm extends UserFormType
                 'titleMapped'           => false,
                 'firstNameMapped'       => false,
                 'lastNameMapped'        => false,
+                'designationMapped'     => false,
             ])
             ->setDefined([
                 'users',

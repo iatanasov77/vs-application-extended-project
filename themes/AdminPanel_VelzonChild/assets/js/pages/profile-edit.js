@@ -1,1 +1,1 @@
-require ( '@@/js/pages/profile-edit.js' );
+require ( '@@@/js/pages/profile-edit.js' );

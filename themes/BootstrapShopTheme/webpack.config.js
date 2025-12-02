@@ -15,8 +15,10 @@ Encore
     })
     
     .addAliases({
-        '@': path.resolve( __dirname, '../../vendor/vankosoft/application/src/Vankosoft/ApplicationBundle/Resources/themes/default/assets' ),
-        '@@': path.resolve( __dirname, '../../vendor/vankosoft/payment-bundle/lib/Resources/assets' )
+        '@': path.resolve( __dirname, '../../public/shared_assets' ),
+        '@@': path.resolve( __dirname, '../../vendor/vankosoft/application/src/Vankosoft/ApplicationBundle/Resources/themes/default/assets' ),
+        '@@@': path.resolve( __dirname, '../../vendor/vankosoft/payment-bundle/lib/Resources/assets' ),
+        '@@@@': path.resolve( __dirname, '../../vendor/vankosoft/catalog-bundle/lib/Resources/themes/default/assets' )
     })
     
     .autoProvidejQuery()
@@ -47,8 +49,8 @@ Encore
     .addEntry( 'js/product-listing', './themes/BootstrapShopTheme/assets/js/pages/product-listing.js' )
     .addEntry( 'js/register', './themes/BootstrapShopTheme/assets/js/pages/register.js' )
     .addEntry( 'js/pricing-plans', './themes/BootstrapShopTheme/assets/js/pages/pricing-plans.js' )
-    .addEntry( 'js/credit-card', './themes/BootstrapShopTheme/assets/js/pages/credit-card.js' )
     .addEntry( 'js/shopping-card', './themes/BootstrapShopTheme/assets/js/pages/shopping-card.js' )
+    .addEntry( 'js/profile', './themes/BootstrapShopTheme/assets/js/pages/profile.js' )
 ;
 
 const config = Encore.getWebpackConfig();
