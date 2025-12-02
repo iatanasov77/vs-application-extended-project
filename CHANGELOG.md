@@ -1,3 +1,9 @@
+1.13.2	|	Release date: **02.12.2025**
+============================================
+* Bug-Fixes:
+  - Some Fixes About New Versions of Vankosoft Library and Extensions.
+
+
 1.13.1	|	Release date: **04.09.2025**
 ============================================
 * New Features and Improvements:
