@@ -5,3 +5,7 @@
 .product-name {
     height: 80px;
 }
+
+.credit-card-exp-select {
+    width: auto !important;
+}

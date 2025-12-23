@@ -4,16 +4,14 @@
 {% block pageTitle %}<i class="fa fa-user-md"></i> Credit Card{% endblock %}
 
 {% block content %}
-    <div class="sign section--bg" data-bg="{{ asset( 'build/holeshunter-theme/img/bg/section__bg.jpg' ) }}">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="sign__content credit-card-page" id="selectPaymentMethodForm">
-                        {% include '@VSPayment/Pages/CreditCard/Partial/CreditCardForm.html.twig' with {
-                            'formMethod': 'POST',
-                            'formClass': 'sign__form'
-                        } %}
-                    </div>
+    <div class="container">
+        <div class="row span9">
+            <div class="col-12">
+                <div class="credit-card-page" id="selectPaymentMethodForm">
+                    {% include '@VSPayment/Pages/CreditCard/Partial/CreditCardForm.html.twig' with {
+                        'formMethod': 'POST',
+                        'formClass': ''
+                    } %}
                 </div>
             </div>
         </div>
