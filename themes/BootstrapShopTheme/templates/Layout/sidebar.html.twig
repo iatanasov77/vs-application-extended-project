@@ -1,40 +1,44 @@
 <!-- Sidebar ================================================== -->
-    <div id="sidebar" class="span3">
-        <div class="well well-small">
-            {% set shoppingCartLength = shoppingCart.items | length %}
-            <a id="myCart" href="{% if shoppingCartLength %}{{ path( 'vs_payment_shopping_cart_index' ) }}{% else %}javascript:void(0);{% endif %}">
-                <img src="{{ asset('/build/bootstrap-shop-theme/images/ico-cart.png') }}" alt="cart">
-                {{ shoppingCartLength }} Items in your cart  
-                <span class="badge badge-warning pull-right">{{ shoppingCart.totalAmount | number_format( 2 ) }} {{ shoppingCart.currencyCode | vs_currency_symbol }}</span>
-            </a>
+<div id="sidebar" class="span3">
+    <div class="well well-small">
+        {% set shoppingCartLength = shoppingCart.items | length %}
+        <a id="myCart" href="{% if shoppingCartLength %}{{ path( 'vs_payment_shopping_cart_index' ) }}{% else %}javascript:void(0);{% endif %}">
+            <img src="{{ asset('/build/bootstrap-shop-theme/images/ico-cart.png') }}" alt="cart">
+            {{ shoppingCartLength }} Items in your cart  
+            <span class="badge badge-warning pull-right">{{ shoppingCart.totalAmount | number_format( 2 ) }} {{ shoppingCart.currencyCode | vs_currency_symbol }}</span>
+        </a>
+    </div>
+    
+    {{ vs_widget_render( 'catalog-widgets', ['sidebar-categories'] ) }}
+    
+    <br/>
+    
+    {#
+    <div class="thumbnail">
+        <img src="{{ asset('/build/bootstrap-shop-theme/images/products/panasonic.jpg') }}" alt="Bootshop panasonoc New camera"/>
+        <div class="caption">
+          <h5>Panasonic</h5>
+            <h4 style="text-align:center">
+                <a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a>
+            </h4>
         </div>
-        
-        {{ vs_widget_render( 'catalog-widgets', ['sidebar-categories'] ) }}
-        
-        <br/>
-        
-        {#
-          <div class="thumbnail">
-            <img src="{{ asset('/build/bootstrap-shop-theme/images/products/panasonic.jpg') }}" alt="Bootshop panasonoc New camera"/>
-            <div class="caption">
-              <h5>Panasonic</h5>
-                <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
-            </div>
-          </div><br/>
-            <div class="thumbnail">
-                <img src="{{ asset('/build/bootstrap-shop-theme/images/products/kindle.png') }}" title="Bootshop New Kindel" alt="Bootshop Kindel">
-                <div class="caption">
-                  <h5>Kindle</h5>
-                    <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
-                </div>
-              </div><br/>
-          #}
-          
-        <div class="thumbnail">
-            <img src="{{ asset('/build/bootstrap-shop-theme/images/payment_methods.png') }}" title="Bootshop Payment Methods" alt="Payments Methods">
-            <div class="caption">
-                <h5>Payment Methods</h5>
-            </div>
+    </div><br/>
+    <div class="thumbnail">
+        <img src="{{ asset('/build/bootstrap-shop-theme/images/products/kindle.png') }}" title="Bootshop New Kindel" alt="Bootshop Kindel">
+        <div class="caption">
+          <h5>Kindle</h5>
+            <h4 style="text-align:center">
+                <a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a>
+            </h4>
+        </div>
+    </div><br/>
+    #}
+      
+    <div class="thumbnail">
+        <img src="{{ asset('/build/bootstrap-shop-theme/images/payment_methods.png') }}" title="Bootshop Payment Methods" alt="Payments Methods">
+        <div class="caption">
+            <h5>Payment Methods</h5>
         </div>
     </div>
+</div>
 <!-- Sidebar end=============================================== -->
