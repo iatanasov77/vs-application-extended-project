@@ -28,6 +28,14 @@
             </a>
             <div class="navbar-inner">
                 <a class="brand" href="{{ path( 'app_home' ) }}"><img src="{{ asset('/build/bootstrap-shop-theme/images/logo.png') }}" alt="Bootsshop"/></a>
+                
+                {{ form_start(searchProductForm, { 'attr': {'class': 'form-inline navbar-search'} }) }}
+                    {{ form_widget( searchProductForm.search, {'attr': {'class': 'srchTxt'}} ) }}
+                    {{ form_widget( searchProductForm.category, {'attr': {'class': 'srchTxt'}} ) }}
+                    {{ form_widget( searchProductForm.submit, {'attr': {'class': 'btn btn-primary'}} ) }}
+                {{ form_end(searchProductForm, {'render_rest': false}) }}
+                
+                {#
                 <form class="form-inline navbar-search" method="post" action="products.html" >
                     <input id="srchFld" class="srchTxt" type="text" />
                     <select class="srchTxt">
@@ -40,7 +48,7 @@
                     </select> 
                     <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
                 </form>
-                
+                #}
                 
                 <ul id="topMenu" class="nav pull-right">
                     {{ knp_menu_render('mainApplication', {'template': 'Menu/main-menu.html.twig'}) }}
