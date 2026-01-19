@@ -1,3 +1,12 @@
+1.13.3	|	Release date: **19.01.2026**
+============================================
+* New Features and Improvements:
+  - Improve BootstrapShopTheme .
+  - Create and Use Product Search Form.
+  - Improve BootstrapShopTheme Menu Template.
+  - Update to Symfony 7.
+
+
 1.13.2	|	Release date: **02.12.2025**
 ============================================
 * Bug-Fixes:

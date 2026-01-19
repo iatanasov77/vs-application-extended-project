@@ -2,14 +2,30 @@
 
 {% block root %}
     {% for parentItem in item.children %}
-        <li class="nav-item mr-lg-3 ">
-            <a class="nav-link" href="{{ parentItem.uri }}">{{ parentItem.name|trans }}</a>
-        
-            {% if(parentItem.hasChildren) %}
+        {% if not app.user %}
+            <li class="nav-item mr-lg-3 ">
+                <a class="nav-link" href="{{ parentItem.uri }}">{{ parentItem.name|trans }}</a>
+            
+                {% if(parentItem.hasChildren) %}
+                    
+                {% endif %}
+            </li>
+        {% else %}
+            {% if
+                parentItem.attributes.id is defined and
+                ( parentItem.attributes.id != 'user_register' or parentItem.attributes.id != 'user_login' )
+            %}
+            
+            {% else %}
+                <li class="nav-item mr-lg-3 ">
+                    <a class="nav-link" href="{{ parentItem.uri }}">{{ parentItem.name|trans }}</a>
                 
+                    {% if(parentItem.hasChildren) %}
+                        
+                    {% endif %}
+                </li>
             {% endif %}
-        </li>
+        {% endif %}
     {% endfor %}
-    
     <li class="">
 {% endblock %}

@@ -5,3 +5,11 @@
 .product-name {
     height: 80px;
 }
+
+.credit-card-exp-select {
+    width: auto !important;
+}
+
+input[type=text].srchTxt {
+    background: url(../vendor/bootshop/images/search.png) no-repeat 4px center #fff;
+}

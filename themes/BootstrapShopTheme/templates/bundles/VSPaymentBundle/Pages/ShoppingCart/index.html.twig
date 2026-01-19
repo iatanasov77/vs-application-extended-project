@@ -58,10 +58,8 @@
             </tr>
         </thead>
         <tbody>
-        {% set grandTotal = 0 %}
-        {% for item in items %}
-            {% set grandTotal = grandTotal + ( item.qty * item.price ) %}
         
+        {% for item in items %}
             {% if item.product.pictures.first %}
                 {% set productPicture = path( 'vs_cms_images_filesystem_get_file', { file: picturesPath ~ '/' ~ item.product.pictures.first.path } ) %}
             {% else %}
@@ -94,7 +92,7 @@
         
             <tr>
                 <td colspan="6" style="text-align:right">Total Price: </td>
-                <td>{{ grandTotal | number_format( 2 ) }} {{ shoppingCart.currencyCode | vs_currency_symbol }}</td>
+                <td>{{ shoppingCart.totalAmount | number_format( 2 ) }} {{ shoppingCart.currencyCode | vs_currency_symbol }}</td>
             </tr>
              <tr>
                 <td colspan="6" style="text-align:right">Total Discount:  </td>
@@ -110,7 +108,7 @@
                     <strong id="GrandTotal"
                         data-currencySymbol="{{ shoppingCart.currencyCode | vs_currency_symbol }}"
                     >
-                        <span id="GrandTotalValue">{{ grandTotal | number_format( 2 ) }}</span> {{ shoppingCart.currencyCode | vs_currency_symbol }}
+                        <span id="GrandTotalValue">{{ shoppingCart.totalAmount | number_format( 2 ) }}</span> {{ shoppingCart.currencyCode | vs_currency_symbol }}
                     </strong>
                 </td>
             </tr>

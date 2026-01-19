@@ -1,0 +1,5 @@
+vs_app:
+    form:
+        product_search:
+            category_placeholder: All
+            apply: Go
