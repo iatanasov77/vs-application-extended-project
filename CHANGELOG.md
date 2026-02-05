@@ -1,3 +1,9 @@
+1.14.0	|	Release date: **05.02.2026**
+============================================
+* New Features:
+  - Update to SyliusResourceBundle 1.14
+
+
 1.13.3	|	Release date: **19.01.2026**
 ============================================
 * New Features and Improvements:
