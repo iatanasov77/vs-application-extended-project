@@ -1,3 +1,9 @@
+1.14.1	|	Release date: **22.02.2026**
+============================================
+* Bug-Fixes:
+  - Remove Thruway Bundle from Requirements Because Its Requirements Not Support Symfony 7
+
+
 1.14.0	|	Release date: **05.02.2026**
 ============================================
 * New Features:
