@@ -1,0 +1,5 @@
+        "vankosoft/thruway-bundle": "dev-develop",
+        "cboden/ratchet": "^0.4",
+        "react/react": "^1.4",
+        "react/partial": "^3.0",
+        "react/zmq": "^0.4"
