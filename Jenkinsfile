@@ -142,8 +142,7 @@ node ( label: 'php-host' ) {
                 sshagent(credentials : ['vps-mini-ssh-root']) {
                     sh """
                         ssh -t -t -l ${REMOTE_SSH_USER} ${REMOTE_SSH_HOST} -o StrictHostKeyChecking=no -p ${REMOTE_SSH_PORT} << ENDSSH
-                            cd ${REMOTE_DIR}
-                            #${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:maintenance --set-maintenance
+                            /usr/bin/echo "MAINTENANCE_MODE=1" > ${REMOTE_DIR}/.env.local
                             
                             exit 0
 ENDSSH
@@ -198,7 +197,7 @@ ENDSSH
                             ${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:install:info update
                             ${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:load-widgets
                             
-                            #${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:maintenance --unset-maintenance
+                            /usr/bin/rm -f  ${REMOTE_DIR}/.env.local
                             
                             #SETUP APPLICATION PERMISSIONS
                             chmod -R 0777 ${REMOTE_DIR}
