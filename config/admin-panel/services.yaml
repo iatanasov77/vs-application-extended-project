@@ -18,6 +18,9 @@ parameters:
     applicationTitle: 'vs_application.template.super_admin_panel'
     hasTopSearch: true
     
+    # Maintenance Mode
+    vs_application.maintenance_template: 'maintenance.html.twig'
+    
     vs_application.version: !php/const App\AdminPanelKernel::VERSION
     vs_application.public_dir: "%kernel.project_dir%/public/admin-panel"
     vs_application.taxon_repository_throw_exception: false

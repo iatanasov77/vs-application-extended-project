@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale|slice(0, 2) }}">
 <head>
-  <meta charset="UTF-8">
-  <title>Site temporarily under maintenance</title>
+    <meta charset="UTF-8">
+    <title>{{ applicationTitle }}</title>
 </head>
 <body>
-  <h1>Site temporarily under maintenance</h1>
-  <p>Sorry for the inconvenience, we will get back soon!</p>
+    <h1>{{ 'vs_application.template.maintenance.title' | trans( {},'VSApplicationBundle' ) }}</h1>
+    <p>{{ 'vs_application.template.maintenance.sorry_text' | trans( {},'VSApplicationBundle' ) }}</p>
 </body>
 </html>
