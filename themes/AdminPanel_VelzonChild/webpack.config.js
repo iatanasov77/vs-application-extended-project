@@ -99,6 +99,7 @@ Encore
     })
     
     // Global Assets
+    .addStyleEntry( 'css/maintenance', './themes/AdminPanel_VelzonChild/assets/css/maintenance.scss' )
     .addStyleEntry( 'css/app', './themes/AdminPanel_VelzonChild/assets/css/app.scss' )
     .addEntry( 'js/layout', './themes/AdminPanel_VelzonChild/assets/layout.js' )
     .addEntry( 'js/app', './themes/AdminPanel_VelzonChild/assets/app.js' )
