@@ -16,5 +16,6 @@ stof_doctrine_extensions:
             #uploadable:     false
     
     class:
-        loggable:   Vankosoft\ApplicationBundle\EventSubscriber\LoggableListener
+        loggable: Vankosoft\ApplicationBundle\Component\GedmoListener\LoggableListener
+        timestampable: Vankosoft\ApplicationBundle\Component\GedmoListener\TimestampableListener
  
