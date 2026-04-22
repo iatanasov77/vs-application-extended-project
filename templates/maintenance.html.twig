@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|slice(0, 2) }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ applicationTitle }}</title>
+</head>
+<body>
+    <h1>{{ 'vs_application.template.maintenance.title' | trans( {},'VSApplicationBundle' ) }}</h1>
+    <p>{{ 'vs_application.template.maintenance.sorry_text' | trans( {},'VSApplicationBundle' ) }}</p>
+</body>
+</html>
