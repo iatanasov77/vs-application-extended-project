@@ -39,12 +39,14 @@
         "php-http/httplug": "^2.4",
         
         "vankosoft/application": "1.14.*",
-        "vankosoft/application-themes": "^1.6",
+        "vankosoft/application-themes": "^1.7",
         "vankosoft/catalog-bundle": "^2.6",
         "vankosoft/borica-bundle": "^0.2",
         "vankosoft/vendo-sdk-bundle": "^0.1",
         "vankosoft/paysera-bundle": "^0.1",
-        "vankosoft/api-bundle": "^3.0"
+        "vankosoft/api-bundle": "^3.0",
+        
+        "doctrine/dbal": "^3.10"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
