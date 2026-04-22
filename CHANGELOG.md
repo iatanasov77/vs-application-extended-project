@@ -1,3 +1,18 @@
+1.14.2	|	Release date: **22.04.2026**
+============================================
+* New Features and Improvements:
+  - Add Template for Maintence Page.
+  - Fix Doctrine Migrations Config.
+  - Add in Jenkinsfile to Set Maintenance Mode.
+  - Add Maintenance Page Templates.
+  - Add Velzon theme Webpack configs for Maintenance Page.
+  - Add Gedmo TimestampableListener into Admin Panel Config.
+  - Fix Some Deprecated Configs.
+  - Remove Annotations from Entites. Allready NOT Needed.
+  - Add a composer.json config.
+  - Limit Doctrine DBAL Requirement to Version 3.
+
+
 1.14.1	|	Release date: **22.02.2026**
 ============================================
 * Bug-Fixes:
