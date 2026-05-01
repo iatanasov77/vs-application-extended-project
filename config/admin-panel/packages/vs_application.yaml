@@ -296,6 +296,18 @@ vs_application:
                         routeParameters:
                           id: int
                         display: false
+                    quick_links_categories_list:
+                        name: vs_application.menu.quick_links_categories_list
+                        route: vs_cms_quick_link_category_index
+                    quick_links_categories_create:
+                        name: vs_application.menu.quick_links_categories_create
+                        route: vs_cms_quick_link_category_create
+                    quick_links_categories_update:
+                        name: vs_application.menu.quick_links_categories_update
+                        route: vs_cms_quick_link_category_update
+                        routeParameters:
+                            id: int
+                        display: false
                     quick_links_list:
                         name: vs_application.menu.quick_links_list
                         route: vs_cms_quick_link_index

@@ -24,6 +24,9 @@ vs_cms:
         helpcenter_question:
             classes:
                 model: App\Entity\Cms\HelpCenterQuestion
+        quick_link_category:
+            classes:
+                model: App\Entity\Cms\QuickLinksCategory
         quick_link:
             classes:
                 model: App\Entity\Cms\QuickLink
