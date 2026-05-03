@@ -94,11 +94,11 @@ node ( label: 'php-host' ) {
     
     stage( 'Source Checkout' ) {
         if ( BUILD_ENVIRONMENT == 'production' ) {
-            checkout([$class: 'GitSCM', 
-                branches: [[name: "refs/tags/${BRANCH_NAME}"]], 
+            checkout([$class: 'GitSCM',
+                branches: [[name: "refs/tags/${BRANCH_NAME}"]],
                 userRemoteConfigs: [[
-                    credentialsId: "${GIT_CREDENTIALS_ID}", 
-                    refspec: '+refs/tags/*:refs/remotes/origin/tags/*', 
+                    credentialsId: "${GIT_CREDENTIALS_ID}",
+                    refspec: '+refs/tags/*:refs/remotes/origin/tags/*',
                     url: "${GIT_REPO_URL}"]]
             ])
         } else {
