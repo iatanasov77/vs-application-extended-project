@@ -6,6 +6,7 @@ const applicationAssetsPath         = './vendor/vankosoft/application/src/Vankos
 const usersSubscriptionsAssetsPath  = './vendor/vankosoft/users-subscriptions-bundle/lib/Resources/themes/default/assets';
 const paymentAssetsPath             = './vendor/vankosoft/payment-bundle/lib/Resources/themes/default/assets';
 const catalogAssetsPath             = './vendor/vankosoft/catalog-bundle/lib/Resources/themes/default/assets';
+const vankosoftAgentAssetsPath      = './vendor/vankosoft/agent-bundle/src/Vankosoft/AgentBundle/Resources/themes/default/assets';
 
 const defaultThemePath              = '../../vendor/vankosoft/application/src/Vankosoft/ApplicationBundle/Resources/themes/default/assets';
 const artgrisAssetsPath             = '../../vendor/artgris/filemanager-bundle/Resources/public';
@@ -221,6 +222,15 @@ if ( pathExists.sync( catalogAssetsPath ) ) {
         .addEntry( 'js/pricing-plan-subscriptions', catalogAssetsPath + '/js/pages/pricing-plan-subscriptions.js' )
         .addEntry( 'js/pricing-plan-subscription-payments', catalogAssetsPath + '/js/pages/pricing-plan-subscription-payments.js' )
         .addEntry( 'js/association-types-index', catalogAssetsPath + '/js/pages/association-types-index.js' )
+    ;
+}
+
+//////////////////////////////////////////////////////////////////
+// Vankosoft Agent Pages
+//////////////////////////////////////////////////////////////////
+if ( pathExists.sync( vankosoftAgentAssetsPath ) ) {
+    Encore
+        .addEntry( 'js/actions-index', vankosoftAgentAssetsPath + '/js/pages/actions-index.js' )
     ;
 }
 

@@ -686,6 +686,18 @@ vs_application:
                           id: int
                         display: false
         
+        mainAgentMenu:
+            agent:
+                name: vs_application.menu.agent_menu_title
+                uri: "javascript:;"
+                attributes:
+                    iconClass: "fa fa-user-secret"
+                    breadcrumb_route: vs_agent_actions_index
+                childs:
+                    list:
+                        name: vs_application.menu.list_agent_actions
+                        route: vs_agent_actions_index
+        
         profileMenu:
             about:
                 name: vs_application.menu.about
