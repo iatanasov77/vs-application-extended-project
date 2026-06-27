@@ -1,3 +1,6 @@
+vs_agent:
+    enabled: false # Defalt is true
+
 vs_application_instalator:
     resources:
         instalation_info:
