@@ -189,7 +189,7 @@ ENDSSH
                     sh """
                         ssh -t -t -l ${REMOTE_SSH_USER} ${REMOTE_SSH_HOST} -o StrictHostKeyChecking=no -p ${REMOTE_SSH_PORT} << ENDSSH
                             cd ${REMOTE_DIR}
-                            ${PHP_BIN} -d memory_limit=-1 bin/console --no-interaction doctrine:migrations:migrate
+                            ${PHP_BIN} -d memory_limit=-1 bin/console --no-interaction --all-or-nothing doctrine:migrations:migrate
                             migrationCode=\$?   # Capture migration return code
                             
                             ${PHP_BIN} -d memory_limit=-1 bin/console cache:clear
@@ -213,7 +213,7 @@ ENDSSH
                     sh """
                         ssh -t -t -l ${REMOTE_SSH_USER} ${REMOTE_SSH_HOST} -o StrictHostKeyChecking=no -p ${REMOTE_SSH_PORT} << ENDSSH
                             cd ${REMOTE_DIR}
-                            ${PHP_BIN} -d memory_limit=-1 bin/console --no-interaction doctrine:migrations:migrate
+                            ${PHP_BIN} -d memory_limit=-1 bin/console --no-interaction --all-or-nothing doctrine:migrations:migrate
                             migrationCode=\$?   # Capture migration return code
                             
                             ${PHP_BIN} -d memory_limit=-1 bin/console cache:clear
