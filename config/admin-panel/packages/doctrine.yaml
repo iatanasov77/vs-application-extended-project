@@ -14,6 +14,9 @@ doctrine:
         mapping_types:
             enum: string
         
+        types:
+            set: Vankosoft\ApplicationBundle\Doctrine\DBAL\Types\SetType
+        
     orm:
         auto_generate_proxy_classes: true
         

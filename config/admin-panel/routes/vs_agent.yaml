@@ -1,0 +1,5 @@
+vs_agent:
+    resource: "@VSAgentBundle/Resources/config/routing/agent.yaml"
+    prefix:   /
+    options:
+        expose: true

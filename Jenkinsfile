@@ -94,11 +94,11 @@ node ( label: 'php-host' ) {
     
     stage( 'Source Checkout' ) {
         if ( BUILD_ENVIRONMENT == 'production' ) {
-            checkout([$class: 'GitSCM', 
-                branches: [[name: "refs/tags/${BRANCH_NAME}"]], 
+            checkout([$class: 'GitSCM',
+                branches: [[name: "refs/tags/${BRANCH_NAME}"]],
                 userRemoteConfigs: [[
-                    credentialsId: "${GIT_CREDENTIALS_ID}", 
-                    refspec: '+refs/tags/*:refs/remotes/origin/tags/*', 
+                    credentialsId: "${GIT_CREDENTIALS_ID}",
+                    refspec: '+refs/tags/*:refs/remotes/origin/tags/*',
                     url: "${GIT_REPO_URL}"]]
             ])
         } else {
@@ -133,6 +133,9 @@ node ( label: 'php-host' ) {
             export COMPOSER_ALLOW_SUPERUSER=1;
             export NODE_OPTIONS=--max-old-space-size=2048
             /usr/local/bin/phing install-${BUILD_ENVIRONMENT} -verbose -debug
+            
+            # Should Be Tested
+            # ${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:project-version:setup-dependencies
         """
     }
     
@@ -189,12 +192,15 @@ ENDSSH
                     sh """
                         ssh -t -t -l ${REMOTE_SSH_USER} ${REMOTE_SSH_HOST} -o StrictHostKeyChecking=no -p ${REMOTE_SSH_PORT} << ENDSSH
                             cd ${REMOTE_DIR}
-                            ${PHP_BIN} -d memory_limit=-1 bin/console --no-interaction doctrine:migrations:migrate
+                            
+                            # Should Be Tested
+                            # ${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:project-version:setup-database
+                            
+                            ${PHP_BIN} -d memory_limit=-1 bin/console --no-interaction --all-or-nothing doctrine:migrations:migrate
+                            ${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:install:info update
                             migrationCode=\$?   # Capture migration return code
                             
                             ${PHP_BIN} -d memory_limit=-1 bin/console cache:clear
-                            
-                            ${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:install:info update
                             ${PHP_BIN} -d memory_limit=-1 bin/console vankosoft:load-widgets
                             
                             /usr/bin/rm -f  ${REMOTE_DIR}/.env.local
@@ -213,7 +219,7 @@ ENDSSH
                     sh """
                         ssh -t -t -l ${REMOTE_SSH_USER} ${REMOTE_SSH_HOST} -o StrictHostKeyChecking=no -p ${REMOTE_SSH_PORT} << ENDSSH
                             cd ${REMOTE_DIR}
-                            ${PHP_BIN} -d memory_limit=-1 bin/console --no-interaction doctrine:migrations:migrate
+                            ${PHP_BIN} -d memory_limit=-1 bin/console --no-interaction --all-or-nothing doctrine:migrations:migrate
                             migrationCode=\$?   # Capture migration return code
                             
                             ${PHP_BIN} -d memory_limit=-1 bin/console cache:clear

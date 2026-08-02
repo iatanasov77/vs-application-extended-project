@@ -1,3 +1,6 @@
+vs_agent:
+    enabled: false # Defalt is true
+
 vs_application_instalator:
     resources:
         instalation_info:
@@ -295,6 +298,18 @@ vs_application:
                         route: vs_cms_helpcenter_question_update
                         routeParameters:
                           id: int
+                        display: false
+                    quick_links_categories_list:
+                        name: vs_application.menu.quick_links_categories_list
+                        route: vs_cms_quick_link_category_index
+                    quick_links_categories_create:
+                        name: vs_application.menu.quick_links_categories_create
+                        route: vs_cms_quick_link_category_create
+                    quick_links_categories_update:
+                        name: vs_application.menu.quick_links_categories_update
+                        route: vs_cms_quick_link_category_update
+                        routeParameters:
+                            id: int
                         display: false
                     quick_links_list:
                         name: vs_application.menu.quick_links_list
@@ -673,6 +688,18 @@ vs_application:
                         routeParameters:
                           id: int
                         display: false
+        
+        mainAgentMenu:
+            agent:
+                name: vs_application.menu.agent_menu_title
+                uri: "javascript:;"
+                attributes:
+                    iconClass: "fa fa-user-secret"
+                    breadcrumb_route: vs_agent_actions_index
+                childs:
+                    list:
+                        name: vs_application.menu.list_agent_actions
+                        route: vs_agent_actions_index
         
         profileMenu:
             about:

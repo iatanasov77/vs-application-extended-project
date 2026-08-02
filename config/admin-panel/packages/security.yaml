@@ -78,7 +78,7 @@ security:
 
             custom_authenticators:
                 - vs_users.security.login_form_authenticator
-                #- vs_api.security.api_key_authenticator
+                - vs_users.security.super_admin_access_token_authenticator
             entry_point: vs_users.security.login_form_authenticator
 
     role_hierarchy:
