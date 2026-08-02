@@ -1,3 +1,23 @@
+1.14.3	|	Release date: **02.08.2026**
+============================================
+* New Features:
+  - Fix Deprecation in Web Profiler Config.
+  - Add a QuickLinksCategory Resource.
+  - Add Vankosoft Agent Actions.
+  - Disallow SEO Robots for Admin Panel.
+  - Update Composer Version of PhpUnit.
+  - Update PhpUnit Command.
+  - Add Some Unit Tests.
+  - Config a SET Type in Doctrine.
+  - Add Access Token authenticator into Admin Panel.
+  - Use AccessTokenEntity in User Entity.
+  - Add Configuration for VS Agent.
+  - Add Alternative Liip Imagine Driver.
+  - Improve Run of Doctrine Migrations in Jenkinsfile.
+  - Some Changes in Jenkinsfile.
+  - Remove Restriction of Doctrine DBAL Version.
+
+
 1.14.2	|	Release date: **22.04.2026**
 ============================================
 * New Features and Improvements:
