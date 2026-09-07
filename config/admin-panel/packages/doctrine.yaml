@@ -4,7 +4,7 @@ doctrine:
 
         logging: true
         driver: 'pdo_mysql'
-        server_version: '8.0'
+        server_version: '10.11.19-MariaDB'
         charset: utf8
         
         default_table_options:
