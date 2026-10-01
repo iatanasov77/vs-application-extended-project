@@ -4,7 +4,7 @@ doctrine:
 
         logging: true
         driver: 'pdo_mysql'
-        server_version: '8.0'
+        server_version: '10.11.19-MariaDB'
         charset: utf8
         
         default_table_options:
@@ -18,17 +18,7 @@ doctrine:
             set: Vankosoft\ApplicationBundle\Doctrine\DBAL\Types\SetType
         
     orm:
-        auto_generate_proxy_classes: true
-        
         auto_mapping: true
-        controller_resolver:
-            auto_mapping: true
-        
-        # Enables the new implementation of proxies based on lazy ghosts instead of using the legacy implementation
-        #enable_lazy_ghost_objects: false
-        
-        enable_lazy_ghost_objects: true
-        report_fields_where_declared: true
         validate_xml_mapping: true
         
         naming_strategy: doctrine.orm.naming_strategy.underscore
