@@ -1,3 +1,11 @@
+1.14.4	|	Release date: **01.10.2026**
+============================================
+* New Features:
+  - Fix Doctrine Configs about Doctrine Bundle 4
+  - Update Dev Database to Maria DB.
+  - Update Requirement Versions.
+
+
 1.14.3	|	Release date: **02.08.2026**
 ============================================
 * New Features:
